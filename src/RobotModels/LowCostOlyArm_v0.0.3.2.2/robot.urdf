@@ -1,0 +1,345 @@
+<?xml version="1.0" ?>
+<robot name="robot">
+	<link name="base_link">
+		<visual>
+			<origin xyz="-5.8654254689123572376e-06 0.0037540802243648946357 0.024381607750669911233" rpy="1.5003121975193070414e-16 5.2841932713258020249e-15 -1.3322676295499249606e-15" />
+			<geometry>
+				<mesh filename="assets/base_1.stl"/>
+			</geometry>
+			<material name="base_1_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="-5.8654254689123572376e-06 0.0037540802243648946357 0.024381607750669911233" rpy="1.5003121975193070414e-16 5.2841932713258020249e-15 -1.3322676295499249606e-15" />
+			<geometry>
+				<mesh filename="assets/base_1.stl"/>
+			</geometry>
+		</collision>
+	
+  	<visual>
+			<origin xyz="-5.8654254690273893941e-06 0.0037540802243645685077 0.0093816077506701008731" rpy="1.5003121975193070414e-16 5.2841932713258020249e-15 -1.3322676295499249606e-15" />
+			<geometry>
+				<mesh filename="assets/base_0.stl"/>
+			</geometry>
+			<material name="base_0_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="-5.8654254690273893941e-06 0.0037540802243645685077 0.0093816077506701008731" rpy="1.5003121975193070414e-16 5.2841932713258020249e-15 -1.3322676295499249606e-15" />
+			<geometry>
+				<mesh filename="assets/base_0.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="-5.8646140803798349581e-06 -0.015556209775635772286 0.028381607750669803764" rpy="1.5003121975193070414e-16 5.2841932713258020249e-15 -1.3322676295499249606e-15" />
+			<geometry>
+				<mesh filename="assets/bearingcase.stl"/>
+			</geometry>
+			<material name="bearingcase_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="-5.8646140803798349581e-06 -0.015556209775635772286 0.028381607750669803764" rpy="1.5003121975193070414e-16 5.2841932713258020249e-15 -1.3322676295499249606e-15" />
+			<geometry>
+				<mesh filename="assets/bearingcase.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="-5.8654254702545055065e-06 -0.041013919775636516196 0.053981607750553245451" rpy="-5.3188877408454462407e-15 2.0554237098318108629e-16 -1.5707963267949185404" />
+			<geometry>
+				<mesh filename="assets/lx-16a_2.stl"/>
+			</geometry>
+			<material name="lx-16a_2_material">
+				<color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="-5.8654254702545055065e-06 -0.041013919775636516196 0.053981607750553245451" rpy="-5.3188877408454462407e-15 2.0554237098318108629e-16 -1.5707963267949185404" />
+			<geometry>
+				<mesh filename="assets/lx-16a_2.stl"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<link name="link_1">
+		<visual>
+			<origin xyz="0 1.7347234759768070944e-18 -0.0049999999999999905631" rpy="3.141592653589793116 -0 1.3563346443495844734e-32" />
+			<geometry>
+				<mesh filename="assets/link_1.stl"/>
+			</geometry>
+			<material name="link_1_material">
+				<color rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 1.7347234759768070944e-18 -0.0049999999999999905631" rpy="3.141592653589793116 -0 1.3563346443495844734e-32" />
+			<geometry>
+				<mesh filename="assets/link_1.stl"/>
+			</geometry>
+		</collision>
+
+	</link>
+	<link name="link_2">
+		<visual>
+			<origin xyz="0.058334089999999762244 5.5511151231257827021e-17 -0.018099999999999158429" rpy="-1.5707963267948976682 -1.1817881554444562221e-14 4.0657581513520743231e-20" />
+			<geometry>
+				<mesh filename="assets/ceparador_bisep.stl"/>
+			</geometry>
+			<material name="ceparador_bisep_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.058334089999999762244 5.5511151231257827021e-17 -0.018099999999999158429" rpy="-1.5707963267948976682 -1.1817881554444562221e-14 4.0657581513520743231e-20" />
+			<geometry>
+				<mesh filename="assets/ceparador_bisep.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="0.099084089999999722109 0.032500000000000014988 -0.03409999999988280045" rpy="-3.1415926535897922278 1.0929668910549514358e-14 -3.141592653589793116" />
+			<geometry>
+				<mesh filename="assets/bicepplate_a.stl"/>
+			</geometry>
+			<material name="bicepplate_a_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.099084089999999722109 0.032500000000000014988 -0.03409999999988280045" rpy="-3.1415926535897922278 1.0929668910549514358e-14 -3.141592653589793116" />
+			<geometry>
+				<mesh filename="assets/bicepplate_a.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="0.099084089999999638843 0.03250000000000000111 0.0010500000000009598877" rpy="-3.1415926535897922278 1.0929668910785314349e-14 -3.141592653589793116" />
+			<geometry>
+				<mesh filename="assets/bicepplate_b.stl"/>
+			</geometry>
+			<material name="bicepplate_b_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.099084089999999638843 0.03250000000000000111 0.0010500000000009598877" rpy="-3.1415926535897922278 1.0929668910785314349e-14 -3.141592653589793116" />
+			<geometry>
+				<mesh filename="assets/bicepplate_b.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="0.025500000000000001832 0 -0.0085000000000000006106" rpy="-4.9991323506365105198e-32 -1.2551797787687954675e-30 1.1381343191667132375e-30" />
+			<geometry>
+				<mesh filename="assets/servo_1.stl"/>
+			</geometry>
+			<material name="servo_1_material">
+				<color rgba="0.76862745098039220171 0.88627450980392152857 0.95294117647058818044 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.025500000000000001832 0 -0.0085000000000000006106" rpy="-4.9991323506365105198e-32 -1.2551797787687954675e-30 1.1381343191667132375e-30" />
+			<geometry>
+				<mesh filename="assets/servo_1.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="0.099084089999999708231 0.0012614800000000925273 -0.0084999999999428553499" rpy="1.3822111843126111948e-14 -5.9591142062816172936e-15 -1.570796326794896558" />
+			<geometry>
+				<mesh filename="assets/servo_2.stl"/>
+			</geometry>
+			<material name="servo_2_material">
+				<color rgba="0.76862745098039220171 0.88627450980392152857 0.95294117647058818044 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.099084089999999708231 0.0012614800000000925273 -0.0084999999999428553499" rpy="1.3822111843126111948e-14 -5.9591142062816172936e-15 -1.570796326794896558" />
+			<geometry>
+				<mesh filename="assets/servo_2.stl"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="link_3">
+		<visual>
+			<origin xyz="0.0050012053375567272484 0.052477983518420603937 -0.0008978360741076010787" rpy="1.570796326794896558 4.7445428398195395331e-19 2.7684641965779303184e-30" />
+			<geometry>
+				<mesh filename="assets/f1_bracket.stl"/>
+			</geometry>
+			<material name="f1_bracket_material">
+				<color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.0050012053375567272484 0.052477983518420603937 -0.0008978360741076010787" rpy="1.570796326794896558 4.7445428398195395331e-19 2.7684641965779303184e-30" />
+			<geometry>
+				<mesh filename="assets/f1_bracket.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="-0.025498170790093074856 0.080677983518418761033 0.018099999999999945993" rpy="1.57079632679489678 -4.744542839803762315e-19 -3.1415926535897211735" />
+			<geometry>
+				<mesh filename="assets/servo_5.stl"/>
+			</geometry>
+			<material name="servo_5_material">
+				<color rgba="0.76862745098039220171 0.88627450980392152857 0.95294117647058818044 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="-0.025498170790093074856 0.080677983518418761033 0.018099999999999945993" rpy="1.57079632679489678 -4.744542839803762315e-19 -3.1415926535897211735" />
+			<geometry>
+				<mesh filename="assets/servo_5.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="0.0057403492099071667942 0.051077983518479787295 0.018099999999999678846" rpy="1.5707963267948508168 1.5707963267948428232 0" />
+			<geometry>
+				<mesh filename="assets/spacer_1.stl"/>
+			</geometry>
+			<material name="spacer_1_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.0057403492099071667942 0.051077983518479787295 0.018099999999999678846" rpy="1.5707963267948508168 1.5707963267948428232 0" />
+			<geometry>
+				<mesh filename="assets/spacer_1.stl"/>
+			</geometry>
+		</collision>
+
+	</link>
+	<link name="link_4">
+		<visual>
+			<origin xyz="0.005000554249739622148 0.018997836074107609522 0" rpy="-3.141592653589793116 4.0273024473854388571e-30 -6.9011105530995942545e-19" />
+			<geometry>
+				<mesh filename="assets/f2_bracket.stl"/>
+			</geometry>
+			<material name="f2_bracket_material">
+				<color rgba="0.97254901960784312376 0.52941176470588235947 0.0039215686274509803377 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.005000554249739622148 0.018997836074107609522 0" rpy="-3.141592653589793116 4.0273024473854388571e-30 -6.9011105530995942545e-19" />
+			<geometry>
+				<mesh filename="assets/f2_bracket.stl"/>
+			</geometry>
+		</collision>
+
+	</link>
+	<link name="link_5">
+		<visual>
+			<origin xyz="0.025499999999999994893 0 -0.027699999999999995459" rpy="3.141592653589793116 3.4731257652107217756e-30 1.1154986237890870061e-30" />
+			<geometry>
+				<mesh filename="assets/servo_3.stl"/>
+			</geometry>
+			<material name="servo_3_material">
+				<color rgba="0.76862745098039220171 0.88627450980392152857 0.95294117647058818044 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.025499999999999994893 0 -0.027699999999999995459" rpy="3.141592653589793116 3.4731257652107217756e-30 1.1154986237890870061e-30" />
+			<geometry>
+				<mesh filename="assets/servo_3.stl"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin xyz="0.10229370956764988199 -0.099115373220648728125 -0.019643149801582382441" rpy="-1.5707963267948941155 2.6392314859705910111e-15 1.5707963267948970021" />
+			<geometry>
+				<mesh filename="assets/hand.stl"/>
+			</geometry>
+			<material name="hand_material">
+				<color rgba="0.76862745098039220171 0.88627450980392152857 0.95294117647058818044 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.10229370956764988199 -0.099115373220648728125 -0.019643149801582382441" rpy="-1.5707963267948941155 2.6392314859705910111e-15 1.5707963267948970021" />
+			<geometry>
+				<mesh filename="assets/hand.stl"/>
+			</geometry>
+		</collision>
+
+	</link>
+	<link name="shadow_link">
+		<visual>
+			<origin xyz="-3.4694469519536141888e-18 0 0" rpy="1.570796326794896558 9.1088627240917607697e-30 4.7082586022447386457e-19" />
+			<geometry>
+				<mesh filename="assets/eeff.stl"/>
+			</geometry>
+			<material name="eeff_material">
+				<color rgba="0.61568627450980395466 0.81176470588235294379 0.92941176470588238168 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="-3.4694469519536141888e-18 0 0" rpy="1.570796326794896558 9.1088627240917607697e-30 4.7082586022447386457e-19" />
+			<geometry>
+				<mesh filename="assets/eeff.stl"/>
+			</geometry>
+		</collision>
+
+	</link>
+	
+	
+		
+
+	<joint name="joint_base" type="revolute">
+		<origin xyz="-5.8654254697703016633e-06 -0.0155139197756358517 0.062481607750553148917" rpy="-3.1415926535897926719 8.7519713911100762367e-15 3.141592653589793116" />
+		<parent link="base_link" />
+		<child link="link_1" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
+		<joint_properties friction="0.0"/>
+	</joint>
+	
+	<joint name="joint_1" type="revolute">
+		<origin xyz="1.4916250201148228971e-18 -0.018550000000000003986 -0.025000000000000008327" rpy="-1.5707963267948972241 7.5425979268642395542e-15 3.1415926535897851224" />
+		<parent link="link_1" />
+		<child link="link_2" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
+		<joint_properties friction="0.0"/>
+	</joint>
+	
+	<joint name="joint_2" type="revolute">
+		<origin xyz="0.099084089999999722109 0.026761479999999990276 5.6850357754711922098e-14" rpy="3.1415926535897442662 9.1508690397614521193e-15 -1.5707963267948807928" />
+		<parent link="link_2" />
+		<child link="link_3" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
+		<joint_properties friction="0.0"/>
+	</joint>	
+	
+	<joint name="joint_3" type="revolute">
+		<origin xyz="1.8292099069061595884e-06 0.089177983518420600451 0.018099999999999942524" rpy="-1.570796326794896558 0.0069765091193576761822 -3.1415926535897420457" />
+		<parent link="link_3" />
+		<child link="link_4" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
+		<joint_properties friction="0.0"/>
+	</joint>	
+	
+	<joint name="joint_4" type="revolute">
+		<origin xyz="-3.4131034207240951162e-06 -0.018550000000000128886 -0.026453769477937476295" rpy="1.5707963267948956698 1.5707963267948930053 0" />
+		<parent link="link_4" />
+		<child link="link_5" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="20" lower="0" upper="3.141592653589793116"/>
+		<joint_properties friction="0.0"/>
+	</joint>
+	
+	<joint name="joint_5" type="revolute">
+		<origin xyz="0.045811480000000001644 2.7755575615628913511e-17 -0.018100000000059679461" rpy="3.1415926535897926719 -1.5707963267948943376 0" />
+		<parent link="link_5" />
+		<child link="shadow_link" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="20" lower="0" upper="1.570796326794896558"/>
+		<joint_properties friction="0.0"/>
+	</joint>	
+
+	<joint name="camera_link" type="fixed">
+		<origin xyz="-0.037759650790093149397 0.05507798351847707774 0.0040999999999992361999" rpy="1.5707963267948488184 1.5707963267948383823 0" />
+		<parent link="link_4" />
+		<child link="camera_link" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="20" />
+		<joint_properties friction="0.0"/>
+	</joint>			
+</robot>

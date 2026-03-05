@@ -1,0 +1,9 @@
+
+{
+    "documentId":"80d3b5bd5f5e5cb079812a7a",
+    "outputFormat":"urdf",
+    "robotName":"robot",
+    "assemblyName":"JSO-800",
+    "drawCollision":true,
+    "workspaceId":"8840d971e5355e8d50181a06"
+}

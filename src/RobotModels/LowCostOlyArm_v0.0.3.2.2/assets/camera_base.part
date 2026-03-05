@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "73ae15d12d6cfeb3ebb081f7",
+    "documentMicroversion": "a6e241914bbd23580a63b11b",
+    "elementId": "a4b36eff498af4c06f38857d",
+    "fullConfiguration": "default",
+    "id": "MMDKeKLPfrLT3d0/y",
+    "isStandardContent": false,
+    "name": "camera_base <1>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}

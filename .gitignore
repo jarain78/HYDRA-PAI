@@ -1,0 +1,6 @@
+.venv
+
+YCB_Dataset
+GEMINI_ROBOTICS_API
+
+*.pt

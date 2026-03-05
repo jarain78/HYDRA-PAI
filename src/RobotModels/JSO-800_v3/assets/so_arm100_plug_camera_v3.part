@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "80d3b5bd5f5e5cb079812a7a",
+    "documentMicroversion": "30e8cfbb264bd46ea520d0ed",
+    "elementId": "084c8089aedad52793e9f6c4",
+    "fullConfiguration": "default",
+    "id": "Mkc65m8bxLdyGdzwd",
+    "isStandardContent": false,
+    "name": "SO-ARM100 Plug camera v3 <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

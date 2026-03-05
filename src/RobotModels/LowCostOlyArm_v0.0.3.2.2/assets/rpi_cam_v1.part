@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "73ae15d12d6cfeb3ebb081f7",
+    "documentMicroversion": "a6e241914bbd23580a63b11b",
+    "elementId": "07d04416e05630b872829cad",
+    "fullConfiguration": "default",
+    "id": "MZjeURrAtcLjvdcVJ",
+    "isStandardContent": false,
+    "name": "RPi cam v1 <1>",
+    "partId": "JFH",
+    "suppressed": false,
+    "type": "Part"
+}

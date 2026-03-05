@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "80d3b5bd5f5e5cb079812a7a",
+    "documentMicroversion": "30e8cfbb264bd46ea520d0ed",
+    "elementId": "0020d0f637ef6be5dd20398e",
+    "fullConfiguration": "default",
+    "id": "MS8Z8wr0F6J06d1Fg",
+    "isStandardContent": false,
+    "name": "Robot_Jaw <1>",
+    "partId": "JF7",
+    "suppressed": false,
+    "type": "Part"
+}

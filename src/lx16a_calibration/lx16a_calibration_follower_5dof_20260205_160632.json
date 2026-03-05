@@ -1,0 +1,43 @@
+{
+  "arm_name": "follower_5dof",
+  "serial_port": "/dev/ttyUSB0",
+  "servo_ids": [
+    7,
+    8,
+    9,
+    11,
+    12
+  ],
+  "hard_range_deg": [
+    0.0,
+    240.0
+  ],
+  "timestamp": 1770303992.5211027,
+  "limits": {
+    "7": {
+      "min_deg": 0.96,
+      "max_deg": 187.92,
+      "home_deg": 98.88
+    },
+    "8": {
+      "min_deg": 8.4,
+      "max_deg": 187.44,
+      "home_deg": 187.44
+    },
+    "9": {
+      "min_deg": 3.84,
+      "max_deg": 179.76,
+      "home_deg": 179.76
+    },
+    "11": {
+      "min_deg": 0.0,
+      "max_deg": 168.0,
+      "home_deg": 90.0
+    },
+    "12": {
+      "min_deg": 0.0,
+      "max_deg": 67.92,
+      "home_deg": 67.68
+    }
+  }
+}

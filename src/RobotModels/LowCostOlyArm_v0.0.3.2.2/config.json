@@ -1,0 +1,9 @@
+
+{
+    "documentId":"73ae15d12d6cfeb3ebb081f7",
+    "outputFormat":"urdf",
+    "robotName":"robot",
+    "assemblyName":"LowCostOlyArm_v0.0.3.2.2",
+    "drawCollision":true,
+    "workspaceId":"9f55585b9d1962741f0011d2"
+}

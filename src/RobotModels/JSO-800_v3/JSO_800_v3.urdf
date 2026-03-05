@@ -1,0 +1,275 @@
+<?xml version="1.0" ?>
+<!-- Improved JSO-800 URDF for PyBullet teleop + pick&place -->
+<robot name="jso800_robot">
+
+  <!-- ===================== base_link ===================== -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- base fija, masa pequeña pero no 1e-9 -->
+      <mass value="1.0"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.002"/>
+    </inertial>
+
+    <!-- Part base_link -->
+    <visual>
+      <origin xyz="0 0 0" rpy="-7.88861e-31 -1.45939e-29 3.14159"/>
+      <geometry>
+        <mesh filename="assets/base_link.stl"/>
+      </geometry>
+      <material name="base_link_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-7.88861e-31 -1.45939e-29 3.14159"/>
+      <geometry>
+        <mesh filename="assets/base_link.stl"/>
+      </geometry>
+    </collision>
+
+    <!-- waveshare_mounting_plate_01d -->
+    <visual>
+      <origin xyz="-0.0694071 -0.000229437 0.0678541" rpy="-1.91735e-16 -9.24126e-31 1.5708"/>
+      <geometry>
+        <mesh filename="assets/waveshare_mounting_plate_01d.stl"/>
+      </geometry>
+      <material name="waveshare_mounting_plate_01d_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0694071 -0.000229437 0.0678541" rpy="-1.91735e-16 -9.24126e-31 1.5708"/>
+      <geometry>
+        <mesh filename="assets/waveshare_mounting_plate_01d.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== rotation_arm ===================== -->
+  <link name="rotation_arm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.8"/>
+      <inertia ixx="0.003" ixy="0" ixz="0" iyy="0.003" iyz="0" izz="0.003"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0458929 0.000380004 0.0717335" rpy="3.14159 9.14755e-16 -9.01378e-33"/>
+      <geometry>
+        <mesh filename="assets/rotation_arm.stl"/>
+      </geometry>
+      <material name="rotation_arm_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0458929 0.000380004 0.0717335" rpy="3.14159 9.14755e-16 -9.01378e-33"/>
+      <geometry>
+        <mesh filename="assets/rotation_arm.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== bisep ===================== -->
+  <link name="bisep">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.7"/>
+      <inertia ixx="0.003" ixy="0" ixz="0" iyy="0.003" iyz="0" izz="0.003"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.03022 -0.125934 0.0187929" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="assets/bisep.stl"/>
+      </geometry>
+      <material name="bisep_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.03022 -0.125934 0.0187929" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="assets/bisep.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== forearm ===================== -->
+  <link name="forearm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.6"/>
+      <inertia ixx="0.0025" ixy="0" ixz="0" iyy="0.0025" iyz="0" izz="0.0025"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.08458 0.158434 -0.0187929" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="assets/forearm.stl"/>
+      </geometry>
+      <material name="forearm_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.08458 0.158434 -0.0187929" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="assets/forearm.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== wrist ===================== -->
+  <link name="wrist">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.4"/>
+      <inertia ixx="0.0015" ixy="0" ixz="0" iyy="0.0015" iyz="0" izz="0.0015"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.154597 0.165763 0.0189993" rpy="1.5708 1.54988 -4.14758e-17"/>
+      <geometry>
+        <mesh filename="assets/wrist.stl"/>
+      </geometry>
+      <material name="wrist_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.154597 0.165763 0.0189993" rpy="1.5708 1.54988 -4.14758e-17"/>
+      <geometry>
+        <mesh filename="assets/wrist.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== robot_jaw (EE) ===================== -->
+  <link name="robot_jaw">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.25"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+
+    <!-- Parte fija de la pinza (efector final para el código) -->
+    <visual>
+      <origin xyz="0.00332431 0.20342 -0.0910979" rpy="0.0872475 -0.00182264 7.37259e-18"/>
+      <geometry>
+        <mesh filename="assets/robot_jaw.stl"/>
+      </geometry>
+      <material name="robot_jaw_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00332431 0.20342 -0.0910979" rpy="0.0872475 -0.00182264 7.37259e-18"/>
+      <geometry>
+        <mesh filename="assets/robot_jaw.stl"/>
+      </geometry>
+    </collision>
+
+    <!-- soporte cámara -->
+    <visual>
+      <origin xyz="-0.035216 -0.000401051 -0.0225803" rpy="1.5708 1.48353 1.54996"/>
+      <geometry>
+        <mesh filename="assets/so_arm100_plug_camera_v3.stl"/>
+      </geometry>
+      <material name="so_arm100_plug_camera_v3_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.035216 -0.000401051 -0.0225803" rpy="1.5708 1.48353 1.54996"/>
+      <geometry>
+        <mesh filename="assets/so_arm100_plug_camera_v3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== moving_jaw (dedo móvil) ===================== -->
+  <link name="moving_jaw">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 -6.93889e-18 0.0184" rpy="-1.11022e-16 -0 0"/>
+      <geometry>
+        <mesh filename="assets/moving_jaw.stl"/>
+      </geometry>
+      <material name="moving_jaw_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -6.93889e-18 0.0184" rpy="-1.11022e-16 -0 0"/>
+      <geometry>
+        <mesh filename="assets/moving_jaw.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ===================== JOINTS ===================== -->
+
+  <!-- Joint 6: robot_jaw -> moving_jaw (gripper) -->
+  <joint name="jso800_joint_6" type="revolute">
+    <origin xyz="0.0193483 -0.0194823 -0.023625" rpy="-1.5708 0.17271 -0.0208344"/>
+    <parent link="robot_jaw"/>
+    <child link="moving_jaw"/>
+    <axis xyz="0 0 1"/>
+    <!-- Rango más razonable para abrir/cerrar pinza -->
+    <limit effort="10" velocity="4.0" lower="-0.5" upper="0.5"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+  <!-- Joint 5: wrist -> robot_jaw -->
+  <joint name="jso800_joint_5" type="revolute">
+    <origin xyz="-0.00526732 0.0603307 0.018085" rpy="1.5708 1.54996 0.0872665"/>
+    <parent link="wrist"/>
+    <child link="robot_jaw"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="4.0" lower="-1.5708" upper="1.5708"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+  <!-- Joint 4: forearm -> wrist -->
+  <joint name="jso800_joint_4" type="revolute">
+    <origin xyz="-0.156487 -9.54862e-05 -0.0382" rpy="2.62526e-16 -5.86965e-16 0.174709"/>
+    <parent link="forearm"/>
+    <child link="wrist"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="4.0" lower="-0.00017626" upper="2.96688"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+  <!-- Joint 3: bisep -> forearm -->
+  <joint name="jso800_joint_3" type="revolute">
+    <origin xyz="0.1148 0.0325 -2.42861e-17" rpy="3.14159 -6.24076e-16 4.44089e-16"/>
+    <parent link="bisep"/>
+    <child link="forearm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="4.0" lower="0" upper="3.14159"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+  <!-- Joint 2: rotation_arm -> bisep -->
+  <joint name="jso800_joint_2" type="revolute">
+    <origin xyz="-0.0189 0.0306 -0.0542" rpy="-1.5708 -1.35907e-14 -1.5708"/>
+    <parent link="rotation_arm"/>
+    <child link="bisep"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="4.0" lower="0" upper="3.14159"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+  <!-- Joint 1: base_link -> rotation_arm -->
+  <joint name="jso800_joint_1" type="revolute">
+    <origin xyz="0.000292857 -0.000380004 0.0722335" rpy="3.14159 -2.72707e-15 1.5708"/>
+    <parent link="base_link"/>
+    <child link="rotation_arm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="4.0" lower="-1.5708" upper="1.5708"/>
+    <dynamics damping="0.1" friction="0.05"/>
+  </joint>
+
+</robot>
