@@ -234,3 +234,25 @@ OWLReady2
 CLIPS / clipspy  
 PyBullet  
 Ultralytics YOLO
+
+
+---
+
+# 🌐 Connect with the Author
+
+If you are interested in **Explainable Physical AI, Robotics, and Hybrid AI architectures**, feel free to connect.
+
+🌍 **Website**  
+https://www.jaimerincon.dev/
+
+🎥 **YouTube Channel**  
+https://www.youtube.com/@78Jarain
+
+💼 **LinkedIn**  
+https://www.linkedin.com/in/jaime-andres-rincon-arango-11a1522b/
+
+📚 **Research / Publications**  
+https://scholar.google.es/citations?user=JEoZvGAAAAAJ&hl=es
+
+💻 **GitHub**  
+https://github.com/jarain78
