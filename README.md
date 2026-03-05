@@ -19,7 +19,7 @@ A set of visual infographics explaining the key concepts of the **HYDRA-PAI arch
 These diagrams illustrate the interaction between perception, reasoning, ontology grounding, and robotic execution.
 
 👉 **Open the infographic page:**  
-[View Clips Concept Diagrams](docs/InfografiaClisp.html)
+[View Clips Concept Diagrams](docs/InfografiaClips.html)
 
 [View Clipspy and Ontology Concept Diagrams](docs/InfografiaClispy.html)
 
