@@ -24,7 +24,7 @@ Unlike traditional robotics demos that stop at perception or captioning, this sy
 
 A demonstration video of the system can be found here:
 
-[![Watch the demo](static/HYDRA_PAI_Logo.png)](https://youtu.be/yoXtI6w1Yyg)
+[![Watch the demo](static/HYDRA_PAI_Logo.png)](https://youtu.be/Ba4fWXsb9LA)
 
 
 (The video shows the full perception‑to‑execution pipeline running with the MyCobot 280 robot in simulation.)
