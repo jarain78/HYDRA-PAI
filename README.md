@@ -5,7 +5,12 @@
   <img src="static/HYDRA_PAI_Logo.png" alt="HYDRA-PAI Logo" width="520"/>
 </p>
 
-## 🚀 NVIDIA Cosmos Cookoff Submission
+
+
+## 📌 Submission Summary
+
+This project presents a hybrid Physical AI architecture integrating NVIDIA Cosmos Reason2 with OWL ontologies and CLIPS symbolic planning. Cosmos acts as a high-level visual reasoner grounded on structured knowledge extracted from an ontology that encodes object-room relationships, pickability, and class hierarchy. The model outputs structured JSON intents, which are transformed into symbolic facts and processed by a CLIPS inference engine to generate ordered task plans with full traceability. A robotic manipulator in PyBullet executes these plans using inverse kinematics and smooth motion control. This integration demonstrates how foundation models gain robustness, explainability, and extensibility when paired with explicit knowledge representation and symbolic reasoning. Rather than relying solely on black-box perception, the system closes the loop from perception to physical action through interpretable planning. The Hybrid Mind showcases a scalable blueprint for trustworthy household and assistive robotics.
+
 
 **HYDRA‑PAI (Hybrid Reasoning Architecture for Physical AI)** demonstrates how foundation models become physically actionable when combined with structured knowledge and symbolic reasoning.
 
@@ -19,7 +24,7 @@ Unlike traditional robotics demos that stop at perception or captioning, this sy
 
 A demonstration video of the system can be found here:
 
-[![Watch the demo](static/HYDRA_PAI_Logo.png)](https://youtu.be/IevGmLlyU4c)
+[![Watch the demo](static/HYDRA_PAI_Logo.png)](https://youtu.be/yoXtI6w1Yyg)
 
 
 (The video shows the full perception‑to‑execution pipeline running with the MyCobot 280 robot in simulation.)
