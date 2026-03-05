@@ -1,289 +1,231 @@
 
 # The Hybrid Mind: Integrating Cosmos Reason2, Ontological Memory, and Symbolic Planning for Explainable Physical AI
 
-
 <p align="center">
   <img src="static/HYDRA_PAI_Logo.png" alt="HYDRA-PAI Logo" width="520"/>
 </p>
 
-**Physical AI needs more than perception.**  
-This project demonstrates a hybrid AI architecture where:
+## 🚀 NVIDIA Cosmos Cookoff Submission
 
-- **Cosmos Reason2** performs high-level visual reasoning.
-- **OWL ontologies** provide structured, hierarchical knowledge representation.
-- **CLIPS (clipspy)** performs deterministic symbolic planning with an inference engine.
-- **PyBullet** executes the plan via robotic manipulation (IK + smooth motion + grasp constraints).
+**HYDRA‑PAI (Hybrid Reasoning Architecture for Physical AI)** demonstrates how foundation models become physically actionable when combined with structured knowledge and symbolic reasoning.
 
-**Result:** The robot does not merely describe what it sees — it understands what should happen, plans symbolically, and executes physical actions accordingly.
+Unlike traditional robotics demos that stop at perception or captioning, this system closes the full loop:
+
+**Perception → Reasoning → Knowledge → Planning → Physical Action**
 
 ---
 
-## 🧠 Why This Matters (NVIDIA Cosmos Cookoff Focus)
+# 🎥 Project Video
 
-Most Vision-Language robotics demos stop at captioning or labeling.  
-This project bridges the critical gap:
+A demonstration video of the system can be found here:
 
-> **Perception → Reasoning → Knowledge → Planning → Physical Action**
+[![Watch the demo](static/HYDRA_PAI_Logo.png)](https://youtu.be/IevGmLlyU4c)
 
-- Cosmos Reason2 provides powerful foundation-level visual reasoning.
-- Ontologies enforce structured, explainable domain knowledge (rooms, objects, hierarchy).
-- CLIPS ensures auditable, rule-based decision-making.
-- The robot executes tasks based on explainable logic — not black-box outputs.
 
-This architecture demonstrates how **foundation models become physically actionable when grounded in structured knowledge and symbolic reasoning.**
+(The video shows the full perception‑to‑execution pipeline running with the MyCobot 280 robot in simulation.)
 
 ---
 
-## 🔬 System Architecture
+# 🤖 Robot Platform
 
-## 🧩 HYDRA-PAI Block Diagram
+The robotic manipulator used in this project is the [MyCobot 280 – Elephant Robotics](https://www.elephantrobotics.com/en/mycobot-280-m5-2023-en/), a lightweight 6‑DOF robotic arm widely used for research and education.
 
-![HYDRA-PAI Flowchart](static/HIDRA_PAI_Flowchart.png)
+<p align="center">
+<img src="static/myCobot280.jpg" width="700">
+</p>
 
+Key characteristics:
 
-```
-PyBullet Camera (RGB)
-        |
-        v
-Perception (YOLO) → Grounding (detection → body_id)
-        |
-        v
-Ontology (OWLReady2)
-  - Object properties: locatedIn, canBePickedBy
-  - Class hierarchy: subClassOf
-        |
-        v
-Cosmos Reason2 (High-Level Reasoner)
-  - Input: image + ontology summary + perception facts
-  - Output: JSON intents (move/ignore, priority, rationale)
-        |
-        v
-CLIPS (clipspy) Planner
-  - Input: (obj ...) + (intent ...)
-  - Output: ordered (task ...) facts + traces
-        |
-        v
-PyBullet Executor (IK-based manipulation)
-```
+• 6 Degrees of Freedom  
+• Python API integration  
+• Compatible with PyBullet simulation  
+• Compact and low‑cost research platform  
+
+In this project the robot is primarily executed in **PyBullet simulation** to enable reproducible evaluation of the hybrid reasoning architecture.  
+The system is also capable of **connecting to the real MyCobot 280 robot**, allowing the same perception → reasoning → planning pipeline to control a physical robotic manipulator.
+---
+
+# 🧠 Why Cosmos?
+
+Most robotics pipelines treat foundation models as **perception tools**.  
+In this project, **Cosmos Reason2 is used as a high‑level reasoning engine.**
+
+Cosmos receives:
+
+• Camera frame  
+• Ontology knowledge summary  
+• Grounded perception results  
+
+It then produces **structured reasoning outputs** in JSON form that drive symbolic planning.
+
+Cosmos therefore functions as:
+
+**Visual Reasoner → Intent Generator → Semantic Bridge between perception and planning**
+
+Benefits:
+
+✔ Structured reasoning output  
+✔ Reduced hallucinations through ontology grounding  
+✔ Explainable decision generation  
+✔ Compatible with symbolic planners
+
+This demonstrates how **Cosmos can operate as the cognitive layer of a Physical AI system.**
 
 ---
 
-## 🚀 Demo Flow
+# 🔬 System Architecture
 
-1. PyBullet renders a robotic scene (Panda or MyCobot + YCB objects).
-2. YOLO detects objects and associates them with simulated bodies.
-3. The ontology provides:
-   - destination room (`locatedIn`)
-   - pickability (`canBePickedBy`)
-   - class hierarchy (subClassOf relationships)
-4. Cosmos Reason2 receives:
-   - a camera frame
-   - ontology summary
-   - grounded object state
-   and produces structured JSON intents.
-5. CLIPS transforms intents into executable symbolic tasks.
-6. The robot performs smooth pick-and-place operations.
+## HYDRA‑PAI Architecture
+
+<p align="center">
+<img src="static/HIDRA_PAI_Flowchart.png" width="700">
+</p>
+
+Pipeline:
+
+PyBullet Camera (RGB)  
+↓  
+YOLO Object Detection  
+↓  
+Ontology Grounding (OWLReady2)  
+↓  
+Cosmos Reason2 (High‑level reasoning)  
+↓  
+CLIPS Symbolic Planner  
+↓  
+PyBullet Robot Execution (IK)
 
 ---
 
-## ✅ Key Contributions
+# 🧩 Reasoning Pipeline
 
-### 1️⃣ Cosmos as a True High-Level Reasoner
-Cosmos is constrained to produce structured JSON:
+### 1 Perception
 
-```
+YOLO detects objects in the scene and maps them to simulated bodies.
+
+### 2 Knowledge Grounding
+
+The ontology provides semantic knowledge:
+
+• object class hierarchy  
+• room location knowledge  
+• pickability constraints  
+
+### 3 Cosmos Reasoning
+
+Cosmos receives:
+
+image + ontology summary + perception facts
+
+Example output:
+
 {
-  "high_level_goal": "...",
-  "intents": [
-    {"onto": "cup", "action": "move", "to_room": "kitchen", "priority": 1, "rationale": "..."}
-  ]
+ "high_level_goal": "organize objects",
+ "intents": [
+   {"onto": "cup", "action": "move", "to_room": "kitchen", "priority": 1}
+ ]
 }
-```
 
-This prevents free-form responses and ensures reliable integration.
+### 4 Symbolic Planning
 
----
+CLIPS converts intents into deterministic tasks.
 
-### 2️⃣ Ontology-Grounded Decision Making
+Example rules:
 
-Cosmos reasons over:
+• Not pickable → ignore  
+• Wrong location → move  
+• Already correct → ignore  
 
-- Object → class relationships
-- Class hierarchy chains
-- Ontology constraints (destination, pickability)
-- Current room vs desired room
+### 5 Physical Execution
 
-Expanding the ontology automatically expands the robot’s knowledge without retraining models.
+The PyBullet robot executes the plan using inverse kinematics and smooth trajectories.
 
 ---
 
-### 3️⃣ Deterministic Symbolic Planning (CLIPS)
+# 📊 Benchmark Comparison
 
-CLIPS converts high-level intents into tasks using inference rules:
+| Capability | Vision‑Only Systems | HYDRA‑PAI |
+|-------------|--------------------|-----------|
+Object Detection | ✔ | ✔ |
+Captioning | ✔ | ✔ |
+Structured Reasoning | ✖ | ✔ |
+Ontology Knowledge | ✖ | ✔ |
+Symbolic Planning | ✖ | ✔ |
+Explainability | ✖ | ✔ |
+Physical Task Execution | Limited | ✔ |
 
-- Not pickable → ignore
-- Missing destination → ignore
-- Out-of-place → move
-- Already correct → ignore
-
-All reasoning steps are traceable and auditable.
-
----
-
-### 4️⃣ Real Physical Execution
-
-The system closes the loop:
-
-> See → Understand → Decide → Plan → Act
+HYDRA‑PAI demonstrates that combining foundation models with symbolic reasoning significantly increases system **interpretability and robustness**.
 
 ---
 
-## 📂 Repository Contents
+# ⚙️ Quickstart
 
-- `ontoai_gui_ycb_cosmos_clips.py` – Streamlit GUI integrating Cosmos + Ontology + CLIPS + PyBullet
-- `hogar_en.owl` – Example ontology (rooms, objects, hierarchy)
-- YCB objects via PyBullet simulation
+Install dependencies:
 
----
-
-## ⚙️ Quickstart
-
-### Install Dependencies
-
-```bash
 pip install streamlit pybullet owlready2 clipspy ultralytics transformers torch imageio imageio-ffmpeg pillow
-```
 
+Run:
 
----
-
-## 🔑 Hugging Face Access Requirement
-
-**Cosmos Reason2 models are hosted on Hugging Face and require authentication to download.**
-
-Before running the project, you must create a **Hugging Face access token**.
-
-### 1. Create an Access Token
-
-Create or log in to your Hugging Face account:
-
-https://huggingface.co
-
-Then generate a token:
-
-https://huggingface.co/settings/tokens
-
-Create a token with **Read access**.
-
-### 2. Login from the Terminal
-
-Install the Hugging Face CLI if needed:
-
-```bash
-pip install huggingface_hub
-```
-
-Authenticate with:
-
-```bash
-huggingface-cli login
-```
-
-Paste your **access token** when prompted.
-
-### 3. Alternative: Environment Variable
-
-You can also export the token manually:
-
-```bash
-export HF_TOKEN=your_huggingface_token_here
-```
-
-### 4. Why This Is Required
-
-The **Cosmos Reason2 model weights are gated**, so authentication is required before the Transformers library can download them.
-
-Once authenticated, the model will be automatically downloaded and cached locally by Hugging Face.
-
-
-### Run the GUI
-
-```bash
 streamlit run src/ontoai_dashboard_streamlit_mycobot280.py
-```
-
-### In the GUI
-
-- Enable **Cosmos High-Level Reasoning**
-- Load ontology (`.owl`)
-- Enable execution
-- Observe planning traces and robot motion
 
 ---
 
-## 🧩 Why Ontologies?
+# 🧩 Why Ontologies?
 
-OWL ontologies provide:
+Ontologies allow the robot to reason about **semantic relationships** without retraining neural models.
 
-- Hierarchical reasoning
-- Domain extensibility
-- Explainable constraints
-- Cross-domain adaptability
+Advantages:
 
-To expand capabilities, edit the ontology — not the neural model.
+• Hierarchical reasoning  
+• Domain extensibility  
+• Explainable constraints  
+• Cross‑domain adaptability
 
----
-
-## 🧪 Evaluation for the Cookoff
-
-### Baseline (Vision-only)
-- Cosmos captioning
-- No structured task execution
-
-### Hybrid Mind (Full Stack)
-- Cosmos + Ontology + CLIPS
-- Explicit intents
-- Planned symbolic tasks
-- Physical execution
-
-Compare:
-
-- Explainability
-- Determinism
-- Robustness
-- Extensibility
+Expanding the ontology automatically expands the robot's knowledge.
 
 ---
 
-## 🔮 Future Work
+# 🔮 Future Work
 
-- Multi-object scheduling optimization
-- Safety constraints from ontology (fragile, hazardous, heavy)
-- Multi-robot reasoning
-- Real robot integration (ROS2)
-- Persistent knowledge updates (ontology learning)
+Planned research directions:
 
----
+• Multi‑object task scheduling  
+• Safety constraints derived from ontology knowledge  
+• Multi‑robot reasoning  
+• Real‑robot deployment using ROS2  
+• Persistent knowledge learning from experience  
 
-## 📌 Submission Summary
+The architecture is also being extended to support **multiple robotic platforms**, allowing the same reasoning system to control different robots beyond the **MyCobot 280**.
 
-This project presents a hybrid Physical AI architecture integrating NVIDIA Cosmos Reason2 with OWL ontologies and CLIPS symbolic planning. Cosmos acts as a high-level visual reasoner grounded on structured knowledge extracted from an ontology that encodes object-room relationships, pickability, and class hierarchy. The model outputs structured JSON intents, which are transformed into symbolic facts and processed by a CLIPS inference engine to generate ordered task plans with full traceability. A robotic manipulator in PyBullet executes these plans using inverse kinematics and smooth motion control. This integration demonstrates how foundation models gain robustness, explainability, and extensibility when paired with explicit knowledge representation and symbolic reasoning. Rather than relying solely on black-box perception, the system closes the loop from perception to physical action through interpretable planning. The Hybrid Mind showcases a scalable blueprint for trustworthy household and assistive robotics.
-
----
-
-## 📜 License
-
-Recommended:
-- **CC BY-NC-SA 4.0** (non-commercial sharing)
-or
-- **AGPL-3.0** (strong copyleft for code)
+Additional manipulators and mobile robots are currently being integrated.
 
 ---
 
-## 🙏 Acknowledgements
+# 📌 Contribution Summary
 
-- NVIDIA Cosmos Reason2
-- OWLReady2
-- CLIPS / clipspy
-- PyBullet
-- Ultralytics YOLO
+HYDRA‑PAI introduces a hybrid Physical AI architecture combining:
+
+• Cosmos Reason2 foundation reasoning  
+• OWL ontology knowledge representation  
+• CLIPS symbolic planning  
+• PyBullet robotic manipulation
+
+This architecture demonstrates how **foundation models become reliable controllers for physical systems when grounded in structured knowledge and symbolic reasoning.**
+
+---
+
+# 📜 License
+
+CC BY‑NC‑SA 4.0
+
+Non‑commercial academic use permitted.
+
+---
+
+# Acknowledgements
+
+NVIDIA Cosmos Reason2  
+OWLReady2  
+CLIPS / clipspy  
+PyBullet  
+Ultralytics YOLO
