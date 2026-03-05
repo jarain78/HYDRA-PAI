@@ -206,6 +206,56 @@ Additional manipulators and mobile robots are currently being integrated.
 
 ---
 
+---
+
+# 📷 System Interface Gallery
+
+The HYDRA-PAI interface shows the full hybrid reasoning pipeline from perception to physical execution.
+
+<p align="center">
+<img src="static/interface_overview.png" width="90%">
+</p>
+
+### Cosmos Reasoning Output
+
+<p align="center">
+<img src="static/cosmos_reasoning.png" width="70%">
+</p>
+
+The Cosmos Reason2 model produces structured JSON intents that describe the high-level goal and the reasoning behind each action.
+
+---
+
+### Ontology Grounding + Perception
+
+<p align="center">
+<img src="static/detections_grounding.png" width="70%">
+</p>
+
+Detected objects are grounded into the ontology, providing semantic context such as room location and object class hierarchy.
+
+---
+
+### Symbolic Planning (CLIPS)
+
+<p align="center">
+<img src="static/clips_planner.png" width="70%">
+</p>
+
+The CLIPS inference engine converts high-level intents into deterministic symbolic tasks.
+
+---
+
+### Physical Execution
+
+<p align="center">
+<img src="static/execution.png" width="70%">
+</p>
+
+The robot executes the plan in PyBullet using inverse kinematics and grasp constraints.
+
+---
+
 # 📌 Contribution Summary
 
 HYDRA‑PAI introduces a hybrid Physical AI architecture combining:
