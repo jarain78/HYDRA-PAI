@@ -26,8 +26,11 @@ A demonstration video of the system can be found here:
 
 [![Watch the demo](static/HYDRA_PAI_Logo.png)](https://youtu.be/Ba4fWXsb9LA)
 
-
 (The video shows the full perception‑to‑execution pipeline running with the MyCobot 280 robot in simulation.)
+
+The following video demonstrates how the HYDRA-PAI system works, illustrating the complete pipeline from perception to reasoning, knowledge integration, planning, and physical robotic action.
+
+[![Watch the demo](static/HYDRA_PAI_Logo.png)](https://youtu.be/KyXOFTeUUKI)
 
 ---
 
