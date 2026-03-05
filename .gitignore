@@ -5,5 +5,4 @@ GEMINI_ROBOTICS_API
 
 *.pt
 src/hydra_pai
-docs/InfografiaClisp.html
-docs/InfografiaClisPy.html
+docs/index.html

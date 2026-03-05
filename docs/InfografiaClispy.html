@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografía: Integración Python, PyBullet, YOLO y CLIPS</title>
+    <title>Infographic: Integrating Python, PyBullet, YOLO, and CLIPS</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -105,10 +105,10 @@
                 Full Stack Robotics Pipeline
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white">
-                Anatomía de un <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Agente Autónomo</span>
+                Anatomy of an <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Autonomous Agent</span>
             </h1>
             <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                Disección completa del script en Python que orquesta la <strong>Percepción (YOLO)</strong>, el <strong>Conocimiento (Ontologías OWL)</strong>, el <strong>Razonamiento (CLIPS)</strong> y la <strong>Acción Física (PyBullet)</strong>.
+                A complete dissection of the Python script that orchestrates <strong>Perception (YOLO)</strong>, <strong>Knowledge (OWL Ontologies)</strong>, <strong>Reasoning (CLIPS)</strong>, and <strong>Physical Action (PyBullet)</strong>.
             </p>
         </div>
     </header>
@@ -118,16 +118,16 @@
         <!-- SECTION 1: Pipeline Flowchart -->
         <section>
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">El Ciclo de Vida del Agente</h2>
-                <p class="text-slate-400">Cómo fluye la información en cada iteración del bucle principal (`main`).</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Agent Life Cycle</h2>
+                <p class="text-slate-400">How information flows in each iteration of the main loop (`main`).</p>
             </div>
 
             <div class="flex flex-col md:flex-row items-center justify-center max-w-5xl mx-auto gap-4 md:gap-0">
                 <!-- Node 1: Vision -->
                 <div class="flow-card accent-blue w-full md:w-1/4">
                     <div class="text-2xl mb-2">📷</div>
-                    <h3 class="font-bold text-blue-400 mb-1">Percepción</h3>
-                    <p class="text-xs text-slate-300">PyBullet renderiza imagen RGB. YOLO detecta bounding boxes.</p>
+                    <h3 class="font-bold text-blue-400 mb-1">Perception</h3>
+                    <p class="text-xs text-slate-300">PyBullet renders an RGB image. YOLO detects bounding boxes.</p>
                 </div>
                 
                 <div class="hidden md:flex items-center w-12"><div class="connector-h"></div><div class="arrow-right"></div></div>
@@ -136,8 +136,8 @@
                 <!-- Node 2: Knowledge -->
                 <div class="flow-card accent-purple w-full md:w-1/4">
                     <div class="text-2xl mb-2">🧠</div>
-                    <h3 class="font-bold text-purple-400 mb-1">Ontología</h3>
-                    <p class="text-xs text-slate-300">Se proyecta 2D a 3D. Se consulta <code>OWLReady2</code> para ver si es recogible y su destino.</p>
+                    <h3 class="font-bold text-purple-400 mb-1">Ontology</h3>
+                    <p class="text-xs text-slate-300">2D is projected to 3D. <code>OWLReady2</code> is queried to check pickability and destination.</p>
                 </div>
 
                 <div class="hidden md:flex items-center w-12"><div class="connector-h"></div><div class="arrow-right"></div></div>
@@ -147,7 +147,7 @@
                 <div class="flow-card accent-pink w-full md:w-1/4">
                     <div class="text-2xl mb-2">⚙️</div>
                     <h3 class="font-bold text-pink-400 mb-1">CLIPS</h3>
-                    <p class="text-xs text-slate-300">Se insertan hechos (facts). Las reglas deciden <code>MOVE</code> o <code>IGNORE</code>.</p>
+                    <p class="text-xs text-slate-300">Facts are inserted. Rules decide <code>MOVE</code> or <code>IGNORE</code>.</p>
                 </div>
 
                 <div class="hidden md:flex items-center w-12"><div class="connector-h"></div><div class="arrow-right"></div></div>
@@ -156,8 +156,8 @@
                 <!-- Node 4: Action -->
                 <div class="flow-card accent-emerald w-full md:w-1/4">
                     <div class="text-2xl mb-2">🦾</div>
-                    <h3 class="font-bold text-emerald-400 mb-1">Cinemática</h3>
-                    <p class="text-xs text-slate-300">Cálculo de IK. El brazo Panda agarra y mueve el objeto al destino.</p>
+                    <h3 class="font-bold text-emerald-400 mb-1">Kinematics</h3>
+                    <p class="text-xs text-slate-300">IK is computed. The Panda arm grasps and moves the object to the destination.</p>
                 </div>
             </div>
         </section>
@@ -165,19 +165,19 @@
         <!-- SECTION 2: Code Breakdown -->
         <section>
             <div class="mb-12 border-b border-slate-800 pb-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Análisis del Código Fuente</h2>
-                <p class="text-slate-400 mt-2">Exploración línea a línea y función a función del script integrador.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Source Code Analysis</h2>
+                <p class="text-slate-400 mt-2">Line-by-line and function-by-function exploration of the integration script.</p>
             </div>
 
             <!-- BLOCK 1: Config & Rooms -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                 <div class="lg:col-span-1 space-y-4">
-                    <h3 class="text-xl font-bold text-blue-400 flex items-center gap-2"><span class="bg-blue-900 text-blue-300 px-2 py-0.5 rounded text-sm">1</span> Configuración y Entorno</h3>
-                    <p class="text-slate-300 text-sm">El script inicia importando las librerías necesarias y configurando constantes críticas.</p>
+                    <h3 class="text-xl font-bold text-blue-400 flex items-center gap-2"><span class="bg-blue-900 text-blue-300 px-2 py-0.5 rounded text-sm">1</span> Configuration and Environment</h3>
+                    <p class="text-slate-300 text-sm">The script starts by importing the required libraries and setting critical constants.</p>
                     <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
-                        <li><strong class="text-slate-200">YOLO_TO_ONTO:</strong> Es vital porque traduce la etiqueta que ve la IA (ej. "cup") al nombre exacto del individuo en la ontología OWL.</li>
-                        <li><strong class="text-slate-200">RoomZone:</strong> Una clase de datos (dataclass) inmutable que define cajas invisibles (límites X, Y) en el espacio 3D para la "cocina" y el "baño", junto con sus puntos exactos para soltar objetos (<code>drop_xy</code>).</li>
-                        <li><strong class="text-slate-200">Funciones:</strong> <code>room_from_xy</code> verifica en qué zona cae un objeto matemáticamente.</li>
+                        <li><strong class="text-slate-200">YOLO_TO_ONTO:</strong> It is essential because it translates the label seen by the AI (e.g., "cup") into the exact individual name in the OWL ontology.</li>
+                        <li><strong class="text-slate-200">RoomZone:</strong> An immutable dataclass that defines invisible boxes (X, Y limits) in 3D space for the "kitchen" and "bathroom", along with their exact drop points (<code>drop_xy</code>).</li>
+                        <li><strong class="text-slate-200">Functions:</strong> <code>room_from_xy</code> checks mathematically which zone an object falls into.</li>
                     </ul>
                 </div>
                 <div class="lg:col-span-2 code-window">
@@ -186,14 +186,14 @@
                         <span class="text-xs text-slate-400 font-mono ml-2">imports_and_config.py</span>
                     </div>
                     <div class="code-body font-mono">
-<pre><code><span class="c-cmt"># Importaciones principales de IA, Simulación y Lógica</span>
+<pre><code><span class="c-cmt"># Main imports for AI, Simulation, and Logic</span>
 <span class="c-kw">import</span> pybullet <span class="c-kw">as</span> p
 <span class="c-kw">import</span> clips
 <span class="c-kw">from</span> owlready2 <span class="c-kw">import</span> get_ontology
 <span class="c-kw">from</span> ultralytics <span class="c-kw">import</span> YOLO
 
 <span class="c-cmt"># --- YOLO label -> ontology individual name ---</span>
-<span class="c-cmt"># Mapea lo que ve la cámara a lo que entiende la base de conocimiento</span>
+<span class="c-cmt"># Maps what the camera sees to what the knowledge base understands</span>
 <span class="c-var">YOLO_TO_ONTO</span> = {
     <span class="c-str">"cup"</span>: <span class="c-str">"cup"</span>,
     <span class="c-str">"cups"</span>: <span class="c-str">"cup"</span>,
@@ -201,7 +201,7 @@
 }
 
 <span class="c-cmt"># ============================================================</span>
-<span class="c-cmt"># Definición de Habitaciones / Zonas físicas del simulador</span>
+<span class="c-cmt"># Definition of Rooms / Physical zones of the simulator</span>
 <span class="c-cmt"># ============================================================</span>
 <span class="c-kw">@dataclass</span>(<span class="c-var">frozen</span>=<span class="c-kw">True</span>)
 <span class="c-kw">class</span> <span class="c-type">RoomZone</span>:
@@ -211,13 +211,13 @@
     <span class="c-var">drop_xy</span>: Tuple[<span class="c-type">float</span>, <span class="c-type">float</span>]
 
 <span class="c-var">ROOMS</span> = [
-    <span class="c-cmt"># Define la zona de la cocina y dónde soltar objetos (0.10, 0.18)</span>
+    <span class="c-cmt"># Defines the kitchen zone and where to drop objects (0.10, 0.18)</span>
     RoomZone(<span class="c-var">name</span>=<span class="c-str">"kitchen"</span>,  <span class="c-var">xmin</span>=<span class="c-num">-0.15</span>, <span class="c-var">xmax</span>=<span class="c-num">0.25</span>, <span class="c-var">ymin</span>=<span class="c-num">-0.25</span>, <span class="c-var">ymax</span>=<span class="c-num">0.25</span>, <span class="c-var">drop_xy</span>=(<span class="c-num">0.10</span>,  <span class="c-num">0.18</span>)),
     RoomZone(<span class="c-var">name</span>=<span class="c-str">"bathroom"</span>, <span class="c-var">xmin</span>=<span class="c-num">0.25</span>,  <span class="c-var">xmax</span>=<span class="c-num">0.65</span>, <span class="c-var">ymin</span>=<span class="c-num">-0.25</span>, <span class="c-var">ymax</span>=<span class="c-num">0.25</span>, <span class="c-var">drop_xy</span>=(<span class="c-num">0.52</span>, <span class="c-num">-0.18</span>)),
 ]
 
 <span class="c-kw">def</span> <span class="c-func">room_from_xy</span>(<span class="c-var">x</span>: <span class="c-type">float</span>, <span class="c-var">y</span>: <span class="c-type">float</span>) -> Optional[<span class="c-type">str</span>]:
-    <span class="c-cmt"># Itera sobre las zonas; si las coordenadas XY están dentro de los límites, devuelve el nombre.</span>
+    <span class="c-cmt"># Iterates over zones; if XY is within bounds, returns the name.</span>
     <span class="c-kw">for</span> r <span class="c-kw">in</span> ROOMS:
         <span class="c-kw">if</span> r.xmin <= x <= r.xmax <span class="c-kw">and</span> r.ymin <= y <= r.ymax:
             <span class="c-kw">return</span> r.name
@@ -229,13 +229,13 @@
             <!-- BLOCK 2: Ontology Loading -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                 <div class="lg:col-span-1 space-y-4">
-                    <h3 class="text-xl font-bold text-purple-400 flex items-center gap-2"><span class="bg-purple-900 text-purple-300 px-2 py-0.5 rounded text-sm">2</span> Motor Ontológico</h3>
-                    <p class="text-slate-300 text-sm">Aquí el sistema lee el archivo <code>.owl</code> (Web Ontology Language) usando <code>OWLReady2</code>.</p>
+                    <h3 class="text-xl font-bold text-purple-400 flex items-center gap-2"><span class="bg-purple-900 text-purple-300 px-2 py-0.5 rounded text-sm">2</span> Ontology Engine</h3>
+                    <p class="text-slate-300 text-sm">Here the system reads the <code>.owl</code> (Web Ontology Language) file using <code>OWLReady2</code>.</p>
                     <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
-                        <li><strong class="text-slate-200">load_ontology_index:</strong> Función crítica. Carga el archivo y extrae todas las instancias de la clase "Objeto".</li>
-                        <li><strong class="text-slate-200">Extracción de Propiedades:</strong> Para cada objeto, lee sus relaciones semánticas:
-                            <br>1. <code>locatedIn</code> -> Extrae su destino.
-                            <br>2. <code>canBePickedBy</code> -> Si tiene un robot asignado, asume que es recogible (pickable = True).
+                        <li><strong class="text-slate-200">load_ontology_index:</strong> A critical function. It loads the file and extracts all instances of the "Object" class.</li>
+                        <li><strong class="text-slate-200">Property Extraction:</strong> For each object, it reads semantic relations:
+                            <br>1. <code>locatedIn</code> -> Extracts its destination.
+                            <br>2. <code>canBePickedBy</code> -> If it has an assigned robot, it is assumed pickable (pickable = True).
                         </li>
                     </ul>
                 </div>
@@ -248,34 +248,34 @@
 <pre><code><span class="c-kw">@dataclass</span>
 <span class="c-kw">class</span> <span class="c-type">OntoIndexEntry</span>:
     <span class="c-var">instance</span>: <span class="c-type">object</span>
-    <span class="c-var">room</span>: Optional[<span class="c-type">str</span>]       <span class="c-cmt"># Destino según la propiedad 'locatedIn'</span>
-    <span class="c-var">robot</span>: Optional[<span class="c-type">str</span>]      <span class="c-cmt"># Robot asignado en 'canBePickedBy'</span>
-    <span class="c-var">pickable</span>: <span class="c-type">bool</span>            <span class="c-cmt"># Booleano derivado de si tiene robot o no</span>
+    <span class="c-var">room</span>: Optional[<span class="c-type">str</span>]       <span class="c-cmt"># Destination according to 'locatedIn'</span>
+    <span class="c-var">robot</span>: Optional[<span class="c-type">str</span>]      <span class="c-cmt"># Assigned robot in 'canBePickedBy'</span>
+    <span class="c-var">pickable</span>: <span class="c-type">bool</span>            <span class="c-cmt"># Boolean derived from whether it has a robot or not</span>
 
 <span class="c-kw">def</span> <span class="c-func">load_ontology_index</span>(<span class="c-var">onto_path</span>: <span class="c-type">str</span>):
-    <span class="c-cmt"># Carga el archivo OWL en memoria</span>
+    <span class="c-cmt"># Loads the OWL file into memory</span>
     onto = get_ontology(onto_path).load()
     ObjectClass = onto.search_one(iri=IRI_OBJECT)
 
-    info = {} <span class="c-cmt"># Diccionario para acceso rápido O(1)</span>
-    <span class="c-cmt"># Recorre todas las instancias de la clase Object en la Ontología</span>
+    info = {} <span class="c-cmt"># Dictionary for O(1) access</span>
+    <span class="c-cmt"># Iterates over all instances of the Object class in the ontology</span>
     <span class="c-kw">for</span> obj <span class="c-kw">in</span> ObjectClass.instances():
         name = obj.name.lower()
         
-        <span class="c-cmt"># Si el objeto tiene la propiedad 'locatedIn', guardamos la primera habitación</span>
+        <span class="c-cmt"># If the object has the 'locatedIn' property, store the first room</span>
         room = <span class="c-kw">None</span>
         <span class="c-kw">if</span> hasattr(obj, <span class="c-str">"locatedIn"</span>) <span class="c-kw">and</span> obj.locatedIn:
             room = obj.locatedIn[<span class="c-num">0</span>].name.lower()
 
-        <span class="c-cmt"># Si el objeto puede ser recogido por alguien, guardamos quién</span>
+        <span class="c-cmt"># If the object can be picked by someone, store who</span>
         robot = <span class="c-kw">None</span>
         <span class="c-kw">if</span> hasattr(obj, <span class="c-str">"canBePickedBy"</span>) <span class="c-kw">and</span> obj.canBePickedBy:
             robot = obj.canBePickedBy[<span class="c-num">0</span>].name
 
-        <span class="c-cmt"># Si el robot existe, el objeto es manipulable físicamente</span>
+        <span class="c-cmt"># If the robot exists, the object is physically manipulable</span>
         pickable = bool(robot)
         
-        <span class="c-cmt"># Almacena el registro estructurado</span>
+        <span class="c-cmt"># Store the structured record</span>
         info[name] = OntoIndexEntry(instance=obj, room=room, robot=robot, pickable=pickable)
 
     <span class="c-kw">return</span> onto, info</code></pre>
@@ -286,11 +286,11 @@
             <!-- BLOCK 3: CLIPS Logic -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                 <div class="lg:col-span-1 space-y-4">
-                    <h3 class="text-xl font-bold text-pink-400 flex items-center gap-2"><span class="bg-pink-900 text-pink-300 px-2 py-0.5 rounded text-sm">3</span> Wrapper de CLIPS</h3>
-                    <p class="text-slate-300 text-sm">El puente entre Python y el motor experto escrito en C.</p>
+                    <h3 class="text-xl font-bold text-pink-400 flex items-center gap-2"><span class="bg-pink-900 text-pink-300 px-2 py-0.5 rounded text-sm">3</span> CLIPS Wrapper</h3>
+                    <p class="text-slate-300 text-sm">The bridge between Python and the expert engine written in C.</p>
                     <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
-                        <li><strong class="text-slate-200">build_clips_planner:</strong> Toma el string que contiene todas las reglas LISP (<code>defrule out-of-place-move</code>, etc.), lo guarda en un archivo temporal y lo carga en el entorno de <code>clipspy</code> mediante <code>env.batch_star()</code>.</li>
-                        <li><strong class="text-slate-200">clips_get_tasks:</strong> Itera sobre la memoria de hechos (facts) de CLIPS, busca aquellos cuya plantilla sea "task" (la orden resultante) y los extrae a diccionarios de Python para que el brazo robótico los entienda.</li>
+                        <li><strong class="text-slate-200">build_clips_planner:</strong> Takes the string containing the LISP rules (<code>defrule out-of-place-move</code>, etc.), writes it to a temporary file, and loads it into <code>clipspy</code> via <code>env.batch_star()</code>.</li>
+                        <li><strong class="text-slate-200">clips_get_tasks:</strong> Iterates over CLIPS working memory (facts), finds those whose template is "task" (the resulting command), and extracts them into Python dictionaries that the robotic arm can interpret.</li>
                     </ul>
                 </div>
                 <div class="lg:col-span-2 code-window">
@@ -300,18 +300,18 @@
                     </div>
                     <div class="code-body font-mono">
 <pre><code><span class="c-kw">def</span> <span class="c-func">build_clips_planner</span>(<span class="c-var">env</span>: clips.Environment) -> <span class="c-kw">None</span>:
-    <span class="c-cmt"># La variable 'kb' contiene el código CLIPS puro (deftemplates y defrules) omitido por brevedad</span>
+    <span class="c-cmt"># The 'kb' variable contains pure CLIPS code (deftemplates and defrules) omitted for brevity</span>
     kb = <span class="c-str">r"""..."""</span> 
     
-    <span class="c-cmt"># Crea un directorio temporal para inyectar el código a CLIPS</span>
+    <span class="c-cmt"># Creates a temporary directory to inject code into CLIPS</span>
     <span class="c-kw">with</span> tempfile.TemporaryDirectory() <span class="c-kw">as</span> td:
         clp = Path(td) / <span class="c-str">"planner.clp"</span>
         clp.write_text(kb, encoding=<span class="c-str">"utf-8"</span>)
-        <span class="c-cmt"># Lee el archivo y carga las reglas a la memoria de la máquina de inferencia</span>
+        <span class="c-cmt"># Reads the file and loads rules into the inference engine memory</span>
         env.batch_star(str(clp))
 
 <span class="c-kw">def</span> <span class="c-func">clear_clips_dynamic</span>(<span class="c-var">env</span>: clips.Environment) -> <span class="c-kw">None</span>:
-    <span class="c-cmt"># Limpia los hechos en cada frame para no acumular basura de frames anteriores</span>
+    <span class="c-cmt"># Clears facts each frame to avoid accumulating garbage from previous frames</span>
     to_retract = []
     <span class="c-kw">for</span> f <span class="c-kw">in</span> env.facts():
         <span class="c-kw">if</span> f.template.name <span class="c-kw">in</span> {<span class="c-str">"obj"</span>, <span class="c-str">"task"</span>, <span class="c-str">"trace"</span>}:
@@ -320,7 +320,7 @@
         f.retract()
 
 <span class="c-kw">def</span> <span class="c-func">clips_get_tasks</span>(<span class="c-var">env</span>: clips.Environment) -> List[Dict]:
-    <span class="c-cmt"># Extrae los resultados (tasks) generados por el motor de inferencia hacia Python</span>
+    <span class="c-cmt"># Extracts outputs (tasks) generated by the inference engine into Python</span>
     out = []
     <span class="c-kw">for</span> f <span class="c-kw">in</span> env.facts():
         <span class="c-kw">if</span> f.template.name == <span class="c-str">"task"</span>:
@@ -338,11 +338,11 @@
             <!-- BLOCK 4: Kinematics -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                 <div class="lg:col-span-1 space-y-4">
-                    <h3 class="text-xl font-bold text-emerald-400 flex items-center gap-2"><span class="bg-emerald-900 text-emerald-300 px-2 py-0.5 rounded text-sm">4</span> Control del Robot (Panda)</h3>
-                    <p class="text-slate-300 text-sm">Traduce la tarea conceptual de CLIPS en movimientos motores 3D.</p>
+                    <h3 class="text-xl font-bold text-emerald-400 flex items-center gap-2"><span class="bg-emerald-900 text-emerald-300 px-2 py-0.5 rounded text-sm">4</span> Robot Control (Panda)</h3>
+                    <p class="text-slate-300 text-sm">Translates CLIPS conceptual tasks into 3D motor motions.</p>
                     <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
-                        <li><strong class="text-slate-200">panda_move_ee:</strong> Calcula la Cinemática Inversa (IK). Dado un punto 3D XYZ, devuelve los ángulos exactos de las 7 articulaciones del brazo para llegar allí, interpolando suavemente.</li>
-                        <li><strong class="text-slate-200">grasp_with_constraint:</strong> En PyBullet, agarrar un objeto físicamente es inestable. Esta función crea un "Constraint" (unión invisible) entre el End Effector (pinza) y el objeto.</li>
+                        <li><strong class="text-slate-200">panda_move_ee:</strong> Computes Inverse Kinematics (IK). Given a 3D XYZ point, it returns the exact joint angles for the 7 arm joints to reach it, interpolating smoothly.</li>
+                        <li><strong class="text-slate-200">grasp_with_constraint:</strong> In PyBullet, physically grasping an object can be unstable. This function creates a "Constraint" (an invisible joint) between the End Effector (gripper) and the object.</li>
                     </ul>
                 </div>
                 <div class="lg:col-span-2 code-window">
@@ -352,23 +352,23 @@
                     </div>
                     <div class="code-body font-mono">
 <pre><code><span class="c-kw">def</span> <span class="c-func">panda_move_ee</span>(<span class="c-var">robot_id</span>: <span class="c-type">int</span>, <span class="c-var">target_pos</span>, <span class="c-var">target_orn</span>, <span class="c-var">duration</span>: <span class="c-type">float</span>, ...):
-    <span class="c-cmt"># 1. Calcula Cinemática Inversa: "¿Qué ángulos de motor necesito para alcanzar target_pos?"</span>
+    <span class="c-cmt"># 1. Compute Inverse Kinematics: "Which motor angles do I need to reach target_pos?"</span>
     q_ik = p.calculateInverseKinematics(
         robot_id, PANDA_EE_LINK,
         targetPosition=target_pos, targetOrientation=target_orn,
         maxNumIterations=<span class="c-num">200</span>, residualThreshold=<span class="c-num">1e-4</span>
     )
-    q_goal = list(q_ik[:<span class="c-num">7</span>]) <span class="c-cmt"># Los 7 grados de libertad del brazo</span>
+    q_goal = list(q_ik[:<span class="c-num">7</span>]) <span class="c-cmt"># 7 degrees of freedom of the arm</span>
     q = [p.getJointState(robot_id, j)[<span class="c-num">0</span>] <span class="c-kw">for</span> j <span class="c-kw">in</span> PANDA_ARM_JOINTS]
 
-    <span class="c-cmt"># 2. Bucle de interpolación suave (movimiento fluido a lo largo del 'duration')</span>
+    <span class="c-cmt"># 2. Smooth interpolation loop (fluid motion over 'duration')</span>
     steps = int(duration * SIM_HZ)
     <span class="c-kw">for</span> i <span class="c-kw">in</span> range(steps):
         a = (i + <span class="c-num">1</span>) / float(steps)
-        <span class="c-cmt"># Interpola la posición actual hacia la meta</span>
+        <span class="c-cmt"># Interpolate the current position toward the goal</span>
         q_ref = [(<span class="c-num">1.0</span> - a) * qc + a * qg <span class="c-kw">for</span> qc, qg <span class="c-kw">in</span> zip(q, q_goal)]
         
-        <span class="c-cmt"># Envía las señales de control de posición a los motores virtuales de PyBullet</span>
+        <span class="c-cmt"># Send position control signals to PyBullet virtual motors</span>
         <span class="c-kw">for</span> j, qj <span class="c-kw">in</span> zip(PANDA_ARM_JOINTS, q_next):
             p.setJointMotorControl2(robot_id, j, p.POSITION_CONTROL, targetPosition=qj, ...)
         
@@ -376,12 +376,12 @@
         time.sleep(DT)
 
 <span class="c-kw">def</span> <span class="c-func">grasp_with_constraint</span>(<span class="c-var">robot_id</span>: <span class="c-type">int</span>, <span class="c-var">obj_id</span>: <span class="c-type">int</span>) -> <span class="c-type">int</span>:
-    <span class="c-cmt"># Crea un enlace físico duro (JOINT_FIXED) entre la pinza y el objeto para evitar caídas en simulación</span>
-    <span class="c-cmt"># ... cálculos de transformación de matrices omitidos por brevedad ...</span>
+    <span class="c-cmt"># Creates a rigid physical link (JOINT_FIXED) between the gripper and the object to prevent drops in simulation</span>
+    <span class="c-cmt"># ... matrix transform computations omitted for brevity ...</span>
     cid = p.createConstraint(
         parentBodyUniqueId=robot_id, parentLinkIndex=PANDA_EE_LINK,
         childBodyUniqueId=obj_id, childLinkIndex=<span class="c-num">-1</span>,
-        jointType=p.JOINT_FIXED, <span class="c-cmt"># <-- Enlace rígido</span>
+        jointType=p.JOINT_FIXED, <span class="c-cmt"># <-- Rigid link</span>
         jointAxis=[<span class="c-num">0</span>, <span class="c-num">0</span>, <span class="c-num">0</span>], ...
     )
     <span class="c-kw">return</span> cid</code></pre>
@@ -392,13 +392,13 @@
             <!-- BLOCK 5: Main Loop -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-1 space-y-4">
-                    <h3 class="text-xl font-bold text-amber-400 flex items-center gap-2"><span class="bg-amber-900 text-amber-300 px-2 py-0.5 rounded text-sm">5</span> El Cerebro Central (Main)</h3>
-                    <p class="text-slate-300 text-sm">El bucle infinito que ata todo el pipeline de IA.</p>
+                    <h3 class="text-xl font-bold text-amber-400 flex items-center gap-2"><span class="bg-amber-900 text-amber-300 px-2 py-0.5 rounded text-sm">5</span> The Central Brain (Main)</h3>
+                    <p class="text-slate-300 text-sm">The infinite loop that ties the entire AI pipeline together.</p>
                     <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
-                        <li><strong class="text-slate-200">1. Percepción:</strong> La cámara saca una foto, YOLO la procesa. Se proyectan los píxeles (u, v) a las coordenadas 3D de PyBullet.</li>
-                        <li><strong class="text-slate-200">2. Inyección Ontológica:</strong> Por cada caja detectada, se consulta la ontología para saber si es <code>pickable</code> y su <code>dst_room</code>.</li>
-                        <li><strong class="text-slate-200">3. Inferencia:</strong> Se arman los strings con datos y se envían a <code>clips_env.assert_string()</code> y luego <code>.run()</code>.</li>
-                        <li><strong class="text-slate-200">4. Ejecución:</strong> Si CLIPS devuelve una tarea <code>move</code>, se llama al script de cinemática para ejecutar <code>execute_pick_and_place</code>.</li>
+                        <li><strong class="text-slate-200">1. Perception:</strong> The camera takes a snapshot, YOLO processes it. Pixels (u, v) are projected to PyBullet 3D coordinates.</li>
+                        <li><strong class="text-slate-200">2. Ontology Injection:</strong> For each detected box, the ontology is queried to determine <code>pickable</code> and <code>dst_room</code>.</li>
+                        <li><strong class="text-slate-200">3. Inference:</strong> Strings are assembled and sent to <code>clips_env.assert_string()</code>, then <code>.run()</code>.</li>
+                        <li><strong class="text-slate-200">4. Execution:</strong> If CLIPS returns a <code>move</code> task, the kinematics script is called to execute <code>execute_pick_and_place</code>.</li>
                     </ul>
                 </div>
                 <div class="lg:col-span-2 code-window">
@@ -408,22 +408,22 @@
                     </div>
                     <div class="code-body font-mono">
 <pre><code><span class="c-kw">while True</span>:
-    <span class="c-cmt"># 1. VISIÓN: Toma foto de la cámara virtual y pásala a la IA YOLO</span>
+    <span class="c-cmt"># 1. VISION: Capture an image from the virtual camera and feed it to YOLO</span>
     rgb, view, proj = render_camera(cam)
     results = yolo.predict(source=rgb, conf=YOLO_CONF, verbose=<span class="c-kw">False</span>)
 
-    <span class="c-cmt"># 2. LIMPIEZA MENTAL: Limpia la memoria de CLIPS para los datos de este frame</span>
+    <span class="c-cmt"># 2. MENTAL CLEANUP: Clear CLIPS memory for this frame’s data</span>
     clear_clips_dynamic(clips_env)
 
-    <span class="c-cmt"># 3. PROCESAMIENTO DE DETECCIONES</span>
+    <span class="c-cmt"># 3. PROCESS DETECTIONS</span>
     <span class="c-kw">for</span> r <span class="c-kw">in</span> results:
         <span class="c-kw">for</span> box <span class="c-kw">in</span> r.boxes:
             cls_name = yolo.names[int(box.cls)].lower()
 
-            <span class="c-cmt"># Cruza la caja 2D de YOLO con el ID 3D del motor de física</span>
+            <span class="c-cmt"># Match YOLO 2D box with the 3D physics engine body ID</span>
             body_id = associate_detection_to_body(box.xyxy, sim_objects, view, proj...)
             
-            <span class="c-cmt"># Extrae la data de la Ontología OWL</span>
+            <span class="c-cmt"># Extract OWL ontology data</span>
             onto_key = YOLO_TO_ONTO.get(cls_name, cls_name).lower()
             entry = onto_info[onto_key]
             
@@ -431,23 +431,23 @@
             dst_room = entry.room.lower() <span class="c-kw">if</span> entry.room <span class="c-kw">else</span> <span class="c-str">"none"</span>
             cur_room = room_from_xy(px, py) <span class="c-kw">or</span> <span class="c-str">"unknown"</span>
 
-            <span class="c-cmt"># INYECTA EL HECHO EN LENGUAJE LISP HACIA CLIPS</span>
+            <span class="c-cmt"># INJECT THE FACT IN LISP SYNTAX INTO CLIPS</span>
             clips_env.assert_string(
                 <span class="c-str">f'(obj (id obj_{body_id}) (onto "{onto_key}") (pickable {pickable_sym}) '</span>
                 <span class="c-str">f'(cur_room {cur_room}) (dst_room {dst_room}))'</span>
             )
 
-    <span class="c-cmt"># 4. RAZONAMIENTO: Ejecuta el motor lógico (Forward Chaining)</span>
+    <span class="c-cmt"># 4. REASONING: Run the logic engine (Forward Chaining)</span>
     clips_env.run()
 
-    <span class="c-cmt"># 5. ACCIÓN: Lee el resultado. Si hay que mover, acciona los motores.</span>
+    <span class="c-cmt"># 5. ACTION: Read results. If something must move, actuate motors.</span>
     tasks = clips_get_tasks(clips_env)
     move_tasks = [t <span class="c-kw">for</span> t <span class="c-kw">in</span> tasks <span class="c-kw">if</span> t[<span class="c-str">"action"</span>] == <span class="c-str">"move"</span>]
     
     <span class="c-kw">if</span> move_tasks:
         execute_pick_and_place(robot_id, bid, dst)
 
-    <span class="c-cmt"># Avanza un paso en la simulación de física general</span>
+    <span class="c-cmt"># Advance one step in the physics simulation</span>
     p.stepSimulation()
     time.sleep(DT)</code></pre>
                     </div>
@@ -459,8 +459,8 @@
         <!-- SECTION 3: Performance Chart -->
         <section class="border-t border-slate-800 pt-16">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-white mb-4">Costo Computacional del Loop</h2>
-                <p class="text-slate-400">Distribución teórica del tiempo de procesamiento en milisegundos por iteración (Frame).</p>
+                <h2 class="text-3xl font-bold text-white mb-4">Computational Cost of the Loop</h2>
+                <p class="text-slate-400">Theoretical distribution of processing time per iteration (frame), in milliseconds.</p>
             </div>
             
             <div class="bg-slate-800/50 border border-slate-700 p-8 rounded-xl max-w-2xl mx-auto shadow-2xl">
@@ -474,7 +474,7 @@
 
     <!-- Footer -->
     <footer class="bg-[#020617] border-t border-slate-800 py-8 text-center mt-12">
-        <p class="text-slate-500 text-sm">Documentación Arquitectónica Generada de forma Dinámica • Python + CLIPS</p>
+        <p class="text-slate-500 text-sm">Dynamically Generated Architectural Documentation • Python + CLIPS</p>
         <!-- Explicit Confirmation -->
         <!-- Confirming NO SVG or Mermaid JS were used in this output. -->
     </footer>
@@ -502,7 +502,7 @@
             new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Inferencia YOLO (Visión)', 'Render PyBullet (Cámara)', 'IK y Control de Motores', 'Inferencia Lógica (CLIPS)', 'Ontología (Consultas RAM)'],
+                    labels: ['YOLO Inference (Vision)', 'PyBullet Render (Camera)', 'IK and Motor Control', 'Logical Inference (CLIPS)', 'Ontology (In-Memory Queries)'],
                     datasets: [{
                         data: [45, 25, 20, 8, 2], // Theoretical percentages
                         backgroundColor: [

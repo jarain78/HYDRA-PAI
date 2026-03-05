@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motor Lógico CLIPS: Toma de Decisiones del Robot</title>
+    <title>CLIPS Logic Engine: Robot Decision-Making</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -106,12 +106,12 @@
     <header class="bg-[#0F172A] text-white py-16 px-4 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400"></div>
         <div class="max-w-6xl mx-auto text-center relative z-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 border border-blue-500 text-blue-300 text-xs font-bold tracking-wider mb-4 uppercase">Sistema Experto CLIPS</span>
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 border border-blue-500 text-blue-300 text-xs font-bold tracking-wider mb-4 uppercase">CLIPS Expert System</span>
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Lógica en Movimiento: <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">El Motor de Decisiones</span>
+                Logic in Motion: <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">The Decision Engine</span>
             </h1>
             <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                ¿Cómo decide un agente autónomo si mover un objeto o ignorarlo? Desglosamos la <strong>Base de Conocimiento</strong> y las <strong>Reglas de Inferencia</strong> que impulsan la gestión inteligente.
+                How does an autonomous agent decide whether to move an object or ignore it? We break down the <strong>Knowledge Base</strong> and the <strong>Inference Rules</strong> that drive intelligent management.
             </p>
         </div>
     </header>
@@ -122,47 +122,47 @@
         <!-- Section 1: Data Structures -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <div class="md:col-span-2 mb-4">
-                <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-blue-600 pl-4">1. El Plano: Estructuras de Datos</h2>
-                <p class="text-slate-600 text-lg">Antes de tomar decisiones, el sistema percibe el mundo a través de plantillas (templates). La entidad central es el <strong>Objeto</strong> (obj), y el resultado deseado es una <strong>Tarea</strong> (task).</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-blue-600 pl-4">1. The Blueprint: Data Structures</h2>
+                <p class="text-slate-600 text-lg">Before making decisions, the system perceives the world through templates. The central entity is the <strong>Object</strong> (obj), and the desired result is a <strong>Task</strong> (task).</p>
             </div>
 
             <!-- Object Card -->
             <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
-                    <h3 class="font-bold text-slate-700 font-mono text-lg">ENTRADA: (deftemplate obj)</h3>
+                    <h3 class="font-bold text-slate-700 font-mono text-lg">INPUT: (deftemplate obj)</h3>
                     <span class="text-blue-500 text-2xl">📦</span>
                 </div>
                 <div class="p-6 space-y-4">
                     <div class="flex items-center space-x-3">
-                        <span class="w-24 font-mono text-xs text-slate-400 uppercase">Atributo</span>
-                        <span class="font-mono text-xs text-slate-400 uppercase">Tipo</span>
-                        <span class="font-mono text-xs text-slate-400 uppercase flex-1">Descripción</span>
+                        <span class="w-24 font-mono text-xs text-slate-400 uppercase">Attribute</span>
+                        <span class="font-mono text-xs text-slate-400 uppercase">Type</span>
+                        <span class="font-mono text-xs text-slate-400 uppercase flex-1">Description</span>
                     </div>
                     <div class="border-t border-slate-100 pt-3">
                         <div class="flex items-center space-x-3 mb-2">
                             <span class="w-24 font-bold text-slate-800 font-mono">id</span>
                             <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
-                            <span class="text-sm text-slate-600 flex-1">Identificador Único</span>
+                            <span class="text-sm text-slate-600 flex-1">Unique Identifier</span>
                         </div>
                         <div class="flex items-center space-x-3 mb-2">
                             <span class="w-24 font-bold text-slate-800 font-mono">onto</span>
                             <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">STRING</span>
-                            <span class="text-sm text-slate-600 flex-1">Categoría (ej. "manzana")</span>
+                            <span class="text-sm text-slate-600 flex-1">Category (e.g., "apple")</span>
                         </div>
                         <div class="flex items-center space-x-3 mb-2">
                             <span class="w-24 font-bold text-blue-600 font-mono">pickable</span>
                             <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
-                            <span class="text-sm text-slate-600 flex-1">¿Se puede recoger? (yes/no)</span>
+                            <span class="text-sm text-slate-600 flex-1">Can it be picked? (yes/no)</span>
                         </div>
                         <div class="flex items-center space-x-3 mb-2">
                             <span class="w-24 font-bold text-slate-800 font-mono">cur_room</span>
                             <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
-                            <span class="text-sm text-slate-600 flex-1">Ubicación Actual</span>
+                            <span class="text-sm text-slate-600 flex-1">Current Location</span>
                         </div>
                         <div class="flex items-center space-x-3">
                             <span class="w-24 font-bold text-blue-600 font-mono">dst_room</span>
                             <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
-                            <span class="text-sm text-slate-600 flex-1">Destino Objetivo</span>
+                            <span class="text-sm text-slate-600 flex-1">Target Destination</span>
                         </div>
                     </div>
                 </div>
@@ -171,25 +171,25 @@
             <!-- Task Card -->
             <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
-                    <h3 class="font-bold text-slate-700 font-mono text-lg">SALIDA: (deftemplate task)</h3>
+                    <h3 class="font-bold text-slate-700 font-mono text-lg">OUTPUT: (deftemplate task)</h3>
                     <span class="text-emerald-500 text-2xl">⚡</span>
                 </div>
                 <div class="p-6 space-y-4">
-                     <p class="text-sm text-slate-600 mb-4">Cuando una regla se activa ("fires"), genera una <strong>Tarea</strong> para decirle al robot qué hacer.</p>
+                     <p class="text-sm text-slate-600 mb-4">When a rule fires, it generates a <strong>Task</strong> that tells the robot what to do.</p>
                      
                      <div class="grid grid-cols-2 gap-4">
                         <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg text-center">
-                            <div class="text-blue-600 font-bold mb-1">ACCIÓN: MOVE</div>
-                            <div class="text-xs text-blue-800">Se genera si el objeto está fuera de lugar.</div>
+                            <div class="text-blue-600 font-bold mb-1">ACTION: MOVE</div>
+                            <div class="text-xs text-blue-800">Generated if the object is out of place.</div>
                         </div>
                         <div class="p-3 bg-red-50 border border-red-100 rounded-lg text-center">
-                            <div class="text-red-500 font-bold mb-1">ACCIÓN: IGNORE</div>
-                            <div class="text-xs text-red-800">Se genera si está correcto o es inamovible.</div>
+                            <div class="text-red-500 font-bold mb-1">ACTION: IGNORE</div>
+                            <div class="text-xs text-red-800">Generated if it is already correct or cannot be moved.</div>
                         </div>
                      </div>
 
                      <div class="mt-4 p-3 bg-slate-100 rounded border border-slate-200">
-                         <span class="font-mono text-xs text-slate-400 block mb-1">Ejemplo de Salida:</span>
+                         <span class="font-mono text-xs text-slate-400 block mb-1">Example Output:</span>
                          <code class="text-sm text-slate-700 font-mono block break-all">
                              (task (action move) (id obj1) (to kitchen) (reason "Out of place: bathroom -> kitchen"))
                          </code>
@@ -200,20 +200,20 @@
 
         <!-- Section 2: Logic Flow (Diagram) -->
         <section class="mt-4">
-            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-cyan-500 pl-4">2. El Flujo Lógico</h2>
-            <p class="text-slate-600 text-lg mb-8">El sistema utiliza 4 reglas específicas para procesar cada objeto. Este diagrama ilustra la ruta de decisión completa (tal y como está codificada).</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-cyan-500 pl-4">2. The Logical Flow</h2>
+            <p class="text-slate-600 text-lg mb-8">The system uses 4 specific rules to process each object. This diagram illustrates the full decision path (exactly as coded).</p>
 
             <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 overflow-x-auto">
                 <div class="min-w-[600px] flex flex-col items-center">
                     
                     <!-- Start -->
-                    <div class="flow-node bg-slate-900 text-white border-slate-900 w-56">Nuevo Objeto Detectado</div>
+                    <div class="flow-node bg-slate-900 text-white border-slate-900 w-56">New Object Detected</div>
                     
                     <div class="h-6 w-0.5 bg-slate-300"></div>
                     <div class="arrow-down"></div>
                     
                     <!-- Decision 1 -->
-                    <div class="font-bold text-slate-500 text-sm mb-1 mt-2">¿Es Recogible? (pickable)</div>
+                    <div class="font-bold text-slate-500 text-sm mb-1 mt-2">Is it Pickable? (pickable)</div>
                     <div class="grid grid-cols-2 gap-16 w-full max-w-3xl">
                         
                         <!-- Left Path (NO) -->
@@ -224,20 +224,20 @@
                             <div class="arrow-down"></div>
                             
                             <div class="flow-node mt-2 bg-red-50 border-red-200 w-full max-w-[200px]">
-                                <div class="font-bold text-red-600">Regla 1: No Recogible</div>
-                                <div class="text-xs text-slate-500 mt-1">Acción: IGNORAR</div>
+                                <div class="font-bold text-red-600">Rule 1: Not Pickable</div>
+                                <div class="text-xs text-slate-500 mt-1">Action: IGNORE</div>
                             </div>
                         </div>
 
                         <!-- Right Path (YES) -->
                         <div class="flex flex-col items-center">
                             <div class="h-4 w-full border-t-2 border-slate-300 rounded-tl-xl transform translate-y-2 -translate-x-1/2"></div>
-                            <div class="text-emerald-500 font-bold text-sm bg-white px-2 z-20">SÍ</div>
+                            <div class="text-emerald-500 font-bold text-sm bg-white px-2 z-20">YES</div>
                             <div class="h-8 w-0.5 bg-slate-300"></div>
                             <div class="arrow-down"></div>
 
                             <div class="flow-node mt-2 w-full max-w-[240px]">
-                                <div class="font-bold text-slate-700">¿Tiene Destino? (dst_room)</div>
+                                <div class="font-bold text-slate-700">Does it Have a Destination? (dst_room)</div>
                             </div>
                             
                             <!-- Nested Decision -->
@@ -246,22 +246,22 @@
                                 <!-- No Dest -->
                                 <div class="flex flex-col items-center">
                                     <div class="h-4 w-full border-t-2 border-slate-300 rounded-tr-xl transform translate-y-2 translate-x-1/2"></div>
-                                    <div class="text-red-500 font-bold text-xs bg-white px-1 z-20">NINGUNO</div>
+                                    <div class="text-red-500 font-bold text-xs bg-white px-1 z-20">NONE</div>
                                     <div class="h-6 w-0.5 bg-slate-300"></div>
                                     <div class="arrow-down"></div>
                                     <div class="flow-node mt-1 bg-red-50 border-red-200 w-32">
-                                        <div class="font-bold text-red-600 text-xs">Regla 2: Sin Destino</div>
+                                        <div class="font-bold text-red-600 text-xs">Rule 2: No Destination</div>
                                     </div>
                                 </div>
                                 <!-- Has Dest -->
                                 <div class="flex flex-col items-center">
                                     <div class="h-4 w-full border-t-2 border-slate-300 rounded-tl-xl transform translate-y-2 -translate-x-1/2"></div>
-                                    <div class="text-emerald-500 font-bold text-xs bg-white px-1 z-20">VÁLIDO</div>
+                                    <div class="text-emerald-500 font-bold text-xs bg-white px-1 z-20">VALID</div>
                                     <div class="h-6 w-0.5 bg-slate-300"></div>
                                     <div class="arrow-down"></div>
                                     
                                     <div class="flow-node mt-1 w-48">
-                                        <div class="font-bold text-slate-700 text-xs">¿Actual == Destino?</div>
+                                        <div class="font-bold text-slate-700 text-xs">Current == Destination?</div>
                                     </div>
 
                                     <!-- Final Branch -->
@@ -272,15 +272,15 @@
                                              <div class="text-blue-500 font-bold text-xs bg-white px-1 z-20">NO</div>
                                              <div class="h-4 w-0.5 bg-slate-300"></div>
                                              <div class="flow-node mt-1 bg-blue-50 border-blue-200 w-28">
-                                                 <div class="font-bold text-blue-600 text-xs">Regla 3: MOVER</div>
+                                                 <div class="font-bold text-blue-600 text-xs">Rule 3: MOVE</div>
                                              </div>
                                         </div>
                                         <div class="flex flex-col items-center">
                                              <div class="h-4 w-full border-t-2 border-slate-300 rounded-tl-xl transform translate-y-2 -translate-x-1/2"></div>
-                                             <div class="text-slate-500 font-bold text-xs bg-white px-1 z-20">SÍ</div>
+                                             <div class="text-slate-500 font-bold text-xs bg-white px-1 z-20">YES</div>
                                              <div class="h-4 w-0.5 bg-slate-300"></div>
                                              <div class="flow-node mt-1 bg-slate-100 border-slate-200 w-28">
-                                                 <div class="font-bold text-slate-600 text-xs">Regla 4: Ya está ahí</div>
+                                                 <div class="font-bold text-slate-600 text-xs">Rule 4: Already There</div>
                                              </div>
                                         </div>
                                     </div>
@@ -294,8 +294,8 @@
 
         <!-- Section 3: Detailed Code Breakdown -->
         <section class="mt-4">
-            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-indigo-500 pl-4">3. Análisis Detallado del Código</h2>
-            <p class="text-slate-600 text-lg mb-8">Traducción directa de la lógica al lenguaje CLIPS. Aquí analizamos cada fragmento de la base de conocimiento aportada, con su explicación funcional.</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-indigo-500 pl-4">3. Detailed Code Analysis</h2>
+            <p class="text-slate-600 text-lg mb-8">A direct translation of the logic into the CLIPS language. Here we analyze each fragment of the provided knowledge base, along with its functional explanation.</p>
 
             <div class="grid grid-cols-1 gap-6">
                 <!-- Templates Code -->
@@ -321,12 +321,12 @@
 <span class="c-paren">)</span></code></pre>
                     </div>
                     <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
-                        <h3 class="font-bold text-xl text-indigo-600 mb-2">Definición de Templates</h3>
-                        <p class="text-slate-600 text-sm mb-3">La instrucción <code class="bg-slate-100 text-indigo-500 px-1 rounded">deftemplate</code> crea la estructura de los hechos (facts) que existirán en la memoria de trabajo.</p>
+                        <h3 class="font-bold text-xl text-indigo-600 mb-2">Template Definitions</h3>
+                        <p class="text-slate-600 text-sm mb-3">The <code class="bg-slate-100 text-indigo-500 px-1 rounded">deftemplate</code> instruction defines the structure of facts that will exist in working memory.</p>
                         <ul class="text-sm text-slate-600 list-disc pl-5 space-y-1">
-                            <li><strong>obj:</strong> Representa un objeto en el mundo. Define sus propiedades físicas y su ubicación.</li>
-                            <li><strong>task:</strong> Orden o mandato para el robot.</li>
-                            <li><strong>trace:</strong> Mensajes de registro (log) que se usarán para depurar las acciones.</li>
+                            <li><strong>obj:</strong> Represents an object in the world. Defines its physical properties and location.</li>
+                            <li><strong>task:</strong> An order or command for the robot.</li>
+                            <li><strong>trace:</strong> Log messages used to debug actions.</li>
                         </ul>
                     </div>
                 </div>
@@ -343,9 +343,9 @@
 <span class="c-paren">)</span></code></pre>
                     </div>
                     <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
-                        <h3 class="font-bold text-xl text-red-500 mb-2">Regla 1: Objeto Fijo</h3>
-                        <p class="text-slate-600 text-sm mb-3">Evalúa si el atributo <code class="bg-slate-100 px-1 rounded">pickable</code> tiene valor <code class="bg-red-100 text-red-600 px-1 rounded font-bold">no</code>.</p>
-                        <p class="text-slate-600 text-sm">Si coincide (el lado izquierdo o LHS de la regla), la regla se dispara. Las variables <code class="text-teal-500">?id</code> y <code class="text-teal-500">?o</code> capturan los datos del objeto para inyectarlos en las acciones (RHS), las cuales <code class="text-indigo-500 font-bold">assert</code> (afirman/crean) una tarea de ignorar y un trazo de registro.</p>
+                        <h3 class="font-bold text-xl text-red-500 mb-2">Rule 1: Fixed Object</h3>
+                        <p class="text-slate-600 text-sm mb-3">Checks whether the <code class="bg-slate-100 px-1 rounded">pickable</code> attribute has the value <code class="bg-red-100 text-red-600 px-1 rounded font-bold">no</code>.</p>
+                        <p class="text-slate-600 text-sm">If it matches (the left-hand side or LHS of the rule), the rule fires. Variables <code class="text-teal-500">?id</code> and <code class="text-teal-500">?o</code> capture the object data to inject it into the actions (RHS), which <code class="text-indigo-500 font-bold">assert</code> (create) an ignore task and a trace log entry.</p>
                     </div>
                 </div>
 
@@ -361,9 +361,9 @@
 <span class="c-paren">)</span></code></pre>
                     </div>
                     <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
-                        <h3 class="font-bold text-xl text-red-500 mb-2">Regla 2: Sin Destino Configurado</h3>
-                        <p class="text-slate-600 text-sm mb-3">Si el objeto SÍ se puede recoger (<code class="bg-emerald-100 text-emerald-600 px-1 rounded font-bold">yes</code>) pero su destino no está definido o es <code class="bg-red-100 text-red-600 px-1 rounded font-bold">none</code>.</p>
-                        <p class="text-slate-600 text-sm">Genera la misma salida que la regla 1: una tarea de ignorar. No tiene sentido mandar al robot a mover algo si no sabe dónde dejarlo.</p>
+                        <h3 class="font-bold text-xl text-red-500 mb-2">Rule 2: No Destination Configured</h3>
+                        <p class="text-slate-600 text-sm mb-3">If the object <strong>can</strong> be picked (<code class="bg-emerald-100 text-emerald-600 px-1 rounded font-bold">yes</code>) but its destination is not defined or is <code class="bg-red-100 text-red-600 px-1 rounded font-bold">none</code>.</p>
+                        <p class="text-slate-600 text-sm">It generates the same output as Rule 1: an ignore task. It makes no sense to command the robot to move something if it does not know where to place it.</p>
                     </div>
                 </div>
 
@@ -382,9 +382,9 @@
 <span class="c-paren">)</span></code></pre>
                     </div>
                     <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
-                        <h3 class="font-bold text-xl text-blue-600 mb-2">Regla 3: Objeto Fuera de Lugar</h3>
-                        <p class="text-slate-600 text-sm mb-3">La regla principal de acción. Además de los atributos del objeto, incluye <code class="bg-slate-100 px-1 rounded text-indigo-500 font-bold">test</code> para evaluar condiciones lógicas más complejas.</p>
-                        <p class="text-slate-600 text-sm">Se asegura de que la habitación actual no sea desconocida (neq ?cr unknown), que tenga destino válido (neq ?dr none) y la validación clave: <strong>que la actual sea diferente al destino</strong> (neq ?cr ?dr). Si se cumple, afirma una tarea tipo <code class="text-blue-600 font-bold">move</code>.</p>
+                        <h3 class="font-bold text-xl text-blue-600 mb-2">Rule 3: Object Out of Place</h3>
+                        <p class="text-slate-600 text-sm mb-3">The main action rule. In addition to object attributes, it includes <code class="bg-slate-100 px-1 rounded text-indigo-500 font-bold">test</code> to evaluate more complex logical conditions.</p>
+                        <p class="text-slate-600 text-sm">It ensures the current room is not unknown (neq ?cr unknown), that a valid destination exists (neq ?dr none), and the key check: <strong>the current room is different from the destination</strong> (neq ?cr ?dr). If satisfied, it asserts a <code class="text-blue-600 font-bold">move</code> task.</p>
                     </div>
                 </div>
 
@@ -400,9 +400,9 @@
 <span class="c-paren">)</span></code></pre>
                     </div>
                     <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
-                        <h3 class="font-bold text-xl text-slate-700 mb-2">Regla 4: Objeto en Lugar Correcto</h3>
-                        <p class="text-slate-600 text-sm mb-3">Actúa como condición de seguridad para los casos que no entran en "Out of Place".</p>
-                        <p class="text-slate-600 text-sm">El test utiliza un <code class="bg-slate-100 text-indigo-500 font-bold px-1 rounded">or</code>: dispara la tarea de ignorar si la habitación actual es igual a la de destino (eq ?cr ?dr), O si la ubicación actual del objeto se desconoce (eq ?cr unknown). Note que esta regla intencionadamente no genera un mensaje de "trace".</p>
+                        <h3 class="font-bold text-xl text-slate-700 mb-2">Rule 4: Object in the Correct Place</h3>
+                        <p class="text-slate-600 text-sm mb-3">Acts as a safety condition for cases that do not fall under "Out of Place".</p>
+                        <p class="text-slate-600 text-sm">The test uses an <code class="bg-slate-100 text-indigo-500 font-bold px-1 rounded">or</code>: it fires the ignore task if the current room equals the destination (eq ?cr ?dr), OR if the object's current location is unknown (eq ?cr unknown). Note that this rule intentionally does not generate a "trace" message.</p>
                     </div>
                 </div>
 
@@ -411,8 +411,8 @@
 
         <!-- NEW SECTION 4: Video Demonstration -->
         <section class="mt-12">
-            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-purple-500 pl-4">4. Demostración Práctica: Robot en Acción</h2>
-            <p class="text-slate-600 text-lg mb-8">Observa cómo el motor lógico CLIPS cobra vida en un entorno de simulación física (<a href="#" class="text-blue-500 hover:underline">PyBullet</a>). El script en Python inicializa el entorno, alimenta a CLIPS con los datos del objeto detectado y ejecuta la tarea resultante.</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-purple-500 pl-4">4. Practical Demonstration: Robot in Action</h2>
+            <p class="text-slate-600 text-lg mb-8">Watch how the CLIPS logic engine comes to life in a physical simulation environment (<a href="#" class="text-blue-500 hover:underline">PyBullet</a>). The Python script initializes the environment, feeds CLIPS with the detected object data, and executes the resulting task.</p>
 
             <div class="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden max-w-4xl mx-auto">
                 <!-- Mac-like Window Bar -->
@@ -422,7 +422,7 @@
                         <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                         <div class="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <span class="text-slate-400 text-xs font-mono tracking-wider">ycb_pubullet_unloab_demo.py - Ejecución</span>
+                    <span class="text-slate-400 text-xs font-mono tracking-wider">ycb_pubullet_unloab_demo.py - Execution</span>
                     <div class="w-12"></div> <!-- Spacer for centering -->
                 </div>
                 
@@ -430,25 +430,25 @@
                 <div class="bg-black w-full flex justify-center border-b border-slate-200">
                     <video controls class="w-full max-h-[550px]" preload="metadata">
                         <source src="static/PybulletClisp.mp4" type="video/webm">
-                        Tu navegador no soporta la etiqueta de video. Descarga el video <a href="static/PybulletClisp.mp4" class="text-blue-400 underline">aquí</a>.
+                        Your browser does not support the video tag. Download the video <a href="static/PybulletClisp.mp4" class="text-blue-400 underline">here</a>.
                     </video>
                 </div>
                 
                 <!-- Video Context / Explanation -->
                 <div class="p-6 bg-slate-50">
-                    <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center"><span class="text-purple-500 text-xl mr-2">⚙️</span> Análisis de la Ejecución en el Video:</h3>
+                    <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center"><span class="text-purple-500 text-xl mr-2">⚙️</span> Execution Analysis in the Video:</h3>
                     <ul class="text-slate-600 space-y-3 text-sm ml-2 border-l-2 border-slate-200 pl-4">
                         <li>
-                            <strong class="text-slate-800">1. Fallo Inicial (Banana):</strong> Al principio, el usuario intenta cargar una "banana". El sistema la ignora porque la categoría <code class="text-indigo-600 bg-indigo-50 px-1 rounded font-mono">banana</code> no se encuentra registrada en la ontología del conocimiento.
+                            <strong class="text-slate-800">1. Initial Failure (Banana):</strong> At the beginning, the user tries to load a "banana". The system ignores it because the <code class="text-indigo-600 bg-indigo-50 px-1 rounded font-mono">banana</code> category is not registered in the knowledge ontology.
                         </li>
                         <li>
-                            <strong class="text-slate-800">2. Modificación del Entorno:</strong> En el código fuente (línea 81), se cambia la configuración para que la cámara y el entorno carguen un vaso/taza (<code class="text-indigo-600 bg-indigo-50 px-1 rounded font-mono">cup</code>).
+                            <strong class="text-slate-800">2. Environment Modification:</strong> In the source code (line 81), the configuration is changed so that the camera and the environment load a cup/mug (<code class="text-indigo-600 bg-indigo-50 px-1 rounded font-mono">cup</code>).
                         </li>
                         <li>
-                            <strong class="text-slate-800">3. Inferencia de CLIPS:</strong> Una vez lanzada la simulación de nuevo, CLIPS detecta el vaso en el "cuarto de baño" (bathroom). La <strong>Regla 3</strong> (<code class="text-blue-500 font-mono text-xs">out-of-place-move</code>) se dispara inmediatamente porque el destino correcto de una taza es la cocina.
+                            <strong class="text-slate-800">3. CLIPS Inference:</strong> After relaunching the simulation, CLIPS detects the cup in the "bathroom". <strong>Rule 3</strong> (<code class="text-blue-500 font-mono text-xs">out-of-place-move</code>) fires immediately because the correct destination for a cup is the kitchen.
                         </li>
                         <li>
-                            <strong class="text-emerald-600">4. Ejecución Física:</strong> Se genera la orden final <code class="text-emerald-600 bg-emerald-50 px-1 rounded font-mono text-xs">(task (action move) (to kitchen) ...)</code>, lo que desencadena la rutina cinemática del robot para ir, agarrar el objeto y trasladarlo a la bandeja azul de destino.
+                            <strong class="text-emerald-600">4. Physical Execution:</strong> The final command <code class="text-emerald-600 bg-emerald-50 px-1 rounded font-mono text-xs">(task (action move) (to kitchen) ...)</code> is generated, which triggers the robot’s kinematic routine to approach, grasp the object, and move it to the blue destination tray.
                         </li>
                     </ul>
                 </div>
@@ -457,15 +457,15 @@
 
         <!-- Section 5: Simulation Statistics -->
         <section class="mt-8">
-            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-emerald-500 pl-4">5. Resultados de la Simulación</h2>
-            <p class="text-slate-600 text-lg mb-8">Simulamos el procesamiento de <strong>100 objetos aleatorios</strong> a través de este motor lógico. Aquí está el desglose de las decisiones y eficiencia del sistema.</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-emerald-500 pl-4">5. Simulation Results</h2>
+            <p class="text-slate-600 text-lg mb-8">We simulated the processing of <strong>100 random objects</strong> through this logic engine. Here is the breakdown of decisions and system efficiency.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Chart 1: Input Distribution -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex flex-col">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Capacidad del Objeto</h3>
-                    <p class="text-sm text-slate-500 mb-4 h-10">Proporción de objetos que pueden ser recogidos vs. estructuras fijas inamovibles.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Object Capability</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-10">Proportion of objects that can be picked vs. fixed immovable structures.</p>
                     <div class="flex-grow flex items-center justify-center">
                         <div class="chart-container">
                             <canvas id="capabilityChart"></canvas>
@@ -475,8 +475,8 @@
 
                 <!-- Chart 2: Action Decisions -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex flex-col">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Decisiones de Acción</h3>
-                    <p class="text-sm text-slate-500 mb-4 h-10">Tareas finales generadas. La mayoría se ignoraron (correctos/fijos), mientras que el 35% requirió moverse.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Action Decisions</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-10">Final tasks generated. Most were ignored (correct/fixed), while 35% required moving.</p>
                     <div class="flex-grow flex items-center justify-center">
                          <div class="chart-container">
                             <canvas id="actionChart"></canvas>
@@ -486,8 +486,8 @@
 
                 <!-- Chart 3: Rule Activation -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex flex-col md:col-span-2 lg:col-span-1">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Activación de Reglas</h3>
-                    <p class="text-sm text-slate-500 mb-4 h-10">¿Qué reglas se dispararon más? "Ya está Correcto" y "Fuera de Lugar" empatan en la simulación.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Rule Activation</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-10">Which rules fired the most? "Already Correct" and "Out of Place" are tied in the simulation.</p>
                     <div class="flex-grow flex items-center justify-center">
                          <div class="chart-container">
                             <canvas id="ruleChart"></canvas>
@@ -499,15 +499,15 @@
 
         <!-- Section 6: Trace Log Examples -->
         <section class="mt-8 mb-12">
-            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-slate-800 pl-4">6. Registro del Sistema (Trace Log)</h2>
-            <p class="text-slate-600 text-lg mb-6">Ejemplos en tiempo real de los hechos <code>(trace)</code> generados al ejecutarse las reglas, similares a los que se ven en la terminal del video de la sección 4.</p>
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-slate-800 pl-4">6. System Log (Trace Log)</h2>
+            <p class="text-slate-600 text-lg mb-6">Real-time examples of <code>(trace)</code> facts generated when rules fire, similar to those shown in the terminal in Section 4's video.</p>
 
             <div class="bg-slate-900 rounded-xl shadow-lg p-6 font-mono text-sm overflow-hidden">
                 <div class="flex space-x-2 mb-4 border-b border-slate-700 pb-2">
                     <div class="w-3 h-3 rounded-full bg-red-500"></div>
                     <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span class="text-slate-400 text-xs ml-2">salida_sistema.log</span>
+                    <span class="text-slate-400 text-xs ml-2">system_output.log</span>
                 </div>
                 
                 <div class="space-y-3">
@@ -529,7 +529,7 @@
                     </div>
                     <div class="flex opacity-50">
                         <span class="text-slate-500 w-24">...</span>
-                        <span class="text-slate-500">Esperando nuevos inputs...</span>
+                        <span class="text-slate-500">Waiting for new inputs...</span>
                     </div>
                 </div>
             </div>
@@ -538,7 +538,7 @@
     </main>
 
     <footer class="bg-slate-100 border-t border-slate-200 py-8 text-center">
-        <p class="text-slate-500 text-sm">Generado para Fines Educativos de CLIPS • No se ha utilizado SVG ni Mermaid JS.</p>
+        <p class="text-slate-500 text-sm">Generated for Educational Purposes in CLIPS • No SVG or Mermaid JS was used.</p>
     </footer>
 
     <!-- JavaScript Logic -->
@@ -586,7 +586,7 @@
         new Chart(ctxCap, {
             type: 'doughnut',
             data: {
-                labels: processLabels(['Objetos Recogibles', 'Fijos (Inamovibles)']),
+                labels: processLabels(['Pickable Objects', 'Fixed (Immovable)']),
                 datasets: [{
                     data: [80, 20],
                     backgroundColor: ['#2563EB', '#94A3B8'], // Blue vs Slate
@@ -609,9 +609,9 @@
         new Chart(ctxAction, {
             type: 'bar',
             data: {
-                labels: processLabels(['Acción: Mover', 'Acción: Ignorar']),
+                labels: processLabels(['Action: Move', 'Action: Ignore']),
                 datasets: [{
-                    label: 'Número de Objetos',
+                    label: 'Number of Objects',
                     data: [35, 65],
                     backgroundColor: ['#10B981', '#EF4444'], // Green vs Red
                     borderRadius: 6
@@ -638,13 +638,13 @@
             indexAxis: 'y', // Horizontal
             data: {
                 labels: processLabels([
-                    'Regla 1: No Recogible', 
-                    'Regla 2: Sin Destino', 
-                    'Regla 3: Fuera de Lugar', 
-                    'Regla 4: Lugar Correcto'
+                    'Rule 1: Not Pickable', 
+                    'Rule 2: No Destination', 
+                    'Rule 3: Out of Place', 
+                    'Rule 4: Correct Place'
                 ]),
                 datasets: [{
-                    label: 'Conteo de Activaciones',
+                    label: 'Activation Count',
                     data: [20, 10, 35, 35],
                     backgroundColor: [
                         '#94A3B8', // Rule 1 (Grey)

@@ -19,7 +19,12 @@ A set of visual infographics explaining the key concepts of the **HYDRA-PAI arch
 These diagrams illustrate the interaction between perception, reasoning, ontology grounding, and robotic execution.
 
 👉 **Open the infographic page:**  
-[View HYDRA-PAI Concept Diagrams](docs/index.html)
+[View Clips Concept Diagrams](docs/InfografiaClisp.html)
+
+[View Clipspy and Ontology Concept Diagrams](docs/InfografiaClispy.html)
+
+---
+
 
 **HYDRA‑PAI (Hybrid Reasoning Architecture for Physical AI)** demonstrates how foundation models become physically actionable when combined with structured knowledge and symbolic reasoning.
 
