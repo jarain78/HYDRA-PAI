@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Lógico CLIPS: Toma de Decisiones del Robot</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC; /* Slate-50 */
+            color: #1E293B; /* Slate-800 */
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Palette Definition: "Digital Blueprint" 
+           Primary: #2563EB (Blue-600)
+           Secondary: #06B6D4 (Cyan-500)
+           Dark: #0F172A (Slate-900)
+           Accent Green: #10B981 (Emerald-500)
+           Accent Red: #EF4444 (Red-500)
+        */
+
+        /* Chart Container Mandatory Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* Custom Flowchart CSS (No SVG/Mermaid) */
+        .flow-node {
+            background-color: white;
+            border: 2px solid #E2E8F0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .flow-node:hover {
+            border-color: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+        }
+
+        .connector-line {
+            width: 2px;
+            background-color: #94A3B8;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #94A3B8;
+            margin: 0 auto;
+        }
+        
+        /* Code Syntax Highlighting Classes */
+        .c-paren { color: #64748B; } /* slate-500 */
+        .c-kw { color: #38BDF8; font-weight: bold; } /* sky-400 */
+        .c-var { color: #2DD4BF; } /* teal-400 */
+        .c-str { color: #A3E635; } /* lime-400 */
+        .c-cmt { color: #94A3B8; font-style: italic; } /* slate-400 */
+        .c-val { color: #F472B6; } /* pink-400 */
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Hook -->
+    <header class="bg-[#0F172A] text-white py-16 px-4 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400"></div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 border border-blue-500 text-blue-300 text-xs font-bold tracking-wider mb-4 uppercase">Sistema Experto CLIPS</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Lógica en Movimiento: <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">El Motor de Decisiones</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                ¿Cómo decide un agente autónomo si mover un objeto o ignorarlo? Desglosamos la <strong>Base de Conocimiento</strong> y las <strong>Reglas de Inferencia</strong> que impulsan la gestión inteligente.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 gap-12">
+
+        <!-- Section 1: Data Structures -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div class="md:col-span-2 mb-4">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-blue-600 pl-4">1. El Plano: Estructuras de Datos</h2>
+                <p class="text-slate-600 text-lg">Antes de tomar decisiones, el sistema percibe el mundo a través de plantillas (templates). La entidad central es el <strong>Objeto</strong> (obj), y el resultado deseado es una <strong>Tarea</strong> (task).</p>
+            </div>
+
+            <!-- Object Card -->
+            <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                    <h3 class="font-bold text-slate-700 font-mono text-lg">ENTRADA: (deftemplate obj)</h3>
+                    <span class="text-blue-500 text-2xl">📦</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-24 font-mono text-xs text-slate-400 uppercase">Atributo</span>
+                        <span class="font-mono text-xs text-slate-400 uppercase">Tipo</span>
+                        <span class="font-mono text-xs text-slate-400 uppercase flex-1">Descripción</span>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="w-24 font-bold text-slate-800 font-mono">id</span>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
+                            <span class="text-sm text-slate-600 flex-1">Identificador Único</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="w-24 font-bold text-slate-800 font-mono">onto</span>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">STRING</span>
+                            <span class="text-sm text-slate-600 flex-1">Categoría (ej. "manzana")</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="w-24 font-bold text-blue-600 font-mono">pickable</span>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
+                            <span class="text-sm text-slate-600 flex-1">¿Se puede recoger? (yes/no)</span>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span class="w-24 font-bold text-slate-800 font-mono">cur_room</span>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
+                            <span class="text-sm text-slate-600 flex-1">Ubicación Actual</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="w-24 font-bold text-blue-600 font-mono">dst_room</span>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">SYMBOL</span>
+                            <span class="text-sm text-slate-600 flex-1">Destino Objetivo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task Card -->
+            <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                    <h3 class="font-bold text-slate-700 font-mono text-lg">SALIDA: (deftemplate task)</h3>
+                    <span class="text-emerald-500 text-2xl">⚡</span>
+                </div>
+                <div class="p-6 space-y-4">
+                     <p class="text-sm text-slate-600 mb-4">Cuando una regla se activa ("fires"), genera una <strong>Tarea</strong> para decirle al robot qué hacer.</p>
+                     
+                     <div class="grid grid-cols-2 gap-4">
+                        <div class="p-3 bg-blue-50 border border-blue-100 rounded-lg text-center">
+                            <div class="text-blue-600 font-bold mb-1">ACCIÓN: MOVE</div>
+                            <div class="text-xs text-blue-800">Se genera si el objeto está fuera de lugar.</div>
+                        </div>
+                        <div class="p-3 bg-red-50 border border-red-100 rounded-lg text-center">
+                            <div class="text-red-500 font-bold mb-1">ACCIÓN: IGNORE</div>
+                            <div class="text-xs text-red-800">Se genera si está correcto o es inamovible.</div>
+                        </div>
+                     </div>
+
+                     <div class="mt-4 p-3 bg-slate-100 rounded border border-slate-200">
+                         <span class="font-mono text-xs text-slate-400 block mb-1">Ejemplo de Salida:</span>
+                         <code class="text-sm text-slate-700 font-mono block break-all">
+                             (task (action move) (id obj1) (to kitchen) (reason "Out of place: bathroom -> kitchen"))
+                         </code>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Logic Flow (Diagram) -->
+        <section class="mt-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-cyan-500 pl-4">2. El Flujo Lógico</h2>
+            <p class="text-slate-600 text-lg mb-8">El sistema utiliza 4 reglas específicas para procesar cada objeto. Este diagrama ilustra la ruta de decisión completa (tal y como está codificada).</p>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 overflow-x-auto">
+                <div class="min-w-[600px] flex flex-col items-center">
+                    
+                    <!-- Start -->
+                    <div class="flow-node bg-slate-900 text-white border-slate-900 w-56">Nuevo Objeto Detectado</div>
+                    
+                    <div class="h-6 w-0.5 bg-slate-300"></div>
+                    <div class="arrow-down"></div>
+                    
+                    <!-- Decision 1 -->
+                    <div class="font-bold text-slate-500 text-sm mb-1 mt-2">¿Es Recogible? (pickable)</div>
+                    <div class="grid grid-cols-2 gap-16 w-full max-w-3xl">
+                        
+                        <!-- Left Path (NO) -->
+                        <div class="flex flex-col items-center">
+                            <div class="h-4 w-full border-t-2 border-slate-300 rounded-tr-xl transform translate-y-2 translate-x-1/2"></div>
+                            <div class="text-red-500 font-bold text-sm bg-white px-2 z-20">NO</div>
+                            <div class="h-8 w-0.5 bg-slate-300"></div>
+                            <div class="arrow-down"></div>
+                            
+                            <div class="flow-node mt-2 bg-red-50 border-red-200 w-full max-w-[200px]">
+                                <div class="font-bold text-red-600">Regla 1: No Recogible</div>
+                                <div class="text-xs text-slate-500 mt-1">Acción: IGNORAR</div>
+                            </div>
+                        </div>
+
+                        <!-- Right Path (YES) -->
+                        <div class="flex flex-col items-center">
+                            <div class="h-4 w-full border-t-2 border-slate-300 rounded-tl-xl transform translate-y-2 -translate-x-1/2"></div>
+                            <div class="text-emerald-500 font-bold text-sm bg-white px-2 z-20">SÍ</div>
+                            <div class="h-8 w-0.5 bg-slate-300"></div>
+                            <div class="arrow-down"></div>
+
+                            <div class="flow-node mt-2 w-full max-w-[240px]">
+                                <div class="font-bold text-slate-700">¿Tiene Destino? (dst_room)</div>
+                            </div>
+                            
+                            <!-- Nested Decision -->
+                            <div class="h-6 w-0.5 bg-slate-300"></div>
+                            <div class="grid grid-cols-2 gap-8 w-full mt-0">
+                                <!-- No Dest -->
+                                <div class="flex flex-col items-center">
+                                    <div class="h-4 w-full border-t-2 border-slate-300 rounded-tr-xl transform translate-y-2 translate-x-1/2"></div>
+                                    <div class="text-red-500 font-bold text-xs bg-white px-1 z-20">NINGUNO</div>
+                                    <div class="h-6 w-0.5 bg-slate-300"></div>
+                                    <div class="arrow-down"></div>
+                                    <div class="flow-node mt-1 bg-red-50 border-red-200 w-32">
+                                        <div class="font-bold text-red-600 text-xs">Regla 2: Sin Destino</div>
+                                    </div>
+                                </div>
+                                <!-- Has Dest -->
+                                <div class="flex flex-col items-center">
+                                    <div class="h-4 w-full border-t-2 border-slate-300 rounded-tl-xl transform translate-y-2 -translate-x-1/2"></div>
+                                    <div class="text-emerald-500 font-bold text-xs bg-white px-1 z-20">VÁLIDO</div>
+                                    <div class="h-6 w-0.5 bg-slate-300"></div>
+                                    <div class="arrow-down"></div>
+                                    
+                                    <div class="flow-node mt-1 w-48">
+                                        <div class="font-bold text-slate-700 text-xs">¿Actual == Destino?</div>
+                                    </div>
+
+                                    <!-- Final Branch -->
+                                    <div class="h-6 w-0.5 bg-slate-300"></div>
+                                    <div class="grid grid-cols-2 gap-4 w-full">
+                                        <div class="flex flex-col items-center">
+                                             <div class="h-4 w-full border-t-2 border-slate-300 rounded-tr-xl transform translate-y-2 translate-x-1/2"></div>
+                                             <div class="text-blue-500 font-bold text-xs bg-white px-1 z-20">NO</div>
+                                             <div class="h-4 w-0.5 bg-slate-300"></div>
+                                             <div class="flow-node mt-1 bg-blue-50 border-blue-200 w-28">
+                                                 <div class="font-bold text-blue-600 text-xs">Regla 3: MOVER</div>
+                                             </div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                             <div class="h-4 w-full border-t-2 border-slate-300 rounded-tl-xl transform translate-y-2 -translate-x-1/2"></div>
+                                             <div class="text-slate-500 font-bold text-xs bg-white px-1 z-20">SÍ</div>
+                                             <div class="h-4 w-0.5 bg-slate-300"></div>
+                                             <div class="flow-node mt-1 bg-slate-100 border-slate-200 w-28">
+                                                 <div class="font-bold text-slate-600 text-xs">Regla 4: Ya está ahí</div>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Detailed Code Breakdown -->
+        <section class="mt-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-indigo-500 pl-4">3. Análisis Detallado del Código</h2>
+            <p class="text-slate-600 text-lg mb-8">Traducción directa de la lógica al lenguaje CLIPS. Aquí analizamos cada fragmento de la base de conocimiento aportada, con su explicación funcional.</p>
+
+            <div class="grid grid-cols-1 gap-6">
+                <!-- Templates Code -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg border border-slate-700 flex flex-col md:flex-row">
+                    <div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto md:w-1/2 bg-[#0d1117]">
+<pre><code><span class="c-paren">(</span><span class="c-kw">deftemplate</span> <span class="c-val">obj</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> id <span class="c-paren">(</span><span class="c-kw">type</span> SYMBOL<span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> onto <span class="c-paren">(</span><span class="c-kw">type</span> STRING<span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> pickable <span class="c-paren">(</span><span class="c-kw">type</span> SYMBOL<span class="c-paren">))</span>   <span class="c-cmt">; yes/no</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> cur_room <span class="c-paren">(</span><span class="c-kw">type</span> SYMBOL<span class="c-paren">))</span>   <span class="c-cmt">; kitchen/bathroom/unknown</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> dst_room <span class="c-paren">(</span><span class="c-kw">type</span> SYMBOL<span class="c-paren">))</span>   <span class="c-cmt">; kitchen/bathroom/none</span>
+<span class="c-paren">)</span>
+
+<span class="c-paren">(</span><span class="c-kw">deftemplate</span> <span class="c-val">task</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> action <span class="c-paren">(</span><span class="c-kw">type</span> SYMBOL<span class="c-paren">))</span>     <span class="c-cmt">; move/ignore</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> id <span class="c-paren">(</span><span class="c-kw">type</span> SYMBOL<span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> to <span class="c-paren">(</span><span class="c-kw">type</span> SYMBOL<span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> reason <span class="c-paren">(</span><span class="c-kw">type</span> STRING<span class="c-paren">))</span>
+<span class="c-paren">)</span>
+
+<span class="c-paren">(</span><span class="c-kw">deftemplate</span> <span class="c-val">trace</span>
+  <span class="c-paren">(</span><span class="c-kw">slot</span> msg <span class="c-paren">(</span><span class="c-kw">type</span> STRING<span class="c-paren">))</span>
+<span class="c-paren">)</span></code></pre>
+                    </div>
+                    <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
+                        <h3 class="font-bold text-xl text-indigo-600 mb-2">Definición de Templates</h3>
+                        <p class="text-slate-600 text-sm mb-3">La instrucción <code class="bg-slate-100 text-indigo-500 px-1 rounded">deftemplate</code> crea la estructura de los hechos (facts) que existirán en la memoria de trabajo.</p>
+                        <ul class="text-sm text-slate-600 list-disc pl-5 space-y-1">
+                            <li><strong>obj:</strong> Representa un objeto en el mundo. Define sus propiedades físicas y su ubicación.</li>
+                            <li><strong>task:</strong> Orden o mandato para el robot.</li>
+                            <li><strong>trace:</strong> Mensajes de registro (log) que se usarán para depurar las acciones.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Rule 1 Code -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg border border-slate-700 flex flex-col md:flex-row">
+                    <div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto md:w-1/2 bg-[#0d1117]">
+<pre><code><span class="c-paren">(</span><span class="c-kw">defrule</span> <span class="c-val">not-pickable-ignore</span>
+  <span class="c-paren">(</span>obj <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>onto <span class="c-var">?o</span><span class="c-paren">)</span> <span class="c-paren">(</span>pickable no<span class="c-paren">))</span>
+  =&gt;
+  <span class="c-paren">(</span><span class="c-kw">assert</span> <span class="c-paren">(</span>task <span class="c-paren">(</span>action ignore<span class="c-paren">)</span> <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>to none<span class="c-paren">)</span>
+                <span class="c-paren">(</span>reason <span class="c-paren">(</span><span class="c-kw">str-cat</span> <span class="c-str">"Not pickable according to ontology: "</span> <span class="c-var">?o</span><span class="c-paren">))))</span>
+  <span class="c-paren">(</span><span class="c-kw">assert</span> <span class="c-paren">(</span>trace <span class="c-paren">(</span>msg <span class="c-paren">(</span><span class="c-kw">str-cat</span> <span class="c-str">"IGNORE "</span> <span class="c-var">?id</span> <span class="c-str">" (not pickable, onto="</span> <span class="c-var">?o</span> <span class="c-str">")"</span><span class="c-paren">))))</span>
+<span class="c-paren">)</span></code></pre>
+                    </div>
+                    <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
+                        <h3 class="font-bold text-xl text-red-500 mb-2">Regla 1: Objeto Fijo</h3>
+                        <p class="text-slate-600 text-sm mb-3">Evalúa si el atributo <code class="bg-slate-100 px-1 rounded">pickable</code> tiene valor <code class="bg-red-100 text-red-600 px-1 rounded font-bold">no</code>.</p>
+                        <p class="text-slate-600 text-sm">Si coincide (el lado izquierdo o LHS de la regla), la regla se dispara. Las variables <code class="text-teal-500">?id</code> y <code class="text-teal-500">?o</code> capturan los datos del objeto para inyectarlos en las acciones (RHS), las cuales <code class="text-indigo-500 font-bold">assert</code> (afirman/crean) una tarea de ignorar y un trazo de registro.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 2 Code -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg border border-slate-700 flex flex-col md:flex-row">
+                    <div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto md:w-1/2 bg-[#0d1117]">
+<pre><code><span class="c-paren">(</span><span class="c-kw">defrule</span> <span class="c-val">missing-destination-ignore</span>
+  <span class="c-paren">(</span>obj <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>onto <span class="c-var">?o</span><span class="c-paren">)</span> <span class="c-paren">(</span>pickable yes<span class="c-paren">)</span> <span class="c-paren">(</span>dst_room none<span class="c-paren">))</span>
+  =&gt;
+  <span class="c-paren">(</span><span class="c-kw">assert</span> <span class="c-paren">(</span>task <span class="c-paren">(</span>action ignore<span class="c-paren">)</span> <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>to none<span class="c-paren">)</span>
+                <span class="c-paren">(</span>reason <span class="c-paren">(</span><span class="c-kw">str-cat</span> <span class="c-str">"Pickable but missing locatedIn/destination: "</span> <span class="c-var">?o</span><span class="c-paren">))))</span>
+  <span class="c-paren">(</span><span class="c-kw">assert</span> <span class="c-paren">(</span>trace <span class="c-paren">(</span>msg <span class="c-paren">(</span><span class="c-kw">str-cat</span> <span class="c-str">"IGNORE "</span> <span class="c-var">?id</span> <span class="c-str">" (no dst_room, onto="</span> <span class="c-var">?o</span> <span class="c-str">")"</span><span class="c-paren">))))</span>
+<span class="c-paren">)</span></code></pre>
+                    </div>
+                    <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
+                        <h3 class="font-bold text-xl text-red-500 mb-2">Regla 2: Sin Destino Configurado</h3>
+                        <p class="text-slate-600 text-sm mb-3">Si el objeto SÍ se puede recoger (<code class="bg-emerald-100 text-emerald-600 px-1 rounded font-bold">yes</code>) pero su destino no está definido o es <code class="bg-red-100 text-red-600 px-1 rounded font-bold">none</code>.</p>
+                        <p class="text-slate-600 text-sm">Genera la misma salida que la regla 1: una tarea de ignorar. No tiene sentido mandar al robot a mover algo si no sabe dónde dejarlo.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 3 Code -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg border border-slate-700 flex flex-col md:flex-row">
+                    <div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto md:w-1/2 bg-[#0d1117]">
+<pre><code><span class="c-paren">(</span><span class="c-kw">defrule</span> <span class="c-val">out-of-place-move</span>
+  <span class="c-paren">(</span>obj <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>onto <span class="c-var">?o</span><span class="c-paren">)</span> <span class="c-paren">(</span>pickable yes<span class="c-paren">)</span> <span class="c-paren">(</span>cur_room <span class="c-var">?cr</span><span class="c-paren">)</span> <span class="c-paren">(</span>dst_room <span class="c-var">?dr</span><span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">test</span> <span class="c-paren">(</span>neq <span class="c-var">?cr</span> unknown<span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">test</span> <span class="c-paren">(</span>neq <span class="c-var">?dr</span> none<span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">test</span> <span class="c-paren">(</span>neq <span class="c-var">?cr</span> <span class="c-var">?dr</span><span class="c-paren">))</span>
+  =&gt;
+  <span class="c-paren">(</span><span class="c-kw">assert</span> <span class="c-paren">(</span>task <span class="c-paren">(</span>action move<span class="c-paren">)</span> <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>to <span class="c-var">?dr</span><span class="c-paren">)</span>
+                <span class="c-paren">(</span>reason <span class="c-paren">(</span><span class="c-kw">str-cat</span> <span class="c-str">"Out of place: "</span> <span class="c-var">?cr</span> <span class="c-str">" -&gt; "</span> <span class="c-var">?dr</span> <span class="c-str">" (onto="</span> <span class="c-var">?o</span> <span class="c-str">")"</span><span class="c-paren">))))</span>
+  <span class="c-paren">(</span><span class="c-kw">assert</span> <span class="c-paren">(</span>trace <span class="c-paren">(</span>msg <span class="c-paren">(</span><span class="c-kw">str-cat</span> <span class="c-str">"MOVE "</span> <span class="c-var">?id</span> <span class="c-str">" "</span> <span class="c-var">?cr</span> <span class="c-str">"-&gt;"</span> <span class="c-var">?dr</span> <span class="c-str">" (onto="</span> <span class="c-var">?o</span> <span class="c-str">")"</span><span class="c-paren">))))</span>
+<span class="c-paren">)</span></code></pre>
+                    </div>
+                    <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
+                        <h3 class="font-bold text-xl text-blue-600 mb-2">Regla 3: Objeto Fuera de Lugar</h3>
+                        <p class="text-slate-600 text-sm mb-3">La regla principal de acción. Además de los atributos del objeto, incluye <code class="bg-slate-100 px-1 rounded text-indigo-500 font-bold">test</code> para evaluar condiciones lógicas más complejas.</p>
+                        <p class="text-slate-600 text-sm">Se asegura de que la habitación actual no sea desconocida (neq ?cr unknown), que tenga destino válido (neq ?dr none) y la validación clave: <strong>que la actual sea diferente al destino</strong> (neq ?cr ?dr). Si se cumple, afirma una tarea tipo <code class="text-blue-600 font-bold">move</code>.</p>
+                    </div>
+                </div>
+
+                <!-- Rule 4 Code -->
+                <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg border border-slate-700 flex flex-col md:flex-row">
+                    <div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto md:w-1/2 bg-[#0d1117]">
+<pre><code><span class="c-paren">(</span><span class="c-kw">defrule</span> <span class="c-val">already-correct-ignore</span>
+  <span class="c-paren">(</span>obj <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>onto <span class="c-var">?o</span><span class="c-paren">)</span> <span class="c-paren">(</span>pickable yes<span class="c-paren">)</span> <span class="c-paren">(</span>cur_room <span class="c-var">?cr</span><span class="c-paren">)</span> <span class="c-paren">(</span>dst_room <span class="c-var">?dr</span><span class="c-paren">))</span>
+  <span class="c-paren">(</span><span class="c-kw">test</span> <span class="c-paren">(</span>or <span class="c-paren">(</span>eq <span class="c-var">?cr</span> <span class="c-var">?dr</span><span class="c-paren">)</span> <span class="c-paren">(</span>eq <span class="c-var">?cr</span> unknown<span class="c-paren">)))</span>
+  =&gt;
+  <span class="c-paren">(</span><span class="c-kw">assert</span> <span class="c-paren">(</span>task <span class="c-paren">(</span>action ignore<span class="c-paren">)</span> <span class="c-paren">(</span>id <span class="c-var">?id</span><span class="c-paren">)</span> <span class="c-paren">(</span>to <span class="c-var">?dr</span><span class="c-paren">)</span>
+                <span class="c-paren">(</span>reason <span class="c-paren">(</span><span class="c-kw">str-cat</span> <span class="c-str">"Already correct (or unknown cur_room): "</span> <span class="c-var">?o</span><span class="c-paren">))))</span>
+<span class="c-paren">)</span></code></pre>
+                    </div>
+                    <div class="p-6 md:w-1/2 flex flex-col justify-center bg-white">
+                        <h3 class="font-bold text-xl text-slate-700 mb-2">Regla 4: Objeto en Lugar Correcto</h3>
+                        <p class="text-slate-600 text-sm mb-3">Actúa como condición de seguridad para los casos que no entran en "Out of Place".</p>
+                        <p class="text-slate-600 text-sm">El test utiliza un <code class="bg-slate-100 text-indigo-500 font-bold px-1 rounded">or</code>: dispara la tarea de ignorar si la habitación actual es igual a la de destino (eq ?cr ?dr), O si la ubicación actual del objeto se desconoce (eq ?cr unknown). Note que esta regla intencionadamente no genera un mensaje de "trace".</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NEW SECTION 4: Video Demonstration -->
+        <section class="mt-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-purple-500 pl-4">4. Demostración Práctica: Robot en Acción</h2>
+            <p class="text-slate-600 text-lg mb-8">Observa cómo el motor lógico CLIPS cobra vida en un entorno de simulación física (<a href="#" class="text-blue-500 hover:underline">PyBullet</a>). El script en Python inicializa el entorno, alimenta a CLIPS con los datos del objeto detectado y ejecuta la tarea resultante.</p>
+
+            <div class="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden max-w-4xl mx-auto">
+                <!-- Mac-like Window Bar -->
+                <div class="p-3 bg-slate-900 flex items-center justify-between border-b border-slate-800">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <span class="text-slate-400 text-xs font-mono tracking-wider">ycb_pubullet_unloab_demo.py - Ejecución</span>
+                    <div class="w-12"></div> <!-- Spacer for centering -->
+                </div>
+                
+                <!-- Video Container -->
+                <div class="bg-black w-full flex justify-center border-b border-slate-200">
+                    <video controls class="w-full max-h-[550px]" preload="metadata">
+                        <source src="static/PybulletClisp.mp4" type="video/webm">
+                        Tu navegador no soporta la etiqueta de video. Descarga el video <a href="static/PybulletClisp.mp4" class="text-blue-400 underline">aquí</a>.
+                    </video>
+                </div>
+                
+                <!-- Video Context / Explanation -->
+                <div class="p-6 bg-slate-50">
+                    <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center"><span class="text-purple-500 text-xl mr-2">⚙️</span> Análisis de la Ejecución en el Video:</h3>
+                    <ul class="text-slate-600 space-y-3 text-sm ml-2 border-l-2 border-slate-200 pl-4">
+                        <li>
+                            <strong class="text-slate-800">1. Fallo Inicial (Banana):</strong> Al principio, el usuario intenta cargar una "banana". El sistema la ignora porque la categoría <code class="text-indigo-600 bg-indigo-50 px-1 rounded font-mono">banana</code> no se encuentra registrada en la ontología del conocimiento.
+                        </li>
+                        <li>
+                            <strong class="text-slate-800">2. Modificación del Entorno:</strong> En el código fuente (línea 81), se cambia la configuración para que la cámara y el entorno carguen un vaso/taza (<code class="text-indigo-600 bg-indigo-50 px-1 rounded font-mono">cup</code>).
+                        </li>
+                        <li>
+                            <strong class="text-slate-800">3. Inferencia de CLIPS:</strong> Una vez lanzada la simulación de nuevo, CLIPS detecta el vaso en el "cuarto de baño" (bathroom). La <strong>Regla 3</strong> (<code class="text-blue-500 font-mono text-xs">out-of-place-move</code>) se dispara inmediatamente porque el destino correcto de una taza es la cocina.
+                        </li>
+                        <li>
+                            <strong class="text-emerald-600">4. Ejecución Física:</strong> Se genera la orden final <code class="text-emerald-600 bg-emerald-50 px-1 rounded font-mono text-xs">(task (action move) (to kitchen) ...)</code>, lo que desencadena la rutina cinemática del robot para ir, agarrar el objeto y trasladarlo a la bandeja azul de destino.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Simulation Statistics -->
+        <section class="mt-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-emerald-500 pl-4">5. Resultados de la Simulación</h2>
+            <p class="text-slate-600 text-lg mb-8">Simulamos el procesamiento de <strong>100 objetos aleatorios</strong> a través de este motor lógico. Aquí está el desglose de las decisiones y eficiencia del sistema.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Chart 1: Input Distribution -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Capacidad del Objeto</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-10">Proporción de objetos que pueden ser recogidos vs. estructuras fijas inamovibles.</p>
+                    <div class="flex-grow flex items-center justify-center">
+                        <div class="chart-container">
+                            <canvas id="capabilityChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Action Decisions -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Decisiones de Acción</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-10">Tareas finales generadas. La mayoría se ignoraron (correctos/fijos), mientras que el 35% requirió moverse.</p>
+                    <div class="flex-grow flex items-center justify-center">
+                         <div class="chart-container">
+                            <canvas id="actionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Rule Activation -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex flex-col md:col-span-2 lg:col-span-1">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Activación de Reglas</h3>
+                    <p class="text-sm text-slate-500 mb-4 h-10">¿Qué reglas se dispararon más? "Ya está Correcto" y "Fuera de Lugar" empatan en la simulación.</p>
+                    <div class="flex-grow flex items-center justify-center">
+                         <div class="chart-container">
+                            <canvas id="ruleChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Trace Log Examples -->
+        <section class="mt-8 mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-3 border-l-4 border-slate-800 pl-4">6. Registro del Sistema (Trace Log)</h2>
+            <p class="text-slate-600 text-lg mb-6">Ejemplos en tiempo real de los hechos <code>(trace)</code> generados al ejecutarse las reglas, similares a los que se ven en la terminal del video de la sección 4.</p>
+
+            <div class="bg-slate-900 rounded-xl shadow-lg p-6 font-mono text-sm overflow-hidden">
+                <div class="flex space-x-2 mb-4 border-b border-slate-700 pb-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="text-slate-400 text-xs ml-2">salida_sistema.log</span>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="flex">
+                        <span class="text-slate-500 w-24">00:29:58</span>
+                        <span class="text-emerald-400">MOVE obj_2 bathroom->kitchen (onto=cup)</span>
+                    </div>
+                    <div class="flex">
+                        <span class="text-slate-500 w-24">00:30:05</span>
+                        <span class="text-red-400">IGNORE obj_24 (not pickable, onto=fridge)</span>
+                    </div>
+                    <div class="flex">
+                        <span class="text-slate-500 w-24">00:30:12</span>
+                        <span class="text-blue-400">IGNORE obj_25 (no dst_room, onto=apple_core)</span>
+                    </div>
+                    <div class="flex">
+                        <span class="text-slate-500 w-24">00:30:45</span>
+                        <span class="text-emerald-400">MOVE obj_26 bedroom->kitchen (onto=plate)</span>
+                    </div>
+                    <div class="flex opacity-50">
+                        <span class="text-slate-500 w-24">...</span>
+                        <span class="text-slate-500">Esperando nuevos inputs...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-100 border-t border-slate-200 py-8 text-center">
+        <p class="text-slate-500 text-sm">Generado para Fines Educativos de CLIPS • No se ha utilizado SVG ni Mermaid JS.</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- UTILITY: Label Wrapping Logic (>16 chars) ---
+        function processLabels(labels) {
+            return labels.map(label => {
+                if (label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = words[0];
+
+                    for (let i = 1; i < words.length; i++) {
+                        if ((currentLine + " " + words[i]).length <= 16) {
+                            currentLine += " " + words[i];
+                        } else {
+                            lines.push(currentLine);
+                            currentLine = words[i];
+                        }
+                    }
+                    lines.push(currentLine);
+                    return lines;
+                }
+                return label;
+            });
+        }
+
+        // --- UTILITY: Common Tooltip Config for Multiline ---
+        const commonTooltipOptions = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: Object Capability (Donut) ---
+        const ctxCap = document.getElementById('capabilityChart').getContext('2d');
+        new Chart(ctxCap, {
+            type: 'doughnut',
+            data: {
+                labels: processLabels(['Objetos Recogibles', 'Fijos (Inamovibles)']),
+                datasets: [{
+                    data: [80, 20],
+                    backgroundColor: ['#2563EB', '#94A3B8'], // Blue vs Slate
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: commonTooltipOptions
+                }
+            }
+        });
+
+        // --- CHART 2: Action Outcomes (Bar) ---
+        const ctxAction = document.getElementById('actionChart').getContext('2d');
+        new Chart(ctxAction, {
+            type: 'bar',
+            data: {
+                labels: processLabels(['Acción: Mover', 'Acción: Ignorar']),
+                datasets: [{
+                    label: 'Número de Objetos',
+                    data: [35, 65],
+                    backgroundColor: ['#10B981', '#EF4444'], // Green vs Red
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#E2E8F0' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // --- CHART 3: Rule Trigger Frequency (Horizontal Bar) ---
+        const ctxRule = document.getElementById('ruleChart').getContext('2d');
+        new Chart(ctxRule, {
+            type: 'bar',
+            indexAxis: 'y', // Horizontal
+            data: {
+                labels: processLabels([
+                    'Regla 1: No Recogible', 
+                    'Regla 2: Sin Destino', 
+                    'Regla 3: Fuera de Lugar', 
+                    'Regla 4: Lugar Correcto'
+                ]),
+                datasets: [{
+                    label: 'Conteo de Activaciones',
+                    data: [20, 10, 35, 35],
+                    backgroundColor: [
+                        '#94A3B8', // Rule 1 (Grey)
+                        '#EF4444', // Rule 2 (Red - Error like)
+                        '#10B981', // Rule 3 (Green - Action)
+                        '#3B82F6'  // Rule 4 (Blue - Info)
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipOptions
+                },
+                scales: {
+                    x: { beginAtZero: true, grid: { color: '#E2E8F0' } },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+import React, { useState } from 'react';
+import { 
+  Cpu, 
+  Eye, 
+  Brain, 
+  Settings, 
+  Play, 
+  Database, 
+  ChevronRight, 
+  Box, 
+  Layers, 
+  Terminal,
+  Activity,
+  Bot
+} from 'lucide-react';
+
+const App = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
+  const steps = [
+    {
+      title: "1. Simulation Engine (PyBullet)",
+      icon: <Box className="w-6 h-6" />,
+      description: "The physical environment where the MyCobot 280 and YCB objects reside.",
+      details: [
+        "Initializes the world using PyBullet (GUI or Direct mode).",
+        "Defines RoomZones (Kitchen, Bathroom) as coordinate boundaries.",
+        "Manages robot Inverse Kinematics (IK) and collision constraints.",
+        "Provides a virtual camera feed for perception."
+      ],
+      codeRefs: ["setup_pybullet_world", "RoomZone", "render_camera"],
+      color: "bg-blue-500"
+    },
+    {
+      title: "2. Visual Perception (YOLO)",
+      icon: <Eye className="w-6 h-6" />,
+      description: "Converts raw pixels from the simulation into identified object entities.",
+      details: [
+        "Runs Ultralytics YOLO inference on the PyBullet RGB frame.",
+        "Maps YOLO class names (e.g., 'cup') to Ontology IRIs using a JSON map.",
+        "Uses 'associate_detection_to_body' to link 2D boxes to 3D PyBullet IDs.",
+        "Features a 'Sim Detection' fallback if YOLO fails."
+      ],
+      codeRefs: ["run_cycle", "associate_detection_to_body", "YOLO_TO_ONTO"],
+      color: "bg-purple-500"
+    },
+    {
+      title: "3. Semantic Brain (OWLReady2)",
+      icon: <Database className="w-6 h-6" />,
+      description: "The knowledge base defining what objects are and where they belong.",
+      details: [
+        "Loads .owl ontology files to extract class hierarchies.",
+        "Retrieves the 'locatedIn' property (target destination) for objects.",
+        "Checks 'canBePickedBy' to determine if an object is 'pickable' by the robot.",
+        "Contextualizes perceptions with semantic metadata."
+      ],
+      codeRefs: ["load_ontology_index", "OntoIndexEntry", "ontology_hierarchy_compact"],
+      color: "bg-emerald-500"
+    },
+    {
+      title: "4. High-Level Reasoning (Cosmos)",
+      icon: <Brain className="w-6 h-6" />,
+      description: "A Visual Language Model (VLM) that performs intuitive decision-making.",
+      details: [
+        "Loads 'nvidia/Cosmos-Reason2-2B' (Qwen3VL based).",
+        "Input: PyBullet Image + Ontology Hierarchy + Grounded Facts + User Prompt.",
+        "Output: JSON 'Intents' with rationale and priority levels.",
+        "Decides the 'What' (e.g., 'Move the blue cup because it is out of place')."
+      ],
+      codeRefs: ["run_cosmos_highlevel_on_image", "build_cosmos_highlevel_prompt"],
+      color: "bg-orange-500"
+    },
+    {
+      title: "5. Symbolic Planning (CLIPS)",
+      icon: <Terminal className="w-6 h-6" />,
+      description: "An Expert System that converts intents into a concrete task queue.",
+      details: [
+        "Uses the CLIPS language to define production rules.",
+        "Resolves conflicts (e.g., Priority 1 vs Priority 999).",
+        "Handles logic like 'If current_room == destination_room then Ignore'.",
+        "Generates a structured task list (Move / Ignore)."
+      ],
+      codeRefs: ["build_clips_planner", "clips_get_tasks", "cosmos-intent-move"],
+      color: "bg-red-500"
+    },
+    {
+      title: "6. Execution & Control",
+      icon: <Bot className="w-6 h-6" />,
+      description: "The physical movement of the robot to achieve the plan.",
+      details: [
+        "Executes Pick-and-Place sequences using smooth trajectory interpolation.",
+        "Attaches 'Fixed Constraints' in PyBullet to simulate grasping.",
+        "Optional Bridge: Synchronizes simulated angles to a real MyCobot serial port.",
+        "Logs completion status back to the Streamlit UI."
+      ],
+      codeRefs: ["execute_pick_and_place_mycobot", "_maybe_real_send_angles"],
+      color: "bg-cyan-500"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-slate-100 p-8 font-sans">
+      <header className="max-w-6xl mx-auto mb-12 border-b border-slate-700 pb-6">
+        <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+          OntoAI Architecture Breakdown
+        </h1>
+        <p className="text-slate-400 text-lg">
+          Detailed technical explanation of <strong>ontoai_gui_ycb_cosmos_clips.py</strong>
+        </p>
+      </header>
+
+      <main className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Column: Navigation */}
+        <div className="lg:col-span-1 space-y-4">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Pipeline Steps</h2>
+          {steps.map((step, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveStep(idx)}
+              className={`w-full flex items-center p-4 rounded-xl transition-all border ${
+                activeStep === idx 
+                ? `${step.color} border-transparent shadow-lg scale-105 text-white` 
+                : "bg-slate-800 border-slate-700 hover:border-slate-500 text-slate-300"
+              }`}
+            >
+              <div className="mr-4">{step.icon}</div>
+              <span className="font-medium text-left">{step.title}</span>
+              {activeStep === idx && <ChevronRight className="ml-auto w-5 h-5" />}
+            </button>
+          ))}
+        </div>
+
+        {/* Right Column: Content Detail */}
+        <div className="lg:col-span-2 bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl min-h-[500px]">
+          <div className="flex items-center mb-6">
+            <div className={`p-3 rounded-lg ${steps[activeStep].color} text-white mr-4`}>
+              {steps[activeStep].icon}
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">{steps[activeStep].title}</h2>
+              <p className="text-slate-400">{steps[activeStep].description}</p>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xs font-bold uppercase text-slate-500 mb-3 flex items-center">
+                <Activity className="w-3 h-3 mr-1" /> Core Functions & Logic
+              </h3>
+              <ul className="space-y-3">
+                {steps[activeStep].details.map((detail, i) => (
+                  <li key={i} className="flex items-start">
+                    <div className="mt-1.5 mr-3 w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0" />
+                    <span className="text-slate-300 leading-relaxed">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-6 border-t border-slate-700">
+              <h3 className="text-xs font-bold uppercase text-slate-500 mb-3 flex items-center">
+                <Terminal className="w-3 h-3 mr-1" /> Key Python Code References
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {steps[activeStep].codeRefs.map((ref, i) => (
+                  <code key={i} className="px-3 py-1 bg-slate-900 border border-slate-700 rounded text-emerald-400 text-sm font-mono">
+                    {ref}
+                  </code>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Tech Stack Footer */}
+      <footer className="max-w-6xl mx-auto mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700 flex items-center space-x-3">
+          <Layers className="text-blue-400" />
+          <div>
+            <div className="text-xs text-slate-500 font-bold uppercase">UI Framework</div>
+            <div className="text-sm">Streamlit</div>
+          </div>
+        </div>
+        <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700 flex items-center space-x-3">
+          <Settings className="text-purple-400" />
+          <div>
+            <div className="text-xs text-slate-500 font-bold uppercase">Physics</div>
+            <div className="text-sm">PyBullet</div>
+          </div>
+        </div>
+        <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700 flex items-center space-x-3">
+          <Brain className="text-orange-400" />
+          <div>
+            <div className="text-xs text-slate-500 font-bold uppercase">VLM Model</div>
+            <div className="text-sm">Nvidia Cosmos (Qwen)</div>
+          </div>
+        </div>
+        <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700 flex items-center space-x-3">
+          <Cpu className="text-red-400" />
+          <div>
+            <div className="text-xs text-slate-500 font-bold uppercase">Expert System</div>
+            <div className="text-sm">CLIPS (clipspy)</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
