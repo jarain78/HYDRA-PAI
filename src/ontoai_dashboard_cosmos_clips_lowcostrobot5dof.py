@@ -196,7 +196,7 @@ ONTO_PATH_DEFAULT = rel_or_abs(os.getenv("HYDRA_ONTO", "Ontology/hogar_en.owl"),
 YOLO_WEIGHTS_DEFAULT = rel_or_abs(os.getenv("HYDRA_YOLO", "models/yolo11n.pt"), REPO_ROOT)
 
 # LowCostRobot URDF defaults (user provided robot.urdf next to this script or via path)
-LOWCOST_URDF_DEFAULT = rel_or_abs(os.getenv("HYDRA_LOWCOST_URDF", "RobotModels/LowCostOlyArm_v0.0.3.2.2/robot.urdf"), SCRIPT_DIR)
+LOWCOST_URDF_DEFAULT = rel_or_abs(os.getenv("HYDRA_LOWCOST_URDF", "RobotModels/LowCostOlyArm_v1/lowCostRobot.urdf"), SCRIPT_DIR)
 
 # Calibration defaults
 CALIB_JSON_DEFAULT = rel_or_abs(os.getenv("HYDRA_LX16A_CALIB_JSON", "lx16a_calibration/lx16a_calibration_follower_5dof_20260205_160632.json"), SCRIPT_DIR)
@@ -935,8 +935,8 @@ def home_angles_from_calib(calib: Dict[str, Any]) -> List[float]:
 # -----------------------
 # World setup
 # -----------------------
-def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], ycb_positions: List[Tuple[float, float, float]],
-                         lowcost_urdf: str, robot_base_xyz: Tuple[float, float, float]) -> Tuple[int, Dict[str, int], List[int], int, Dict[str, int]]:
+def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], ycb_positions: List[Tuple[float, float, float]], lowcost_urdf: str, robot_base_xyz: Tuple[float, float, float],) -> Tuple[int, Dict[str, int], List[int], int, Dict[str, int]]:
+    
     if p.isConnected():
         try:
             p.disconnect()
@@ -951,25 +951,50 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
     p.loadURDF("plane.urdf")
 
     urdf_path = lowcost_urdf
-    if urdf_path and not os.path.isabs(urdf_path):
-        urdf_path = os.path.abspath(urdf_path)
+    if not urdf_path:
+        raise RuntimeError("Empty URDF path.")
 
-    print(f"Robot Path: {urdf_path}")
+    urdf_path = os.path.abspath(os.path.expanduser(urdf_path))
 
-    robot_id = p.loadURDF(urdf_path, basePosition=list(robot_base_xyz), useFixedBase=True)
+    if not os.path.isfile(urdf_path):
+        raise FileNotFoundError(f"URDF file not found: {urdf_path}")
+
+    # Muy importante: añadir también la carpeta del URDF para que encuentre meshes relativos
+    urdf_dir = os.path.dirname(urdf_path)
+    p.setAdditionalSearchPath(urdf_dir)
+
+    #print(f"[DEBUG] Loading URDF: {urdf_path}")
+    #print(f"[DEBUG] URDF dir: {urdf_dir}")
+
+    try:
+        robot_id = p.loadURDF(
+            urdf_path,
+            basePosition=list(robot_base_xyz),
+            useFixedBase=True,
+            flags=p.URDF_USE_INERTIA_FROM_FILE,
+        )
+
+    except Exception as e:
+        raise RuntimeError(
+            f"PyBullet could not load URDF: {urdf_path}\\n"
+            f"Check that all referenced meshes/textures exist and that relative paths inside the URDF are valid.\\n"
+            f"Original error: {e}"
+        )
+
     jmap = find_joint_indices_by_name(robot_id, ROBOT_5DOF_JOINT_NAMES)
     if len(jmap) != len(ROBOT_5DOF_JOINT_NAMES):
         missing = [jn for jn in ROBOT_5DOF_JOINT_NAMES if jn not in jmap]
-        raise RuntimeError(f"LowCostRobot URDF missing joints: {missing}. Found: {sorted(list(jmap.keys()))}")
+        raise RuntimeError(
+            f"LowCostRobot URDF missing joints: {missing}. "
+            f"Found joints: {sorted(list(jmap.keys()))}"
+        )
 
     joint_indices = [jmap[jn] for jn in ROBOT_5DOF_JOINT_NAMES]
     ee_link = choose_ee_link(robot_id)
 
-    # Set a neutral pose
     q_home = [0.0, 0.4, 0.8, 0.8, 0.4]
     smooth_move_joints(robot_id, joint_indices, q_home, duration=0.4)
 
-    # YCB objects
     paths = ensure_repo(ycb_repo_dir)
     available = set(list_ycb_objects(paths.ycb_dir))
 
@@ -985,9 +1010,15 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
 
     draw_rooms_debug()
     if gui:
-        p.resetDebugVisualizerCamera(cameraDistance=1.1, cameraYaw=35, cameraPitch=-35, cameraTargetPosition=[0.35, 0.0, 0.18])
+        p.resetDebugVisualizerCamera(
+            cameraDistance=1.1,
+            cameraYaw=35,
+            cameraPitch=-35,
+            cameraTargetPosition=[0.35, 0.0, 0.18],
+        )
 
     return robot_id, sim_objects, joint_indices, ee_link, jmap
+
 
 # -----------------------
 # Execution: move in SIM + optionally command REAL robot

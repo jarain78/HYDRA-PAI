@@ -29,3 +29,4 @@ streamlit
 owlready2
 clipspy
 accelerate
+imageio

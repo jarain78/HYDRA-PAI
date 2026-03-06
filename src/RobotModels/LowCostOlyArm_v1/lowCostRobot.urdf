@@ -1,0 +1,489 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: 73ae15d12d6cfeb3ebb081f7 / workspace_id: 9f55585b9d1962741f0011d2 -->
+<robot name="LowCostRobot">
+  <!-- Link base -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.000254804 -0.00992594 0.0269288" rpy="0 0 0"/>
+      <mass value="0.0306426"/>
+      <inertia ixx="1.91493e-05" ixy="-1.39799e-08" ixz="-5.18631e-09" iyy="1.5403e-05" iyz="2.79349e-06" izz="2.10625e-05"/>
+    </inertial>
+    <!-- Part baserobots -->
+    <visual>
+      <origin xyz="-0.000260741 0.0001 -0.007587" rpy="1.21197e-15 1.07352e-16 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/baserobots.stl"/>
+      </geometry>
+      <material name="baserobots_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000260741 0.0001 -0.007587" rpy="1.21197e-15 1.07352e-16 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/baserobots.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part acople_base -->
+    <visual>
+      <origin xyz="-0.000167866 -0.0313222 -0.00270539" rpy="1.20474e-15 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/acople_base.stl"/>
+      </geometry>
+      <material name="acople_base_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000167866 -0.0313222 -0.00270539" rpy="1.20474e-15 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/acople_base.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_1 -->
+    <visual>
+      <origin xyz="-0.000266606 0.0123541 0.0117946" rpy="1.50031e-16 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/base_1.stl"/>
+      </geometry>
+      <material name="base_1_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000266606 0.0123541 0.0117946" rpy="1.50031e-16 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/base_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_0 -->
+    <visual>
+      <origin xyz="-0.000266606 0.0123541 -0.00320539" rpy="1.50031e-16 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/base_0.stl"/>
+      </geometry>
+      <material name="base_0_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000266606 0.0123541 -0.00320539" rpy="1.50031e-16 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/base_0.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearingcase -->
+    <visual>
+      <origin xyz="-0.000266605 -0.00695621 0.0157946" rpy="1.50031e-16 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/bearingcase.stl"/>
+      </geometry>
+      <material name="bearingcase_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000266605 -0.00695621 0.0157946" rpy="1.50031e-16 4.66571e-15 -1.33227e-15"/>
+      <geometry>
+        <mesh filename="assets/bearingcase.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part lx_16a_2 -->
+    <visual>
+      <origin xyz="-0.000266606 -0.0324139 0.0413946" rpy="-4.70041e-15 2.05542e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="assets/lx_16a_2.stl"/>
+      </geometry>
+      <material name="lx_16a_2_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000266606 -0.0324139 0.0413946" rpy="-4.70041e-15 2.05542e-16 -1.5708"/>
+      <geometry>
+        <mesh filename="assets/lx_16a_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link_1 -->
+  <link name="link_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part link_1 -->
+    <visual>
+      <origin xyz="0 0 -0.005" rpy="3.14159 -0 -1.10886e-32"/>
+      <geometry>
+        <mesh filename="assets/link_1.stl"/>
+      </geometry>
+      <material name="link_1_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.005" rpy="3.14159 -0 -1.10886e-32"/>
+      <geometry>
+        <mesh filename="assets/link_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link bicep -->
+  <link name="bicep">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part ceparador_bisep -->
+    <visual>
+      <origin xyz="0.0583341 5.55112e-17 -0.0181" rpy="-1.5708 -1.18179e-14 4.06576e-20"/>
+      <geometry>
+        <mesh filename="assets/ceparador_bisep.stl"/>
+      </geometry>
+      <material name="ceparador_bisep_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0583341 5.55112e-17 -0.0181" rpy="-1.5708 -1.18179e-14 4.06576e-20"/>
+      <geometry>
+        <mesh filename="assets/ceparador_bisep.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bicepplate_a -->
+    <visual>
+      <origin xyz="0.0990841 0.0325 -0.0341" rpy="-3.14159 1.09297e-14 3.14159"/>
+      <geometry>
+        <mesh filename="assets/bicepplate_a.stl"/>
+      </geometry>
+      <material name="bicepplate_a_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0990841 0.0325 -0.0341" rpy="-3.14159 1.09297e-14 3.14159"/>
+      <geometry>
+        <mesh filename="assets/bicepplate_a.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bicepplate_b -->
+    <visual>
+      <origin xyz="0.0990841 0.0325 0.00105" rpy="-3.14159 1.09297e-14 3.14159"/>
+      <geometry>
+        <mesh filename="assets/bicepplate_b.stl"/>
+      </geometry>
+      <material name="bicepplate_b_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0990841 0.0325 0.00105" rpy="-3.14159 1.09297e-14 3.14159"/>
+      <geometry>
+        <mesh filename="assets/bicepplate_b.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_1 -->
+    <visual>
+      <origin xyz="0.0255 0 -0.0085" rpy="0 -7.10228e-31 0"/>
+      <geometry>
+        <mesh filename="assets/servo_1.stl"/>
+      </geometry>
+      <material name="servo_1_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0255 0 -0.0085" rpy="0 -7.10228e-31 0"/>
+      <geometry>
+        <mesh filename="assets/servo_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_2 -->
+    <visual>
+      <origin xyz="0.0990841 0.00126148 -0.0085" rpy="1.38221e-14 -5.95911e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="assets/servo_2.stl"/>
+      </geometry>
+      <material name="servo_2_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0990841 0.00126148 -0.0085" rpy="1.38221e-14 -5.95911e-15 -1.5708"/>
+      <geometry>
+        <mesh filename="assets/servo_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link forearm_elbow -->
+  <link name="forearm_elbow">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part f1_bracket -->
+    <visual>
+      <origin xyz="0.00500121 0.052478 -0.000897836" rpy="1.5708 4.74454e-19 0"/>
+      <geometry>
+        <mesh filename="assets/f1_bracket.stl"/>
+      </geometry>
+      <material name="f1_bracket_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00500121 0.052478 -0.000897836" rpy="1.5708 4.74454e-19 0"/>
+      <geometry>
+        <mesh filename="assets/f1_bracket.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_5 -->
+    <visual>
+      <origin xyz="-0.0254982 0.080678 0.0181" rpy="1.5708 -4.74454e-19 -3.14159"/>
+      <geometry>
+        <mesh filename="assets/servo_5.stl"/>
+      </geometry>
+      <material name="servo_5_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0254982 0.080678 0.0181" rpy="1.5708 -4.74454e-19 -3.14159"/>
+      <geometry>
+        <mesh filename="assets/servo_5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part spacer_1 -->
+    <visual>
+      <origin xyz="0.00574035 0.051078 0.0181" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="assets/spacer_1.stl"/>
+      </geometry>
+      <material name="spacer_1_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00574035 0.051078 0.0181" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="assets/spacer_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link f2_bracket -->
+  <link name="f2_bracket">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part f2_bracket -->
+    <visual>
+      <origin xyz="0.00500055 0.0189978 1.73472e-18" rpy="-3.14159 3.15544e-30 -8.67362e-19"/>
+      <geometry>
+        <mesh filename="assets/f2_bracket.stl"/>
+      </geometry>
+      <material name="f2_bracket_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00500055 0.0189978 1.73472e-18" rpy="-3.14159 3.15544e-30 -8.67362e-19"/>
+      <geometry>
+        <mesh filename="assets/f2_bracket.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link wrist_1 -->
+  <link name="wrist_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part camera_gripper -->
+    <visual>
+      <origin xyz="0.03265 0.0223974 -0.0181" rpy="1.5708 -7.51003e-16 3.14159"/>
+      <geometry>
+        <mesh filename="assets/camera_gripper.stl"/>
+      </geometry>
+      <material name="camera_gripper_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.03265 0.0223974 -0.0181" rpy="1.5708 -7.51003e-16 3.14159"/>
+      <geometry>
+        <mesh filename="assets/camera_gripper.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part servo_3 -->
+    <visual>
+      <origin xyz="0.0255 1.38778e-17 -0.0277" rpy="3.14159 2.02146e-30 0"/>
+      <geometry>
+        <mesh filename="assets/servo_3.stl"/>
+      </geometry>
+      <material name="servo_3_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0255 1.38778e-17 -0.0277" rpy="3.14159 2.02146e-30 0"/>
+      <geometry>
+        <mesh filename="assets/servo_3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part hand -->
+    <visual>
+      <origin xyz="0.102294 -0.0991154 -0.0196431" rpy="-1.5708 2.63938e-15 1.5708"/>
+      <geometry>
+        <mesh filename="assets/hand.stl"/>
+      </geometry>
+      <material name="hand_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.102294 -0.0991154 -0.0196431" rpy="-1.5708 2.63938e-15 1.5708"/>
+      <geometry>
+        <mesh filename="assets/hand.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link eeff -->
+  <link name="eeff">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part eeff -->
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 9.83611e-30 8.67362e-19"/>
+      <geometry>
+        <mesh filename="assets/eeff.stl"/>
+      </geometry>
+      <material name="eeff_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 9.83611e-30 8.67362e-19"/>
+      <geometry>
+        <mesh filename="assets/eeff.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from wrist_1 to eeff -->
+  <joint name="shadow_link" type="revolute">
+    <origin xyz="0.0458115 4.16334e-17 -0.0181" rpy="3.14159 -1.5708 0"/>
+    <parent link="wrist_1"/>
+    <child link="eeff"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="1.5708"/>
+  </joint>
+
+
+  <!-- Link camera_link -->
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part camera_base -->
+    <visual>
+      <origin xyz="-0.014 -0.015 0" rpy="1.5708 9.53969e-31 0"/>
+      <geometry>
+        <mesh filename="assets/camera_base.stl"/>
+      </geometry>
+      <material name="camera_base_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.014 -0.015 0" rpy="1.5708 9.53969e-31 0"/>
+      <geometry>
+        <mesh filename="assets/camera_base.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part rpi_cam_v1 -->
+    <visual>
+      <origin xyz="-0.014 -0.0179 -0.008" rpy="3.14159 1.33227e-15 -3.70317e-18"/>
+      <geometry>
+        <mesh filename="assets/rpi_cam_v1.stl"/>
+      </geometry>
+      <material name="rpi_cam_v1_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.014 -0.0179 -0.008" rpy="3.14159 1.33227e-15 -3.70317e-18"/>
+      <geometry>
+        <mesh filename="assets/rpi_cam_v1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joint from base to link_1 -->
+  <joint name="joint_base" type="revolute">
+    <origin xyz="-0.000266606 -0.00691392 0.0498946" rpy="-3.14159 8.75197e-15 3.14159"/>
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
+  </joint>
+
+  <!-- Joint from link_1 to bicep -->
+  <joint name="joint_1" type="revolute">
+    <origin xyz="-4.87891e-19 -0.01855 -0.025" rpy="-1.5708 7.5426e-15 3.14159"/>
+    <parent link="link_1"/>
+    <child link="bicep"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
+  </joint>
+
+  <!-- Joint from bicep to forearm_elbow -->
+  <joint name="joint_2" type="revolute">
+    <origin xyz="0.0990841 0.0267615 5.68469e-14" rpy="3.14159 9.15087e-15 -1.5708"/>
+    <parent link="bicep"/>
+    <child link="forearm_elbow"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
+  </joint>
+
+  <!-- Joint from forearm_elbow to f2_bracket -->
+  <joint name="joint_3" type="revolute">
+    <origin xyz="1.82921e-06 0.089178 0.0181" rpy="-1.5708 0.00697651 -3.14159"/>
+    <parent link="forearm_elbow"/>
+    <child link="f2_bracket"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.57777" upper="1.56382"/>
+  </joint>
+
+  <!-- Joint from f2_bracket to wrist_1 -->
+  <joint name="joint_4" type="revolute">
+    <origin xyz="-3.4131e-06 -0.01855 -0.0264538" rpy="1.5708 1.5708 0"/>
+    <parent link="f2_bracket"/>
+    <child link="wrist_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+
+
+  <!-- Joint from forearm_elbow to camera_link -->
+  <joint name="camera_link" type="fixed">
+    <origin xyz="-0.0377597 0.055078 0.0041" rpy="1.5708 1.5708 0"/>
+    <parent link="forearm_elbow"/>
+    <child link="camera_link"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+
+
+
+</robot>

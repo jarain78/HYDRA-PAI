@@ -185,7 +185,7 @@ def rel_or_abs(p: str, base: Path) -> str:
     return str(pp if pp.is_absolute() else (base / pp).resolve())
 
 ONTO_PATH_DEFAULT = rel_or_abs(
-    os.getenv("HYDRA_ONTO", "Ontology/hogar_en.owl"),
+    os.getenv("HYDRA_ONTO", "Ontology/Home.owl"),
     REPO_ROOT,
 )
 print("ONTO_PATH_DEFAULT:", ONTO_PATH_DEFAULT)

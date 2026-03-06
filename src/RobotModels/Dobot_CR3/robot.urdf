@@ -1,0 +1,365 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: 384d273dab782e686905da03 / workspace_id: 05cffc649f36287ef4692688 -->
+<robot name="robot">
+  <!-- Link cr3_j6_asm_3_asm_1_asm_1_asm -->
+  <link name="cr3_j6_asm_3_asm_1_asm_1_asm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part cr3_j6_cr3_2__cr30001_1_1_2_1_1 -->
+    <visual>
+      <origin xyz="-0.00190005 2.91544e-08 0.0589988" rpy="1.66533e-15 2.89768e-15 3.21987e-15"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j6_cr3_2__cr30001_1_1_2_1_1.stl"/>
+      </geometry>
+      <material name="cr3_j6_cr3_2__cr30001_1_1_2_1_1_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00190005 2.91544e-08 0.0589988" rpy="1.66533e-15 2.89768e-15 3.21987e-15"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j6_cr3_2__cr30001_1_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part cr3_j6_cr3_2__cr30001_1_2_2_1_1 -->
+    <visual>
+      <origin xyz="-0.00190005 2.91544e-08 0.0589988" rpy="1.66533e-15 1.64624e-15 2.77118e-15"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j6_cr3_2__cr30001_1_2_2_1_1.stl"/>
+      </geometry>
+      <material name="cr3_j6_cr3_2__cr30001_1_2_2_1_1_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00190005 2.91544e-08 0.0589988" rpy="1.66533e-15 1.64624e-15 2.77118e-15"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j6_cr3_2__cr30001_1_2_2_1_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cr3_j5_asm_3_asm_1_asm_1_asm -->
+  <link name="cr3_j5_asm_3_asm_1_asm_1_asm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part 1__5443600_1_2_1_1 -->
+    <visual>
+      <origin xyz="1.56781e-16 -0.6896 -0.1959" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__5443600_1_2_1_1.stl"/>
+      </geometry>
+      <material name="1__5443600_1_2_1_1_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.56781e-16 -0.6896 -0.1959" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__5443600_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 1__10296000_1_2_1_1 -->
+    <visual>
+      <origin xyz="1.39965e-07 -0.6896 -0.1959" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__10296000_1_2_1_1.stl"/>
+      </geometry>
+      <material name="1__10296000_1_2_1_1_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.39965e-07 -0.6896 -0.1959" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__10296000_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cr3_j4_asm_3_asm_1_asm_1_asm -->
+  <link name="cr3_j4_asm_3_asm_1_asm_1_asm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part 1__898100_1_2_1_1 -->
+    <visual>
+      <origin xyz="-2.73152e-09 -4.04826e-09 0.000999998" rpy="3.14159 9.82563e-19 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/1__898100_1_2_1_1.stl"/>
+      </geometry>
+      <material name="1__898100_1_2_1_1_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-2.73152e-09 -4.04826e-09 0.000999998" rpy="3.14159 9.82563e-19 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/1__898100_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 1__5583500_1_2_1_1 -->
+    <visual>
+      <origin xyz="0 -1.18178e-16 0.001" rpy="3.14159 -2.29263e-29 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/1__5583500_1_2_1_1.stl"/>
+      </geometry>
+      <material name="1__5583500_1_2_1_1_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -1.18178e-16 0.001" rpy="3.14159 -2.29263e-29 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/1__5583500_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cr3_j3_asm_3_asm_1_asm_1_asm -->
+  <link name="cr3_j3_asm_3_asm_1_asm_1_asm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part cr3_j32_cr3_2__cr30001_1_2_1_1 -->
+    <visual>
+      <origin xyz="7.98858e-09 -0.5736 -0.0795999" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j32_cr3_2__cr30001_1_2_1_1.stl"/>
+      </geometry>
+      <material name="cr3_j32_cr3_2__cr30001_1_2_1_1_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="7.98858e-09 -0.5736 -0.0795999" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j32_cr3_2__cr30001_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part cr3_j3_cr3_2__cr30001_1_3_1_1 -->
+    <visual>
+      <origin xyz="6.42567e-17 -0.5736 -0.0796" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j3_cr3_2__cr30001_1_3_1_1.stl"/>
+      </geometry>
+      <material name="cr3_j3_cr3_2__cr30001_1_3_1_1_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="6.42567e-17 -0.5736 -0.0796" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_j3_cr3_2__cr30001_1_3_1_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cr3_j2_asm_3_asm_1_asm_1_asm -->
+  <link name="cr3_j2_asm_3_asm_1_asm_1_asm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part 2__379600_1_2_1_1 -->
+    <visual>
+      <origin xyz="3.06522e-08 0.3434 0.0625997" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__379600_1_2_1_1.stl"/>
+      </geometry>
+      <material name="2__379600_1_2_1_1_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="3.06522e-08 0.3434 0.0625997" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__379600_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 2__10365500_1_2_1_1 -->
+    <visual>
+      <origin xyz="2.45243e-09 0.3436 0.0626" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__10365500_1_2_1_1.stl"/>
+      </geometry>
+      <material name="2__10365500_1_2_1_1_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="2.45243e-09 0.3436 0.0626" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__10365500_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 2__5654200_1_2_1_1 -->
+    <visual>
+      <origin xyz="-5.44801e-07 0.3436 0.0626" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__5654200_1_2_1_1.stl"/>
+      </geometry>
+      <material name="2__5654200_1_2_1_1_material">
+        <color rgba="0.647059 0.647059 0.647059 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-5.44801e-07 0.3436 0.0626" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__5654200_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 2__968800_1_2_1_1 -->
+    <visual>
+      <origin xyz="-2.91535e-08 0.3434 0.0625999" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__968800_1_2_1_1.stl"/>
+      </geometry>
+      <material name="2__968800_1_2_1_1_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-2.91535e-08 0.3434 0.0625999" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/2__968800_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part none_1_2_1_1 -->
+    <visual>
+      <origin xyz="6.1529e-09 0.3436 0.0626" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/none_1_2_1_1.stl"/>
+      </geometry>
+      <material name="none_1_2_1_1_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="6.1529e-09 0.3436 0.0626" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/none_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cr3_j1_asm_3_asm_1_asm_1_asm -->
+  <link name="cr3_j1_asm_3_asm_1_asm_1_asm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part 1__1038100_1_2_1_1 -->
+    <visual>
+      <origin xyz="-0.042 9.14997e-13 -0.059" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__1038100_1_2_1_1.stl"/>
+      </geometry>
+      <material name="1__1038100_1_2_1_1_material">
+        <color rgba="0.768627 0.886275 0.952941 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.042 9.14997e-13 -0.059" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__1038100_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part 1__309400_1_2_1_1 -->
+    <visual>
+      <origin xyz="-0.0419999 1.72068e-06 -0.0589997" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__309400_1_2_1_1.stl"/>
+      </geometry>
+      <material name="1__309400_1_2_1_1_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0419999 1.72068e-06 -0.0589997" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/1__309400_1_2_1_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link cr3_base_2_1_1 -->
+  <link name="cr3_base_2_1_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part cr3_base_2_1_1 -->
+    <visual>
+      <origin xyz="5.20417e-18 3.06855e-11 -8.38218e-15" rpy="6.79409e-09 -3.04663e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_base_2_1_1.stl"/>
+      </geometry>
+      <material name="cr3_base_2_1_1_material">
+        <color rgba="0.498039 0.498039 0.498039 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="5.20417e-18 3.06855e-11 -8.38218e-15" rpy="6.79409e-09 -3.04663e-16 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/cr3_base_2_1_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from cr3_j1_asm_3_asm_1_asm_1_asm to cr3_base_2_1_1 -->
+  <joint name="j0" type="revolute">
+    <origin xyz="-0.0698 9.14997e-13 -0.059" rpy="-0 1.5708 0"/>
+    <parent link="cr3_j1_asm_3_asm_1_asm_1_asm"/>
+    <child link="cr3_base_2_1_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
+  </joint>
+  <!-- Joint from cr3_j2_asm_3_asm_1_asm_1_asm to cr3_j1_asm_3_asm_1_asm_1_asm -->
+  <joint name="j1" type="revolute">
+    <origin xyz="-2.91535e-08 0.2738 0.00359995" rpy="-3.14159 1.00424e-15 -1.5708"/>
+    <parent link="cr3_j2_asm_3_asm_1_asm_1_asm"/>
+    <child link="cr3_j1_asm_3_asm_1_asm_1_asm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
+  </joint>
+  <!-- Joint from cr3_j3_asm_3_asm_1_asm_1_asm to cr3_j2_asm_3_asm_1_asm_1_asm -->
+  <joint name="j2" type="revolute">
+    <origin xyz="4.71638e-17 -0.229999 -0.0167" rpy="3.14159 -5.74986e-16 -5.55112e-17"/>
+    <parent link="cr3_j3_asm_3_asm_1_asm_1_asm"/>
+    <child link="cr3_j2_asm_3_asm_1_asm_1_asm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
+  </joint>
+  <!-- Joint from cr3_j4_asm_3_asm_1_asm_1_asm to cr3_j3_asm_3_asm_1_asm_1_asm -->
+  <joint name="j3" type="revolute">
+    <origin xyz="-0.049 -4.39748e-17 -0.067" rpy="1.5708 -5.55112e-17 1.5708"/>
+    <parent link="cr3_j4_asm_3_asm_1_asm_1_asm"/>
+    <child link="cr3_j3_asm_3_asm_1_asm_1_asm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
+  </joint>
+  <!-- Joint from cr3_j5_asm_3_asm_1_asm_1_asm to cr3_j4_asm_3_asm_1_asm_1_asm -->
+  <joint name="j4" type="revolute">
+    <origin xyz="4.34299e-17 -0.049 -0.0673" rpy="-1.5708 -1.5708 0"/>
+    <parent link="cr3_j5_asm_3_asm_1_asm_1_asm"/>
+    <child link="cr3_j4_asm_3_asm_1_asm_1_asm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.77636e-15" upper="3.14159"/>
+  </joint>
+  <!-- Joint from cr3_j6_asm_3_asm_1_asm_1_asm to cr3_j5_asm_3_asm_1_asm_1_asm -->
+  <joint name="j5" type="revolute">
+    <origin xyz="0.1921 2.91544e-08 0.748599" rpy="1.5708 -1.66533e-15 1.5708"/>
+    <parent link="cr3_j6_asm_3_asm_1_asm_1_asm"/>
+    <child link="cr3_j5_asm_3_asm_1_asm_1_asm"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="0" upper="4.71239"/>
+  </joint>
+</robot>
