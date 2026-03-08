@@ -179,7 +179,7 @@ IRI_ROOM_DEFAULT = "*#Room"
 YOLO_WEIGHTS_DEFAULT = rel_or_abs(os.getenv("HYDRA_YOLO", "models/yolo11n.pt"), REPO_ROOT)
 YOLO_CONF_DEFAULT = 0.35
 YOLO_TO_ONTO_DEFAULT = {"cup": "cup", "cups": "cup", "mug": "cup", "b_cups": "b_cups", "d_cups": "d_cups"}
-ROBOT_URDF_DEFAULT = "src/RobotModels/Dobot_CR3/robot.urdf"
+ROBOT_URDF_DEFAULT = "src/RobotModels/Dobot/cr3_robot_camera.urdf"
 ROBOT_USE_FIXED_BASE_DEFAULT = True
 COSMOS_MODEL_DEFAULT = "nvidia/Cosmos-Reason2-2B"
 SIM_HZ = 240
@@ -775,6 +775,9 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
     p.loadURDF("plane.urdf")
 
     robot_urdf = str(Path(robot_urdf).expanduser().resolve())
+
+    print(robot_urdf)
+
     if not os.path.isfile(robot_urdf):
         raise FileNotFoundError(f"robot.urdf not found: {robot_urdf}")
 
