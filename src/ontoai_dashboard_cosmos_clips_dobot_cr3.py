@@ -179,7 +179,7 @@ IRI_ROOM_DEFAULT = "*#Room"
 YOLO_WEIGHTS_DEFAULT = rel_or_abs(os.getenv("HYDRA_YOLO", "models/yolo11n.pt"), REPO_ROOT)
 YOLO_CONF_DEFAULT = 0.35
 YOLO_TO_ONTO_DEFAULT = {"cup": "cup", "cups": "cup", "mug": "cup", "b_cups": "b_cups", "d_cups": "d_cups"}
-ROBOT_URDF_DEFAULT = "src/RobotModels/Dobot/cr3_robot_camera.urdf"
+ROBOT_URDF_DEFAULT = "src/RobotModels/Dobot/cr3_robot.urdf"
 ROBOT_USE_FIXED_BASE_DEFAULT = True
 COSMOS_MODEL_DEFAULT = "nvidia/Cosmos-Reason2-2B"
 SIM_HZ = 240
@@ -535,13 +535,55 @@ def symbol_to_body(sym: str) -> Optional[int]:
 # ============================================================
 # robot.urdf control (simulation)
 # ============================================================
-ROBOT_ARM_JOINT_NAMES = ["j0", "j1", "j2", "j3", "j4", "j5"]
+# Dobot CR3 usually uses joint1..joint6
+ROBOT_ARM_JOINT_NAMES = ["joint1", "joint2", "joint3", "joint4", "joint5", "joint6"]
 
-def rewrite_package_uris_for_pybullet(urdf_path: str) -> str:
+def validate_urdf_meshes_exist(urdf_path: str) -> None:
+    """
+    Validate that all mesh files referenced by the URDF exist on disk.
+    This catches the real cause before PyBullet raises the generic
+    'Cannot load URDF file' exception.
+    """
+    txt = Path(urdf_path).read_text(encoding="utf-8", errors="ignore")
+    urdf_dir = Path(urdf_path).resolve().parent
+
+    mesh_paths = re.findall(r'filename="([^"]+\.(?:STL|stl|dae|DAE|obj|OBJ))"', txt)
+    missing = []
+
+    for mp in mesh_paths:
+        if mp.startswith("package://"):
+            continue
+        full = (urdf_dir / mp).resolve()
+        if not full.exists():
+            missing.append(str(full))
+
+    if missing:
+        msg = "Missing URDF mesh files:" + " ".join(missing)
+        raise FileNotFoundError(msg)
+
+def rewrite_urdf_paths_for_pybullet(urdf_path: str) -> str:
+    """
+    Rewrite URDF resource paths so PyBullet can resolve:
+      - package://...
+      - relative paths like meshes/...
+    """
     src = Path(urdf_path).read_text(encoding="utf-8", errors="ignore")
     urdf_dir = Path(urdf_path).resolve().parent
-    assets_dir = (urdf_dir / "assets").resolve()
-    src = src.replace("package://assets/", str(assets_dir).replace("\\", "/") + "/")
+
+    def repl_package(match):
+        rel = match.group(1)
+        abs_path = (urdf_dir / rel).resolve()
+        return f'filename="{str(abs_path).replace(chr(92), "/")}"'
+
+    src = re.sub(r'filename="package://([^"]+)"', repl_package, src)
+
+    def repl_rel_mesh(match):
+        rel = match.group(1)
+        abs_path = (urdf_dir / rel).resolve()
+        return f'filename="{str(abs_path).replace(chr(92), "/")}"'
+
+    src = re.sub(r'filename="((?:meshes|Mesh|mesh)/[^"]+)"', repl_rel_mesh, src)
+
     td = tempfile.mkdtemp(prefix="robot_urdf_fixed_")
     fixed = Path(td) / Path(urdf_path).name
     fixed.write_text(src, encoding="utf-8")
@@ -561,14 +603,23 @@ def robot_guess_joints(robot_id: int) -> Tuple[List[int], int]:
     if len(jmap) == len(ROBOT_ARM_JOINT_NAMES):
         arm = [jmap[n] for n in ROBOT_ARM_JOINT_NAMES]
         return arm, arm[-1]
+
     revolute = []
+    discovered = []
     for j in range(p.getNumJoints(robot_id)):
         info = p.getJointInfo(robot_id, j)
-        if info[2] == p.JOINT_REVOLUTE:
+        jname = info[1].decode("utf-8")
+        jtype = info[2]
+        discovered.append((j, jname, jtype))
+        if jtype == p.JOINT_REVOLUTE:
             revolute.append(j)
+
+    log(f"Named joints not fully matched. Discovered joints: {discovered}")
+
     arm = revolute[:6]
     if not arm:
         raise RuntimeError("No revolute arm joints discovered in robot.urdf")
+
     return arm, arm[-1]
 
 def robot_home(robot_id: int, arm_joints: List[int]) -> None:
@@ -767,6 +818,7 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
             p.disconnect()
         except Exception:
             pass
+
     p.connect(p.GUI if gui else p.DIRECT)
     p.setAdditionalSearchPath(pybullet_data.getDataPath())
     p.resetSimulation()
@@ -775,16 +827,15 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
     p.loadURDF("plane.urdf")
 
     robot_urdf = str(Path(robot_urdf).expanduser().resolve())
-
     print(robot_urdf)
 
     if not os.path.isfile(robot_urdf):
         raise FileNotFoundError(f"robot.urdf not found: {robot_urdf}")
 
-    fixed_urdf = rewrite_package_uris_for_pybullet(robot_urdf)
+    validate_urdf_meshes_exist(robot_urdf)
+    fixed_urdf = rewrite_urdf_paths_for_pybullet(robot_urdf)
     urdf_dir = str(Path(robot_urdf).resolve().parent)
 
-    # Better XY placement near the scene center / first object
     if ycb_positions:
         ox, oy, _oz = ycb_positions[0]
         robot_base_pos = [float(ox - 0.18), float(oy - 0.22), 0.0]
@@ -793,24 +844,31 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
 
     log(f"Loading robot.urdf: {robot_urdf}")
     log(f"Resolved URDF for PyBullet: {fixed_urdf}")
-    log(f"URDF assets dir: {urdf_dir}")
+    log(f"URDF directory: {urdf_dir}")
     log(f"Initial robot base position: {robot_base_pos}")
 
-    robot_id = p.loadURDF(
-        fixed_urdf,
-        basePosition=robot_base_pos,
-        useFixedBase=use_fixed_base,
-        flags=p.URDF_USE_INERTIA_FROM_FILE
-    )
+    try:
+        robot_id = p.loadURDF(
+            fixed_urdf,
+            basePosition=robot_base_pos,
+            useFixedBase=use_fixed_base,
+            flags=p.URDF_USE_INERTIA_FROM_FILE
+        )
+    except Exception as e:
+        raise RuntimeError(
+            f"PyBullet could not load the URDF.\n"
+            f"Original URDF: {robot_urdf}\n"
+            f"Rewritten URDF: {fixed_urdf}\n"
+            f"URDF dir: {urdf_dir}\n"
+            f"Reason: {e}"
+        ) from e
 
-    # Auto-correct vertical placement so the base sits on the floor
     place_robot_on_floor(robot_id, extra_z=0.003)
 
     arm_joints, ee_link = robot_guess_joints(robot_id)
     log(f"Discovered arm joints: {arm_joints}")
     log(f"Using end-effector link index: {ee_link}")
 
-    # Debug info after floor correction
     aabb = p.getAABB(robot_id, -1)
     base_pos_after, _ = p.getBasePositionAndOrientation(robot_id)
     log(f"Robot base after floor correction: {base_pos_after}")
@@ -821,6 +879,7 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
     paths = ensure_repo(ycb_repo_dir)
     available = set(list_ycb_objects(paths.ycb_dir))
     sim_objects = {}
+
     for i, name in enumerate(ycb_objects):
         if name not in available:
             raise RuntimeError(f"YCB object '{name}' not found.")
@@ -831,6 +890,7 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
         log(f"YCB loaded '{name}' body_id={bid} at {pos}")
 
     draw_rooms_debug()
+
     if gui:
         p.resetDebugVisualizerCamera(
             cameraDistance=1.2,
@@ -838,6 +898,7 @@ def setup_pybullet_world(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], y
             cameraPitch=-35,
             cameraTargetPosition=[0.32, -0.02, 0.18]
         )
+
     return robot_id, sim_objects, arm_joints, ee_link
 
 # ============================================================
