@@ -1565,3 +1565,5 @@ if __name__ == "__main__":
 # requests
 # owlready2
 # ultralytics  (optional, for YOLO)
+
+# streamlit run src/ugv/ugv_cosmos_reasoner2_streamlit_astar.py

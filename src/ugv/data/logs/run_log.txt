@@ -1,468 +1,490 @@
-[2026-03-09 13:29:09] [INIT] PyBullet DIRECT session started | {"client_id": 0}
-[2026-03-09 13:29:09] [ONTOLOGY] Using built-in fallback ontology | {"ontology_path": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl", "note": "Expected an existing .owl file"}
-[2026-03-09 13:29:09] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "mug_red", "expected_candidates": ["025_mug", "YcbMug"]}
-[2026-03-09 13:29:09] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "soap_blue", "expected_candidates": ["021_bleach_cleanser", "YcbBleachCleanser"]}
-[2026-03-09 13:29:09] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "remote_black", "expected_candidates": ["040_large_marker"]}
-[2026-03-09 13:29:09] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "pillow_green", "expected_candidates": ["061_foam_brick", "YcbFoamBrick"]}
-[2026-03-09 13:29:09] [YOLO] YOLO model loaded | {"model_path": "yolov8n.pt"}
-[2026-03-09 13:29:09] [PATHS] Resolved project paths | {"base_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv", "ontology_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology", "data_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data", "logs_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/logs", "ycb_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/YCB_Dataset", "models_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/models", "ontology_path": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl", "ycb_dataset_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/YCB_Dataset", "output_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/logs", "yolo_model_path": "yolov8n.pt"}
-[2026-03-09 13:29:09] [YOLO] Detections computed | {"count": 0, "detections": []}
-[2026-03-09 13:29:28] [TASK] Move mug_red from bathroom to kitchen
-[2026-03-09 13:29:28] [PLAN] A* path computed for source pedestal of mug_red | {"goal": [2.0, 2.0], "path": [[0.0, 0.0], [1.4000000000000004, 1.4000000000000004]]}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.122, 0.024, 16.6], "dist": 1.899, "yaw_err_deg": 31.9}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.347, 0.12, 30.6], "dist": 1.68, "yaw_err_deg": 20.8}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.538, 0.254, 40.1], "dist": 1.457, "yaw_err_deg": 13.5}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.708, 0.414, 46.5], "dist": 1.227, "yaw_err_deg": 8.8}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.859, 0.583, 50.1], "dist": 1.0, "yaw_err_deg": 6.5}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.975, 0.727, 52.5], "dist": 0.812, "yaw_err_deg": 5.4}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.064, 0.846, 54.3], "dist": 0.662, "yaw_err_deg": 4.5}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.131, 0.942, 55.8], "dist": 0.542, "yaw_err_deg": 3.9}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.183, 1.02, 57.0], "dist": 0.446, "yaw_err_deg": 3.4}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.223, 1.083, 57.9], "dist": 0.369, "yaw_err_deg": 3.0}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.254, 1.134, 58.6], "dist": 0.308, "yaw_err_deg": 2.6}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.278, 1.175, 59.2], "dist": 0.26, "yaw_err_deg": 2.4}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.297, 1.208, 59.7], "dist": 0.221, "yaw_err_deg": 2.1}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.312, 1.234, 60.1], "dist": 0.19, "yaw_err_deg": 1.9}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.323, 1.255, 60.3], "dist": 0.166, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.332, 1.272, 60.5], "dist": 0.146, "yaw_err_deg": 1.6}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.34, 1.286, 60.7], "dist": 0.131, "yaw_err_deg": 1.5}
-[2026-03-09 13:29:28] [YOLO] Detections computed | {"count": 0, "detections": []}
-[2026-03-09 13:29:28] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
-[2026-03-09 13:29:28] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in bathroom and sees 1 relevant objects.", "current_room": "bathroom", "visible_objects": [{"name": "mug_red", "category": "mug", "distance_m": 0.962, "bearing_deg": -13.7, "estimated_room": "bathroom"}], "hazards": [], "recommended_next_action": "inspect_visible_objects", "best_target_object": "mug_red", "best_target_room": "kitchen", "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find mug_red. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:28] [PLAN] Target selected after reasoner call | {"object": "mug_red", "ontology_target": "kitchen", "reasoner_target": "kitchen", "reasoner": {"scene_summary": "Robot is in bathroom and sees 1 relevant objects.", "current_room": "bathroom", "visible_objects": [{"name": "mug_red", "category": "mug", "distance_m": 0.962, "bearing_deg": -13.7, "estimated_room": "bathroom"}], "hazards": [], "recommended_next_action": "inspect_visible_objects", "best_target_object": "mug_red", "best_target_room": "kitchen", "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find mug_red. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:28] [PLAN] A* path computed for approach mug_red | {"goal": [2.000041716458079, 2.000032388379096], "path": [[1.4000000000000004, 1.2600000000000007], [1.4000000000000004, 1.4000000000000004]]}
-[2026-03-09 13:29:28] [PICK] Picked mug_red
-[2026-03-09 13:29:28] [PLAN] A* path computed for carry mug_red to kitchen | {"goal": [-2.0, 2.0], "path": [[1.4000000000000004, 1.2600000000000007], [0.14000000000000057, 0.9800000000000004], [-0.6999999999999997, 0.9800000000000004], [-2.52, 1.4000000000000004]]}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.345, 1.296, 72.6], "dist": 1.246, "yaw_err_deg": 124.4}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.345, 1.294, 95.9], "dist": 1.245, "yaw_err_deg": 101.1}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.345, 1.294, 119.3], "dist": 1.246, "yaw_err_deg": 77.6}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.346, 1.293, 142.4], "dist": 1.246, "yaw_err_deg": 54.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.282, 1.321, 160.7], "dist": 1.211, "yaw_err_deg": 37.2}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.06, 1.365, 177.1], "dist": 1.016, "yaw_err_deg": 26.5}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.87, 1.358, -171.0], "dist": 0.839, "yaw_err_deg": 19.0}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.72, 1.326, -162.5], "dist": 0.689, "yaw_err_deg": 13.7}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.603, 1.286, -156.5], "dist": 0.566, "yaw_err_deg": 10.2}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.513, 1.246, -152.1], "dist": 0.467, "yaw_err_deg": 7.8}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.442, 1.209, -149.0], "dist": 0.387, "yaw_err_deg": 6.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.387, 1.178, -146.5], "dist": 0.323, "yaw_err_deg": 5.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.345, 1.151, -144.4], "dist": 0.271, "yaw_err_deg": 4.6}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.312, 1.128, -142.5], "dist": 0.231, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.285, 1.11, -141.5], "dist": 0.198, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.264, 1.095, -140.5], "dist": 0.172, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.248, 1.083, -139.6], "dist": 0.151, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.235, 1.073, -138.7], "dist": 0.134, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.224, 1.065, -137.9], "dist": 0.121, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [0.091, 0.974, -153.7], "dist": 0.806, "yaw_err_deg": -27.7}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.048, 0.924, -165.9], "dist": 0.667, "yaw_err_deg": -19.7}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.165, 0.903, -174.5], "dist": 0.551, "yaw_err_deg": -14.1}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.261, 0.899, 179.3], "dist": 0.455, "yaw_err_deg": -10.0}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.337, 0.902, 174.8], "dist": 0.378, "yaw_err_deg": -7.1}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.398, 0.908, 171.5], "dist": 0.316, "yaw_err_deg": -5.0}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.446, 0.916, 169.1], "dist": 0.266, "yaw_err_deg": -3.5}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.485, 0.922, 167.3], "dist": 0.226, "yaw_err_deg": -2.4}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.515, 0.928, 166.0], "dist": 0.195, "yaw_err_deg": -1.6}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.539, 0.934, 165.0], "dist": 0.17, "yaw_err_deg": -1.1}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.558, 0.938, 164.2], "dist": 0.149, "yaw_err_deg": -0.7}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.574, 0.942, 163.6], "dist": 0.133, "yaw_err_deg": -0.4}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.586, 0.945, 163.1], "dist": 0.12, "yaw_err_deg": -0.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-0.79, 1.003, 164.3], "dist": 1.799, "yaw_err_deg": 2.9}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.016, 1.063, 165.2], "dist": 1.565, "yaw_err_deg": 2.3}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.242, 1.121, 165.9], "dist": 1.331, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.47, 1.175, 166.4], "dist": 1.097, "yaw_err_deg": 1.6}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.668, 1.222, 166.8], "dist": 0.888, "yaw_err_deg": 1.4}
-[2026-03-09 13:29:28] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.827, 1.257, 167.1], "dist": 0.722, "yaw_err_deg": 1.3}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.954, 1.284, 167.4], "dist": 0.59, "yaw_err_deg": 1.1}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.055, 1.306, 167.6], "dist": 0.484, "yaw_err_deg": 1.0}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.135, 1.322, 167.7], "dist": 0.4, "yaw_err_deg": 0.9}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.2, 1.335, 167.8], "dist": 0.333, "yaw_err_deg": 0.7}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.251, 1.345, 167.8], "dist": 0.279, "yaw_err_deg": 0.6}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.292, 1.353, 167.8], "dist": 0.237, "yaw_err_deg": 0.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.324, 1.359, 167.7], "dist": 0.203, "yaw_err_deg": 0.4}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.35, 1.363, 167.6], "dist": 0.176, "yaw_err_deg": 0.3}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.371, 1.367, 167.4], "dist": 0.155, "yaw_err_deg": 0.2}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.387, 1.37, 167.2], "dist": 0.138, "yaw_err_deg": 0.2}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.4, 1.373, 167.0], "dist": 0.124, "yaw_err_deg": 0.1}
-[2026-03-09 13:29:29] [DROP] Dropped mug_red in kitchen
-[2026-03-09 13:29:29] [TASK] Move soap_blue from living_room to bathroom
-[2026-03-09 13:29:29] [PLAN] A* path computed for source pedestal of soap_blue | {"goal": [-2.0, -2.0], "path": [[-2.38, 1.4000000000000004], [-0.98, 0.41999999999999993], [-0.98, -0.41999999999999993], [-2.52, -1.4]]}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.405, 1.374, 174.0], "dist": 1.714, "yaw_err_deg": 154.6}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.404, 1.374, -162.7], "dist": 1.714, "yaw_err_deg": 131.2}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.375, -139.4], "dist": 1.713, "yaw_err_deg": 107.9}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.376, -116.1], "dist": 1.713, "yaw_err_deg": 84.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.378, -92.8], "dist": 1.714, "yaw_err_deg": 61.2}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.38, -73.9], "dist": 1.715, "yaw_err_deg": 41.4}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.307, 1.166, -56.1], "dist": 1.543, "yaw_err_deg": 27.8}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.16, 0.985, -44.3], "dist": 1.33, "yaw_err_deg": 19.3}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.982, 0.833, -36.1], "dist": 1.106, "yaw_err_deg": 14.1}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.809, 0.72, -30.2], "dist": 0.9, "yaw_err_deg": 10.6}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.663, 0.643, -25.8], "dist": 0.733, "yaw_err_deg": 8.0}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.542, 0.589, -22.7], "dist": 0.599, "yaw_err_deg": 6.1}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.444, 0.552, -20.4], "dist": 0.492, "yaw_err_deg": 4.6}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.364, 0.525, -18.7], "dist": 0.406, "yaw_err_deg": 3.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.3, 0.506, -17.5], "dist": 0.338, "yaw_err_deg": 2.6}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.249, 0.491, -16.7], "dist": 0.283, "yaw_err_deg": 2.0}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.208, 0.48, -16.2], "dist": 0.24, "yaw_err_deg": 1.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.175, 0.472, -16.0], "dist": 0.205, "yaw_err_deg": 1.1}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.149, 0.466, -15.9], "dist": 0.178, "yaw_err_deg": 0.8}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.129, 0.461, -15.9], "dist": 0.156, "yaw_err_deg": 0.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.112, 0.457, -16.0], "dist": 0.139, "yaw_err_deg": 0.3}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.099, 0.454, -16.1], "dist": 0.125, "yaw_err_deg": 0.2}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-1.093, 0.453, -30.1], "dist": 0.88, "yaw_err_deg": -54.7}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-1.067, 0.427, -47.9], "dist": 0.865, "yaw_err_deg": -37.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.978, 0.293, -64.9], "dist": 0.726, "yaw_err_deg": -26.2}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.935, 0.169, -76.4], "dist": 0.602, "yaw_err_deg": -18.6}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.918, 0.064, -84.5], "dist": 0.497, "yaw_err_deg": -13.3}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.913, -0.021, -90.3], "dist": 0.412, "yaw_err_deg": -9.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.916, -0.089, -94.5], "dist": 0.343, "yaw_err_deg": -6.7}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.92, -0.143, -97.6], "dist": 0.288, "yaw_err_deg": -4.7}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.926, -0.186, -99.9], "dist": 0.244, "yaw_err_deg": -3.3}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.931, -0.22, -101.5], "dist": 0.209, "yaw_err_deg": -2.3}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.936, -0.247, -102.8], "dist": 0.181, "yaw_err_deg": -1.6}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.94, -0.269, -103.7], "dist": 0.159, "yaw_err_deg": -1.1}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.944, -0.286, -104.5], "dist": 0.141, "yaw_err_deg": -0.7}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.947, -0.299, -105.0], "dist": 0.126, "yaw_err_deg": -0.5}
-[2026-03-09 13:29:29] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-0.977, -0.395, -113.6], "dist": 1.86, "yaw_err_deg": -34.9}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.097, -0.595, -129.2], "dist": 1.656, "yaw_err_deg": -22.2}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.261, -0.762, -139.5], "dist": 1.434, "yaw_err_deg": -14.3}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.448, -0.902, -146.2], "dist": 1.205, "yaw_err_deg": -9.3}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.64, -1.017, -150.6], "dist": 0.98, "yaw_err_deg": -6.2}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.801, -1.1, -153.5], "dist": 0.796, "yaw_err_deg": -4.1}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.932, -1.16, -155.4], "dist": 0.648, "yaw_err_deg": -2.6}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.038, -1.205, -156.5], "dist": 0.531, "yaw_err_deg": -1.5}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.123, -1.239, -157.2], "dist": 0.437, "yaw_err_deg": -0.8}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.191, -1.265, -157.5], "dist": 0.362, "yaw_err_deg": -0.2}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.245, -1.285, -157.6], "dist": 0.303, "yaw_err_deg": 0.2}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.289, -1.301, -157.4], "dist": 0.256, "yaw_err_deg": 0.6}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.324, -1.313, -157.1], "dist": 0.218, "yaw_err_deg": 1.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.352, -1.323, -156.7], "dist": 0.188, "yaw_err_deg": 1.3}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.374, -1.331, -156.1], "dist": 0.164, "yaw_err_deg": 1.5}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.391, -1.337, -155.6], "dist": 0.145, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.406, -1.342, -155.0], "dist": 0.13, "yaw_err_deg": 2.0}
-[2026-03-09 13:29:30] [YOLO] Detections computed | {"count": 0, "detections": []}
-[2026-03-09 13:29:30] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
-[2026-03-09 13:29:30] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in living_room and sees 0 relevant objects.", "current_room": "living_room", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find soap_blue. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:30] [PLAN] Target selected after reasoner call | {"object": "soap_blue", "ontology_target": "bathroom", "reasoner_target": "bathroom", "reasoner": {"scene_summary": "Robot is in living_room and sees 0 relevant objects.", "current_room": "living_room", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find soap_blue. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:30] [PLAN] A* path computed for approach soap_blue | {"goal": [-1.999988477768492, -1.9996971861856923], "path": [[-2.38, -1.4], [-2.52, -1.4]]}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 0, "target": [-2.38, -1.4], "pose": [-2.415, -1.345, -152.2], "dist": 0.065, "yaw_err_deg": 96.9}
-[2026-03-09 13:29:30] [PICK] Picked soap_blue
-[2026-03-09 13:29:30] [PLAN] A* path computed for carry soap_blue to bathroom | {"goal": [2.0, 2.0], "path": [[-2.38, -1.4], [-0.98, -0.41999999999999993], [1.4000000000000004, 1.4000000000000004]]}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.415, -1.345, -168.5], "dist": 1.707, "yaw_err_deg": -161.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.414, -1.345, 168.2], "dist": 1.707, "yaw_err_deg": -137.7}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.346, 144.8], "dist": 1.706, "yaw_err_deg": -114.3}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.347, 121.5], "dist": 1.706, "yaw_err_deg": -90.9}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.348, 98.1], "dist": 1.707, "yaw_err_deg": -67.5}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.349, 77.0], "dist": 1.707, "yaw_err_deg": -45.7}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.35, -1.198, 59.4], "dist": 1.595, "yaw_err_deg": -31.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.212, -1.009, 46.4], "dist": 1.387, "yaw_err_deg": -21.5}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.039, -0.852, 37.4], "dist": 1.166, "yaw_err_deg": -15.6}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.859, -0.729, 30.9], "dist": 0.951, "yaw_err_deg": -11.8}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.704, -0.645, 26.0], "dist": 0.774, "yaw_err_deg": -9.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.576, -0.588, 22.5], "dist": 0.632, "yaw_err_deg": -6.9}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.471, -0.549, 19.8], "dist": 0.518, "yaw_err_deg": -5.2}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.387, -0.521, 17.8], "dist": 0.427, "yaw_err_deg": -4.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.319, -0.502, 16.5], "dist": 0.355, "yaw_err_deg": -3.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.264, -0.487, 15.5], "dist": 0.297, "yaw_err_deg": -2.3}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.22, -0.476, 14.9], "dist": 0.251, "yaw_err_deg": -1.7}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.185, -0.468, 14.5], "dist": 0.214, "yaw_err_deg": -1.3}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.157, -0.462, 14.3], "dist": 0.185, "yaw_err_deg": -0.9}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.135, -0.458, 14.3], "dist": 0.162, "yaw_err_deg": -0.6}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.117, -0.454, 14.3], "dist": 0.143, "yaw_err_deg": -0.4}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.103, -0.451, 14.4], "dist": 0.128, "yaw_err_deg": -0.3}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-1.027, -0.431, 18.0], "dist": 3.062, "yaw_err_deg": 20.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.81, -0.343, 26.8], "dist": 2.838, "yaw_err_deg": 12.1}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.606, -0.229, 32.3], "dist": 2.608, "yaw_err_deg": 7.1}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.412, -0.099, 35.8], "dist": 2.375, "yaw_err_deg": 4.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.225, 0.042, 38.0], "dist": 2.141, "yaw_err_deg": 2.1}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.042, 0.188, 39.3], "dist": 1.907, "yaw_err_deg": 0.8}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.138, 0.338, 40.1], "dist": 1.673, "yaw_err_deg": -0.0}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.316, 0.49, 40.6], "dist": 1.439, "yaw_err_deg": -0.6}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.493, 0.643, 40.8], "dist": 1.205, "yaw_err_deg": -0.9}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.662, 0.79, 40.8], "dist": 0.978, "yaw_err_deg": -1.2}
-[2026-03-09 13:29:30] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.798, 0.908, 40.7], "dist": 0.794, "yaw_err_deg": -1.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.907, 1.002, 40.5], "dist": 0.646, "yaw_err_deg": -1.6}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.994, 1.077, 40.2], "dist": 0.529, "yaw_err_deg": -1.7}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.063, 1.136, 39.9], "dist": 0.436, "yaw_err_deg": -1.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.119, 1.183, 39.6], "dist": 0.361, "yaw_err_deg": -1.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.164, 1.22, 39.2], "dist": 0.302, "yaw_err_deg": -1.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.2, 1.249, 38.8], "dist": 0.255, "yaw_err_deg": -1.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.228, 1.273, 38.4], "dist": 0.217, "yaw_err_deg": -1.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.251, 1.291, 38.1], "dist": 0.187, "yaw_err_deg": -1.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.269, 1.305, 37.8], "dist": 0.163, "yaw_err_deg": -1.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.284, 1.317, 37.5], "dist": 0.144, "yaw_err_deg": -1.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.296, 1.326, 37.2], "dist": 0.129, "yaw_err_deg": -1.7}
-[2026-03-09 13:29:31] [DROP] Dropped soap_blue in bathroom
-[2026-03-09 13:29:31] [TASK] Move remote_black from bedroom to living_room
-[2026-03-09 13:29:31] [PLAN] A* path computed for source pedestal of remote_black | {"goal": [2.0, -2.0], "path": [[1.2600000000000007, 1.4000000000000004], [0.9800000000000004, 0.14000000000000057], [0.9800000000000004, -0.6999999999999997], [1.4000000000000004, -2.52]]}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 0, "target": [1.2600000000000007, 1.4000000000000004], "pose": [1.304, 1.332, 39.3], "dist": 0.081, "yaw_err_deg": 85.7}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, 15.9], "dist": 1.235, "yaw_err_deg": -123.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, -7.4], "dist": 1.235, "yaw_err_deg": -100.1}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, -30.8], "dist": 1.235, "yaw_err_deg": -76.7}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, -53.8], "dist": 1.235, "yaw_err_deg": -53.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.329, 1.268, -71.9], "dist": 1.199, "yaw_err_deg": -36.6}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.369, 1.046, -88.2], "dist": 1.005, "yaw_err_deg": -25.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.358, 0.859, -100.0], "dist": 0.828, "yaw_err_deg": -18.4}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.323, 0.712, -108.6], "dist": 0.68, "yaw_err_deg": -12.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.28, 0.598, -114.8], "dist": 0.558, "yaw_err_deg": -8.7}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.237, 0.511, -119.3], "dist": 0.46, "yaw_err_deg": -5.7}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.198, 0.444, -122.4], "dist": 0.381, "yaw_err_deg": -3.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.164, 0.392, -124.4], "dist": 0.318, "yaw_err_deg": -1.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.136, 0.352, -125.8], "dist": 0.267, "yaw_err_deg": -0.7}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.113, 0.32, -126.6], "dist": 0.227, "yaw_err_deg": 0.2}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.094, 0.295, -127.1], "dist": 0.195, "yaw_err_deg": 0.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.078, 0.275, -127.3], "dist": 0.17, "yaw_err_deg": 1.2}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.066, 0.26, -127.3], "dist": 0.149, "yaw_err_deg": 1.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.056, 0.247, -127.2], "dist": 0.133, "yaw_err_deg": 1.7}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.049, 0.237, -127.0], "dist": 0.12, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.965, 0.097, -113.5], "dist": 0.812, "yaw_err_deg": 25.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.918, -0.045, -102.5], "dist": 0.671, "yaw_err_deg": 18.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.901, -0.163, -94.5], "dist": 0.553, "yaw_err_deg": 13.3}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.897, -0.259, -88.7], "dist": 0.457, "yaw_err_deg": 9.6}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.901, -0.336, -84.4], "dist": 0.379, "yaw_err_deg": 6.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.907, -0.397, -81.4], "dist": 0.317, "yaw_err_deg": 5.0}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.914, -0.446, -79.1], "dist": 0.267, "yaw_err_deg": 3.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.92, -0.484, -77.4], "dist": 0.227, "yaw_err_deg": 3.0}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.926, -0.515, -76.1], "dist": 0.195, "yaw_err_deg": 2.4}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.931, -0.54, -75.0], "dist": 0.17, "yaw_err_deg": 2.1}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.935, -0.559, -74.1], "dist": 0.15, "yaw_err_deg": 2.0}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.938, -0.575, -73.3], "dist": 0.134, "yaw_err_deg": 1.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.941, -0.587, -72.6], "dist": 0.121, "yaw_err_deg": 1.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.999, -0.79, -74.2], "dist": 1.799, "yaw_err_deg": -2.9}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.059, -1.017, -75.3], "dist": 1.565, "yaw_err_deg": -2.0}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.115, -1.244, -76.1], "dist": 1.331, "yaw_err_deg": -1.4}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.168, -1.471, -76.6], "dist": 1.097, "yaw_err_deg": -1.0}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.213, -1.67, -76.9], "dist": 0.888, "yaw_err_deg": -0.8}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.248, -1.829, -77.1], "dist": 0.722, "yaw_err_deg": -0.5}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.275, -1.956, -77.2], "dist": 0.589, "yaw_err_deg": -0.4}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.297, -2.057, -77.2], "dist": 0.484, "yaw_err_deg": -0.2}
-[2026-03-09 13:29:31] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.313, -2.137, -77.2], "dist": 0.4, "yaw_err_deg": -0.1}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.326, -2.201, -77.0], "dist": 0.333, "yaw_err_deg": 0.1}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.337, -2.253, -76.8], "dist": 0.28, "yaw_err_deg": 0.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.345, -2.293, -76.6], "dist": 0.237, "yaw_err_deg": 0.3}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.351, -2.326, -76.3], "dist": 0.203, "yaw_err_deg": 0.5}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.356, -2.352, -76.0], "dist": 0.176, "yaw_err_deg": 0.6}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.36, -2.372, -75.6], "dist": 0.155, "yaw_err_deg": 0.7}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.363, -2.389, -75.2], "dist": 0.138, "yaw_err_deg": 0.8}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.366, -2.402, -74.8], "dist": 0.124, "yaw_err_deg": 0.9}
-[2026-03-09 13:29:32] [YOLO] Detections computed | {"count": 0, "detections": []}
-[2026-03-09 13:29:32] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
-[2026-03-09 13:29:32] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in bedroom and sees 0 relevant objects.", "current_room": "bedroom", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find remote_black. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:32] [PLAN] Target selected after reasoner call | {"object": "remote_black", "ontology_target": "living_room", "reasoner_target": "living_room", "reasoner": {"scene_summary": "Robot is in bedroom and sees 0 relevant objects.", "current_room": "bedroom", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find remote_black. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:32] [PLAN] A* path computed for approach remote_black | {"goal": [1.9999838189138623, -1.9994487065072142], "path": [[1.4000000000000004, -2.38], [1.4000000000000004, -2.52]]}
-[2026-03-09 13:29:32] [PICK] Picked remote_black
-[2026-03-09 13:29:32] [PLAN] A* path computed for carry remote_black to living_room | {"goal": [-2.0, -2.0], "path": [[1.4000000000000004, -2.38], [0.41999999999999993, -0.98], [-1.96, -1.12], [-2.52, -1.4]]}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.367, -2.407, -74.7], "dist": 1.713, "yaw_err_deg": -164.1}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.367, -2.406, -98.0], "dist": 1.712, "yaw_err_deg": -140.7}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.367, -2.406, -121.4], "dist": 1.712, "yaw_err_deg": -117.3}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.368, -2.405, -144.7], "dist": 1.712, "yaw_err_deg": -94.0}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.369, -2.405, -168.1], "dist": 1.712, "yaw_err_deg": -70.6}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.37, -2.405, 170.0], "dist": 1.713, "yaw_err_deg": -48.1}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.239, -2.356, 152.1], "dist": 1.621, "yaw_err_deg": -32.6}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.045, -2.225, 138.4], "dist": 1.415, "yaw_err_deg": -22.5}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.882, -2.058, 128.9], "dist": 1.195, "yaw_err_deg": -16.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.752, -1.877, 122.2], "dist": 0.976, "yaw_err_deg": -12.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.662, -1.72, 117.2], "dist": 0.795, "yaw_err_deg": -9.3}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.601, -1.59, 113.5], "dist": 0.649, "yaw_err_deg": -7.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.558, -1.483, 110.7], "dist": 0.532, "yaw_err_deg": -5.5}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.529, -1.396, 108.7], "dist": 0.438, "yaw_err_deg": -4.1}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.507, -1.326, 107.2], "dist": 0.363, "yaw_err_deg": -3.1}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.492, -1.27, 106.2], "dist": 0.304, "yaw_err_deg": -2.4}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.48, -1.225, 105.6], "dist": 0.256, "yaw_err_deg": -1.8}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.471, -1.189, 105.1], "dist": 0.218, "yaw_err_deg": -1.3}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.465, -1.16, 104.9], "dist": 0.188, "yaw_err_deg": -1.0}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.46, -1.137, 104.9], "dist": 0.164, "yaw_err_deg": -0.7}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.456, -1.119, 104.9], "dist": 0.145, "yaw_err_deg": -0.5}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.453, -1.104, 105.0], "dist": 0.13, "yaw_err_deg": -0.3}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.45, -1.095, 109.8], "dist": 2.411, "yaw_err_deg": 73.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.45, -1.093, 132.3], "dist": 2.41, "yaw_err_deg": 50.3}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.373, -1.04, 149.8], "dist": 2.353, "yaw_err_deg": 33.7}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.157, -0.949, 164.1], "dist": 2.146, "yaw_err_deg": 21.5}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.072, -0.904, 173.1], "dist": 1.923, "yaw_err_deg": 14.0}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.305, -0.888, 179.1], "dist": 1.694, "yaw_err_deg": 9.3}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.539, -0.892, -176.8], "dist": 1.463, "yaw_err_deg": 6.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.772, -0.91, -174.0], "dist": 1.23, "yaw_err_deg": 4.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.997, -0.936, -171.9], "dist": 1.001, "yaw_err_deg": 2.9}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.18, -0.963, -170.5], "dist": 0.812, "yaw_err_deg": 1.9}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.325, -0.988, -169.4], "dist": 0.662, "yaw_err_deg": 1.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.441, -1.009, -168.6], "dist": 0.541, "yaw_err_deg": 0.7}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.533, -1.026, -168.0], "dist": 0.446, "yaw_err_deg": 0.4}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.606, -1.041, -167.5], "dist": 0.369, "yaw_err_deg": 0.2}
-[2026-03-09 13:29:32] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.664, -1.053, -167.2], "dist": 0.309, "yaw_err_deg": 0.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.711, -1.062, -166.9], "dist": 0.26, "yaw_err_deg": -0.1}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.748, -1.07, -166.6], "dist": 0.222, "yaw_err_deg": -0.1}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.777, -1.076, -166.3], "dist": 0.191, "yaw_err_deg": -0.1}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.801, -1.081, -166.0], "dist": 0.166, "yaw_err_deg": -0.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.819, -1.084, -165.8], "dist": 0.147, "yaw_err_deg": -0.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.834, -1.087, -165.5], "dist": 0.131, "yaw_err_deg": 0.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.86, -1.093, -164.7], "dist": 0.743, "yaw_err_deg": 10.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.988, -1.132, -159.9], "dist": 0.608, "yaw_err_deg": 6.9}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.088, -1.17, -156.4], "dist": 0.499, "yaw_err_deg": 4.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.166, -1.205, -154.0], "dist": 0.412, "yaw_err_deg": 3.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.227, -1.234, -152.2], "dist": 0.342, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.275, -1.259, -151.0], "dist": 0.287, "yaw_err_deg": 1.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.313, -1.28, -150.1], "dist": 0.243, "yaw_err_deg": 0.4}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.344, -1.296, -149.5], "dist": 0.208, "yaw_err_deg": -0.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.367, -1.31, -149.0], "dist": 0.18, "yaw_err_deg": -0.3}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.386, -1.321, -148.7], "dist": 0.157, "yaw_err_deg": -0.5}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.402, -1.329, -148.5], "dist": 0.14, "yaw_err_deg": -0.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.414, -1.336, -148.3], "dist": 0.125, "yaw_err_deg": -0.7}
-[2026-03-09 13:29:33] [DROP] Dropped remote_black in living_room
-[2026-03-09 13:29:33] [TASK] Move pillow_green from kitchen to bedroom
-[2026-03-09 13:29:33] [PLAN] A* path computed for source pedestal of pillow_green | {"goal": [-2.0, 2.0], "path": [[-2.38, -1.4], [-0.98, -0.41999999999999993], [-0.98, 0.41999999999999993], [-2.52, 1.4000000000000004]]}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.419, -1.34, -138.9], "dist": 1.708, "yaw_err_deg": 173.9}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.42, -1.34, -115.6], "dist": 1.709, "yaw_err_deg": 150.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.42, -1.342, -92.3], "dist": 1.71, "yaw_err_deg": 127.2}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.42, -1.343, -68.9], "dist": 1.71, "yaw_err_deg": 103.9}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.419, -1.344, -45.6], "dist": 1.71, "yaw_err_deg": 80.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.418, -1.345, -22.2], "dist": 1.71, "yaw_err_deg": 57.3}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.394, -1.347, -4.1], "dist": 1.709, "yaw_err_deg": 39.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.161, -1.332, 12.8], "dist": 1.513, "yaw_err_deg": 25.8}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.938, -1.261, 24.1], "dist": 1.297, "yaw_err_deg": 17.8}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.731, -1.155, 31.8], "dist": 1.073, "yaw_err_deg": 13.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.564, -1.045, 37.2], "dist": 0.873, "yaw_err_deg": 9.9}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.439, -0.946, 41.2], "dist": 0.712, "yaw_err_deg": 7.8}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.343, -0.86, 44.2], "dist": 0.582, "yaw_err_deg": 6.3}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.271, -0.789, 46.5], "dist": 0.479, "yaw_err_deg": 5.3}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.215, -0.729, 48.4], "dist": 0.396, "yaw_err_deg": 4.5}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.171, -0.681, 49.8], "dist": 0.33, "yaw_err_deg": 4.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.138, -0.642, 51.0], "dist": 0.277, "yaw_err_deg": 3.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.112, -0.61, 52.0], "dist": 0.235, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.091, -0.584, 52.8], "dist": 0.201, "yaw_err_deg": 3.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.076, -0.563, 53.5], "dist": 0.174, "yaw_err_deg": 2.8}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.063, -0.546, 54.1], "dist": 0.153, "yaw_err_deg": 2.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.053, -0.533, 54.6], "dist": 0.136, "yaw_err_deg": 2.4}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.046, -0.522, 55.0], "dist": 0.123, "yaw_err_deg": 2.3}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.978, -0.408, 65.3], "dist": 0.843, "yaw_err_deg": 25.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.927, -0.261, 76.4], "dist": 0.697, "yaw_err_deg": 18.6}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.907, -0.138, 84.5], "dist": 0.574, "yaw_err_deg": 13.4}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.902, -0.038, 90.4], "dist": 0.473, "yaw_err_deg": 9.7}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.904, 0.042, 94.6], "dist": 0.392, "yaw_err_deg": 6.9}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.91, 0.106, 97.7], "dist": 0.327, "yaw_err_deg": 5.1}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.916, 0.157, 100.0], "dist": 0.275, "yaw_err_deg": 3.8}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.922, 0.197, 101.7], "dist": 0.234, "yaw_err_deg": 2.9}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.928, 0.229, 103.0], "dist": 0.201, "yaw_err_deg": 2.4}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.932, 0.255, 104.1], "dist": 0.174, "yaw_err_deg": 2.0}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.936, 0.275, 105.0], "dist": 0.153, "yaw_err_deg": 1.9}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.939, 0.291, 105.7], "dist": 0.136, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.942, 0.304, 106.4], "dist": 0.123, "yaw_err_deg": 1.7}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.003, 0.46, 119.3], "dist": 1.805, "yaw_err_deg": 30.1}
-[2026-03-09 13:29:33] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.136, 0.652, 131.8], "dist": 1.595, "yaw_err_deg": 20.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.303, 0.816, 140.3], "dist": 1.372, "yaw_err_deg": 14.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.49, 0.957, 146.2], "dist": 1.144, "yaw_err_deg": 10.8}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.672, 1.069, 150.5], "dist": 0.929, "yaw_err_deg": 8.4}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.823, 1.149, 153.8], "dist": 0.756, "yaw_err_deg": 6.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.947, 1.206, 156.2], "dist": 0.617, "yaw_err_deg": 5.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.048, 1.247, 158.1], "dist": 0.506, "yaw_err_deg": 4.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.129, 1.278, 159.4], "dist": 0.417, "yaw_err_deg": 3.3}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.194, 1.3, 160.4], "dist": 0.347, "yaw_err_deg": 2.6}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.247, 1.317, 161.1], "dist": 0.29, "yaw_err_deg": 2.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.289, 1.33, 161.6], "dist": 0.246, "yaw_err_deg": 1.7}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.322, 1.34, 161.9], "dist": 0.21, "yaw_err_deg": 1.4}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.349, 1.348, 162.0], "dist": 0.181, "yaw_err_deg": 1.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.37, 1.354, 162.1], "dist": 0.159, "yaw_err_deg": 0.9}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.387, 1.359, 162.0], "dist": 0.141, "yaw_err_deg": 0.7}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.401, 1.362, 161.9], "dist": 0.126, "yaw_err_deg": 0.6}
-[2026-03-09 13:29:34] [YOLO] Detections computed | {"count": 0, "detections": []}
-[2026-03-09 13:29:34] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
-[2026-03-09 13:29:34] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in kitchen and sees 0 relevant objects.", "current_room": "kitchen", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find pillow_green. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:34] [PLAN] Target selected after reasoner call | {"object": "pillow_green", "ontology_target": "bedroom", "reasoner_target": "bedroom", "reasoner": {"scene_summary": "Robot is in kitchen and sees 0 relevant objects.", "current_room": "kitchen", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find pillow_green. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
-[2026-03-09 13:29:34] [PLAN] A* path computed for approach pillow_green | {"goal": [-1.997196384354563, 3.860010966032229], "path": [[-2.38, 1.4000000000000004], [-2.52, 1.4000000000000004], [-2.66, 1.54], [-2.66, 2.9400000000000004], [-2.38, 3.500000000000001]]}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.414, 1.366, 158.8], "dist": 0.306, "yaw_err_deg": -14.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.457, 1.385, 152.0], "dist": 0.26, "yaw_err_deg": -9.8}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.49, 1.403, 147.2], "dist": 0.222, "yaw_err_deg": -6.3}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.515, 1.42, 144.0], "dist": 0.191, "yaw_err_deg": -3.9}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.534, 1.434, 141.9], "dist": 0.166, "yaw_err_deg": -2.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.549, 1.446, 140.5], "dist": 0.147, "yaw_err_deg": -0.8}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.561, 1.456, 139.8], "dist": 0.131, "yaw_err_deg": 0.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.569, 1.464, 137.7], "dist": 1.479, "yaw_err_deg": -45.9}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.666, 1.595, 119.5], "dist": 1.365, "yaw_err_deg": -31.0}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.755, 1.811, 105.9], "dist": 1.155, "yaw_err_deg": -21.4}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.797, 2.023, 96.4], "dist": 0.946, "yaw_err_deg": -15.4}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.807, 2.198, 89.5], "dist": 0.772, "yaw_err_deg": -11.0}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.801, 2.337, 84.5], "dist": 0.632, "yaw_err_deg": -7.8}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.788, 2.448, 80.8], "dist": 0.518, "yaw_err_deg": -5.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.773, 2.536, 78.1], "dist": 0.428, "yaw_err_deg": -3.8}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.758, 2.605, 76.1], "dist": 0.355, "yaw_err_deg": -2.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.745, 2.66, 74.6], "dist": 0.297, "yaw_err_deg": -1.6}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.734, 2.704, 73.5], "dist": 0.251, "yaw_err_deg": -1.0}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.725, 2.739, 72.7], "dist": 0.214, "yaw_err_deg": -0.6}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.717, 2.767, 72.1], "dist": 0.185, "yaw_err_deg": -0.3}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.711, 2.789, 71.6], "dist": 0.162, "yaw_err_deg": -0.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.706, 2.806, 71.1], "dist": 0.143, "yaw_err_deg": 0.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.701, 2.82, 70.8], "dist": 0.128, "yaw_err_deg": 0.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.684, 2.87, 69.5], "dist": 0.714, "yaw_err_deg": -5.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.638, 2.989, 66.6], "dist": 0.584, "yaw_err_deg": -3.5}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.597, 3.083, 64.5], "dist": 0.479, "yaw_err_deg": -2.1}
-[2026-03-09 13:29:34] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.562, 3.156, 63.0], "dist": 0.396, "yaw_err_deg": -1.0}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.533, 3.214, 62.1], "dist": 0.33, "yaw_err_deg": -0.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.509, 3.26, 61.4], "dist": 0.277, "yaw_err_deg": 0.3}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.49, 3.297, 61.0], "dist": 0.235, "yaw_err_deg": 0.7}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.474, 3.325, 60.7], "dist": 0.201, "yaw_err_deg": 0.9}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.462, 3.348, 60.6], "dist": 0.175, "yaw_err_deg": 1.1}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.452, 3.367, 60.5], "dist": 0.153, "yaw_err_deg": 1.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.444, 3.381, 60.4], "dist": 0.136, "yaw_err_deg": 1.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.438, 3.393, 60.5], "dist": 0.123, "yaw_err_deg": 1.2}
-[2026-03-09 13:29:35] [PICK] Picked pillow_green
-[2026-03-09 13:29:35] [PLAN] A* path computed for carry pillow_green to bedroom | {"goal": [2.0, -2.0], "path": [[-2.38, 3.3600000000000003], [-1.4, 2.5200000000000005], [-0.41999999999999993, 0.9800000000000004], [1.4000000000000004, -2.52]]}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.436, 3.397, 44.1], "dist": 1.357, "yaw_err_deg": -86.7}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.435, 3.398, 20.8], "dist": 1.357, "yaw_err_deg": -63.5}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.433, 3.398, 1.0], "dist": 1.356, "yaw_err_deg": -42.9}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.226, 3.368, -17.5], "dist": 1.204, "yaw_err_deg": -29.3}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.019, 3.278, -31.2], "dist": 0.998, "yaw_err_deg": -20.3}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.869, 3.17, -40.9], "dist": 0.817, "yaw_err_deg": -13.8}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.762, 3.065, -47.6], "dist": 0.668, "yaw_err_deg": -9.1}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.687, 2.974, -52.1], "dist": 0.547, "yaw_err_deg": -5.8}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.632, 2.896, -55.0], "dist": 0.45, "yaw_err_deg": -3.5}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.591, 2.832, -56.8], "dist": 0.373, "yaw_err_deg": -1.8}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.561, 2.78, -57.8], "dist": 0.311, "yaw_err_deg": -0.6}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.537, 2.739, -58.3], "dist": 0.262, "yaw_err_deg": 0.3}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.519, 2.705, -58.4], "dist": 0.223, "yaw_err_deg": 1.0}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.504, 2.678, -58.1], "dist": 0.192, "yaw_err_deg": 1.5}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.493, 2.656, -57.7], "dist": 0.167, "yaw_err_deg": 1.9}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.484, 2.639, -57.2], "dist": 0.147, "yaw_err_deg": 2.3}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.477, 2.625, -56.6], "dist": 0.132, "yaw_err_deg": 2.5}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.471, 2.614, -55.9], "dist": 0.119, "yaw_err_deg": 2.7}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-1.343, 2.418, -56.9], "dist": 1.732, "yaw_err_deg": -0.5}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-1.218, 2.22, -57.4], "dist": 1.498, "yaw_err_deg": 0.1}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-1.095, 2.021, -57.7], "dist": 1.264, "yaw_err_deg": 0.6}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.974, 1.825, -57.7], "dist": 1.032, "yaw_err_deg": 0.9}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.874, 1.662, -57.6], "dist": 0.837, "yaw_err_deg": 1.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.794, 1.532, -57.3], "dist": 0.681, "yaw_err_deg": 1.4}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.73, 1.429, -57.0], "dist": 0.557, "yaw_err_deg": 1.6}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.679, 1.346, -56.6], "dist": 0.458, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.639, 1.281, -56.0], "dist": 0.379, "yaw_err_deg": 2.0}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.606, 1.229, -55.5], "dist": 0.316, "yaw_err_deg": 2.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.58, 1.187, -54.8], "dist": 0.266, "yaw_err_deg": 2.4}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.559, 1.154, -54.1], "dist": 0.226, "yaw_err_deg": 2.6}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.542, 1.128, -53.4], "dist": 0.194, "yaw_err_deg": 2.8}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.528, 1.107, -52.6], "dist": 0.169, "yaw_err_deg": 2.9}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.517, 1.09, -51.8], "dist": 0.149, "yaw_err_deg": 3.1}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.508, 1.077, -51.0], "dist": 0.133, "yaw_err_deg": 3.1}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.501, 1.067, -50.2], "dist": 0.12, "yaw_err_deg": 3.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.362, 0.879, -55.8], "dist": 3.851, "yaw_err_deg": -7.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.238, 0.68, -59.1], "dist": 3.618, "yaw_err_deg": -4.0}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.123, 0.476, -61.0], "dist": 3.384, "yaw_err_deg": -2.2}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.014, 0.269, -62.1], "dist": 3.15, "yaw_err_deg": -1.0}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.092, 0.06, -62.8], "dist": 2.916, "yaw_err_deg": -0.4}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.196, -0.149, -63.1], "dist": 2.682, "yaw_err_deg": 0.0}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.299, -0.36, -63.3], "dist": 2.448, "yaw_err_deg": 0.3}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.401, -0.57, -63.3], "dist": 2.214, "yaw_err_deg": 0.4}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.504, -0.78, -63.3], "dist": 1.98, "yaw_err_deg": 0.5}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.607, -0.991, -63.2], "dist": 1.746, "yaw_err_deg": 0.6}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.71, -1.201, -63.1], "dist": 1.512, "yaw_err_deg": 0.7}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.814, -1.411, -63.0], "dist": 1.278, "yaw_err_deg": 0.8}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.917, -1.618, -62.8], "dist": 1.046, "yaw_err_deg": 0.9}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.003, -1.791, -62.5], "dist": 0.847, "yaw_err_deg": 1.0}
-[2026-03-09 13:29:35] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.073, -1.929, -62.2], "dist": 0.689, "yaw_err_deg": 1.2}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.128, -2.039, -61.8], "dist": 0.563, "yaw_err_deg": 1.3}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.172, -2.127, -61.4], "dist": 0.463, "yaw_err_deg": 1.5}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.208, -2.197, -60.9], "dist": 0.383, "yaw_err_deg": 1.6}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.236, -2.252, -60.4], "dist": 0.32, "yaw_err_deg": 1.8}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.259, -2.296, -59.8], "dist": 0.269, "yaw_err_deg": 2.0}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.277, -2.332, -59.1], "dist": 0.228, "yaw_err_deg": 2.2}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.292, -2.36, -58.4], "dist": 0.196, "yaw_err_deg": 2.4}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.303, -2.382, -57.6], "dist": 0.171, "yaw_err_deg": 2.6}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.313, -2.4, -56.8], "dist": 0.15, "yaw_err_deg": 2.8}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.32, -2.414, -56.0], "dist": 0.134, "yaw_err_deg": 3.0}
-[2026-03-09 13:29:36] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.327, -2.426, -55.2], "dist": 0.121, "yaw_err_deg": 3.1}
-[2026-03-09 13:29:36] [DROP] Dropped pillow_green in bedroom
-[2026-03-09 13:29:36] [DONE] All objects are correctly sorted
+[2026-03-09 20:07:55] [INIT] PyBullet DIRECT session started | {"client_id": 0}
+[2026-03-09 20:07:55] [ONTOLOGY] Using built-in fallback ontology | {"ontology_path": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl", "note": "Expected an existing .owl file"}
+[2026-03-09 20:07:55] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "mug_red", "expected_candidates": ["025_mug", "YcbMug"]}
+[2026-03-09 20:07:55] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "soap_blue", "expected_candidates": ["021_bleach_cleanser", "YcbBleachCleanser"]}
+[2026-03-09 20:07:55] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "remote_black", "expected_candidates": ["040_large_marker"]}
+[2026-03-09 20:07:55] [WARN] YCB model not found; fallback primitive used | {"semantic_name": "pillow_green", "expected_candidates": ["061_foam_brick", "YcbFoamBrick"]}
+[2026-03-09 20:07:55] [YOLO] YOLO model loaded | {"model_path": "yolov8n.pt"}
+[2026-03-09 20:07:55] [PATHS] Resolved project paths | {"base_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv", "ontology_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/Ontology", "data_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data", "logs_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/logs", "ycb_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/YCB_Dataset", "models_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/models", "ontology_path": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl", "ycb_dataset_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/YCB_Dataset", "output_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/logs", "yolo_model_path": "yolov8n.pt"}
+[2026-03-09 20:07:56] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:08:05] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:08:10] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:08:14] [TASK] Move mug_red from bathroom to kitchen
+[2026-03-09 20:08:14] [PLAN] A* path computed for source pedestal of mug_red | {"goal": [2.0, 2.0], "path": [[0.0, 0.0], [1.4000000000000004, 1.4000000000000004]]}
+[2026-03-09 20:08:15] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:08:16] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:08:17] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:08:19] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:18] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:19] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:19] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.122, 0.024, 16.6], "dist": 1.899, "yaw_err_deg": 31.9}
+[2026-03-09 20:10:20] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:22] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:22] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:23] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:28] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:31] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:32] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:37] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:41] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:43] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:45] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:45] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.347, 0.12, 30.6], "dist": 1.68, "yaw_err_deg": 20.8}
+[2026-03-09 20:10:46] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:47] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:52] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.538, 0.254, 40.1], "dist": 1.457, "yaw_err_deg": 13.5}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.708, 0.414, 46.5], "dist": 1.227, "yaw_err_deg": 8.8}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.859, 0.583, 50.1], "dist": 1.0, "yaw_err_deg": 6.5}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.975, 0.727, 52.5], "dist": 0.812, "yaw_err_deg": 5.4}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.064, 0.846, 54.3], "dist": 0.662, "yaw_err_deg": 4.5}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.131, 0.942, 55.8], "dist": 0.542, "yaw_err_deg": 3.9}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.183, 1.02, 57.0], "dist": 0.446, "yaw_err_deg": 3.4}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.223, 1.083, 57.9], "dist": 0.369, "yaw_err_deg": 3.0}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.254, 1.134, 58.6], "dist": 0.308, "yaw_err_deg": 2.6}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.278, 1.175, 59.2], "dist": 0.26, "yaw_err_deg": 2.4}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.297, 1.208, 59.7], "dist": 0.221, "yaw_err_deg": 2.1}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.312, 1.234, 60.1], "dist": 0.19, "yaw_err_deg": 1.9}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.323, 1.255, 60.3], "dist": 0.166, "yaw_err_deg": 1.8}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.332, 1.272, 60.5], "dist": 0.146, "yaw_err_deg": 1.6}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.34, 1.286, 60.7], "dist": 0.131, "yaw_err_deg": 1.5}
+[2026-03-09 20:10:54] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:54] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
+[2026-03-09 20:10:54] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in bathroom and sees 1 relevant objects.", "current_room": "bathroom", "visible_objects": [{"name": "mug_red", "category": "mug", "distance_m": 0.962, "bearing_deg": -13.7, "estimated_room": "bathroom"}], "hazards": [], "recommended_next_action": "inspect_visible_objects", "best_target_object": "mug_red", "best_target_room": "kitchen", "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find mug_red. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:10:54] [PLAN] Target selected after reasoner call | {"object": "mug_red", "ontology_target": "kitchen", "reasoner_target": "kitchen", "reasoner": {"scene_summary": "Robot is in bathroom and sees 1 relevant objects.", "current_room": "bathroom", "visible_objects": [{"name": "mug_red", "category": "mug", "distance_m": 0.962, "bearing_deg": -13.7, "estimated_room": "bathroom"}], "hazards": [], "recommended_next_action": "inspect_visible_objects", "best_target_object": "mug_red", "best_target_room": "kitchen", "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find mug_red. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:10:54] [PLAN] A* path computed for approach mug_red | {"goal": [2.000041716458079, 2.000032388379096], "path": [[1.4000000000000004, 1.2600000000000007], [1.4000000000000004, 1.4000000000000004]]}
+[2026-03-09 20:10:54] [PICK] Picked mug_red
+[2026-03-09 20:10:54] [PLAN] A* path computed for carry mug_red to kitchen | {"goal": [-2.0, 2.0], "path": [[1.4000000000000004, 1.2600000000000007], [0.14000000000000057, 0.9800000000000004], [-0.6999999999999997, 0.9800000000000004], [-2.52, 1.4000000000000004]]}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.345, 1.296, 72.6], "dist": 1.246, "yaw_err_deg": 124.4}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.345, 1.294, 95.9], "dist": 1.245, "yaw_err_deg": 101.1}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.345, 1.294, 119.3], "dist": 1.246, "yaw_err_deg": 77.6}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.346, 1.293, 142.4], "dist": 1.246, "yaw_err_deg": 54.3}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.282, 1.321, 160.7], "dist": 1.211, "yaw_err_deg": 37.2}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [1.06, 1.365, 177.1], "dist": 1.016, "yaw_err_deg": 26.5}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.87, 1.358, -171.0], "dist": 0.839, "yaw_err_deg": 19.0}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.72, 1.326, -162.5], "dist": 0.689, "yaw_err_deg": 13.7}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.603, 1.286, -156.5], "dist": 0.566, "yaw_err_deg": 10.2}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.513, 1.246, -152.1], "dist": 0.467, "yaw_err_deg": 7.8}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.442, 1.209, -149.0], "dist": 0.387, "yaw_err_deg": 6.3}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.387, 1.178, -146.5], "dist": 0.323, "yaw_err_deg": 5.3}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.345, 1.151, -144.4], "dist": 0.271, "yaw_err_deg": 4.6}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.312, 1.128, -142.5], "dist": 0.231, "yaw_err_deg": 3.3}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.285, 1.11, -141.5], "dist": 0.198, "yaw_err_deg": 3.3}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.264, 1.095, -140.5], "dist": 0.172, "yaw_err_deg": 3.3}
+[2026-03-09 20:10:54] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.248, 1.083, -139.6], "dist": 0.151, "yaw_err_deg": 3.3}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.235, 1.073, -138.7], "dist": 0.134, "yaw_err_deg": 3.3}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.14000000000000057, 0.9800000000000004], "pose": [0.224, 1.065, -137.9], "dist": 0.121, "yaw_err_deg": 3.3}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [0.091, 0.974, -153.7], "dist": 0.806, "yaw_err_deg": -27.7}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.048, 0.924, -165.9], "dist": 0.667, "yaw_err_deg": -19.7}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.165, 0.903, -174.5], "dist": 0.551, "yaw_err_deg": -14.1}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.261, 0.899, 179.3], "dist": 0.455, "yaw_err_deg": -10.0}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.337, 0.902, 174.8], "dist": 0.378, "yaw_err_deg": -7.1}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.398, 0.908, 171.5], "dist": 0.316, "yaw_err_deg": -5.0}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.446, 0.916, 169.1], "dist": 0.266, "yaw_err_deg": -3.5}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.485, 0.922, 167.3], "dist": 0.226, "yaw_err_deg": -2.4}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.515, 0.928, 166.0], "dist": 0.195, "yaw_err_deg": -1.6}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.539, 0.934, 165.0], "dist": 0.17, "yaw_err_deg": -1.1}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.558, 0.938, 164.2], "dist": 0.149, "yaw_err_deg": -0.7}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.574, 0.942, 163.6], "dist": 0.133, "yaw_err_deg": -0.4}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.6999999999999997, 0.9800000000000004], "pose": [-0.586, 0.945, 163.1], "dist": 0.12, "yaw_err_deg": -0.3}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-0.79, 1.003, 164.3], "dist": 1.799, "yaw_err_deg": 2.9}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.016, 1.063, 165.2], "dist": 1.565, "yaw_err_deg": 2.3}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.242, 1.121, 165.9], "dist": 1.331, "yaw_err_deg": 1.8}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.47, 1.175, 166.4], "dist": 1.097, "yaw_err_deg": 1.6}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.668, 1.222, 166.8], "dist": 0.888, "yaw_err_deg": 1.4}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.827, 1.257, 167.1], "dist": 0.722, "yaw_err_deg": 1.3}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.954, 1.284, 167.4], "dist": 0.59, "yaw_err_deg": 1.1}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.055, 1.306, 167.6], "dist": 0.484, "yaw_err_deg": 1.0}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.135, 1.322, 167.7], "dist": 0.4, "yaw_err_deg": 0.9}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.2, 1.335, 167.8], "dist": 0.333, "yaw_err_deg": 0.7}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.251, 1.345, 167.8], "dist": 0.279, "yaw_err_deg": 0.6}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.292, 1.353, 167.8], "dist": 0.237, "yaw_err_deg": 0.5}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.324, 1.359, 167.7], "dist": 0.203, "yaw_err_deg": 0.4}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.35, 1.363, 167.6], "dist": 0.176, "yaw_err_deg": 0.3}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.371, 1.367, 167.4], "dist": 0.155, "yaw_err_deg": 0.2}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.387, 1.37, 167.2], "dist": 0.138, "yaw_err_deg": 0.2}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.4, 1.373, 167.0], "dist": 0.124, "yaw_err_deg": 0.1}
+[2026-03-09 20:10:55] [DROP] Dropped mug_red in kitchen
+[2026-03-09 20:10:55] [TASK] Move soap_blue from living_room to bathroom
+[2026-03-09 20:10:55] [PLAN] A* path computed for source pedestal of soap_blue | {"goal": [-2.0, -2.0], "path": [[-2.38, 1.4000000000000004], [-0.98, 0.41999999999999993], [-0.98, -0.41999999999999993], [-2.52, -1.4]]}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.405, 1.374, 174.0], "dist": 1.714, "yaw_err_deg": 154.6}
+[2026-03-09 20:10:55] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.404, 1.374, -162.7], "dist": 1.714, "yaw_err_deg": 131.2}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.375, -139.4], "dist": 1.713, "yaw_err_deg": 107.9}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.376, -116.1], "dist": 1.713, "yaw_err_deg": 84.5}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.378, -92.8], "dist": 1.714, "yaw_err_deg": 61.2}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.402, 1.38, -73.9], "dist": 1.715, "yaw_err_deg": 41.4}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.307, 1.166, -56.1], "dist": 1.543, "yaw_err_deg": 27.8}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-2.16, 0.985, -44.3], "dist": 1.33, "yaw_err_deg": 19.3}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.982, 0.833, -36.1], "dist": 1.106, "yaw_err_deg": 14.1}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.809, 0.72, -30.2], "dist": 0.9, "yaw_err_deg": 10.6}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.663, 0.643, -25.8], "dist": 0.733, "yaw_err_deg": 8.0}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.542, 0.589, -22.7], "dist": 0.599, "yaw_err_deg": 6.1}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.444, 0.552, -20.4], "dist": 0.492, "yaw_err_deg": 4.6}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.364, 0.525, -18.7], "dist": 0.406, "yaw_err_deg": 3.5}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.3, 0.506, -17.5], "dist": 0.338, "yaw_err_deg": 2.6}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.249, 0.491, -16.7], "dist": 0.283, "yaw_err_deg": 2.0}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.208, 0.48, -16.2], "dist": 0.24, "yaw_err_deg": 1.5}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.175, 0.472, -16.0], "dist": 0.205, "yaw_err_deg": 1.1}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.149, 0.466, -15.9], "dist": 0.178, "yaw_err_deg": 0.8}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.129, 0.461, -15.9], "dist": 0.156, "yaw_err_deg": 0.5}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.112, 0.457, -16.0], "dist": 0.139, "yaw_err_deg": 0.3}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, 0.41999999999999993], "pose": [-1.099, 0.454, -16.1], "dist": 0.125, "yaw_err_deg": 0.2}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-1.093, 0.453, -30.1], "dist": 0.88, "yaw_err_deg": -54.7}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-1.067, 0.427, -47.9], "dist": 0.865, "yaw_err_deg": -37.5}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.978, 0.293, -64.9], "dist": 0.726, "yaw_err_deg": -26.2}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.935, 0.169, -76.4], "dist": 0.602, "yaw_err_deg": -18.6}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.918, 0.064, -84.5], "dist": 0.497, "yaw_err_deg": -13.3}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.913, -0.021, -90.3], "dist": 0.412, "yaw_err_deg": -9.5}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.916, -0.089, -94.5], "dist": 0.343, "yaw_err_deg": -6.7}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.92, -0.143, -97.6], "dist": 0.288, "yaw_err_deg": -4.7}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.926, -0.186, -99.9], "dist": 0.244, "yaw_err_deg": -3.3}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.931, -0.22, -101.5], "dist": 0.209, "yaw_err_deg": -2.3}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.936, -0.247, -102.8], "dist": 0.181, "yaw_err_deg": -1.6}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.94, -0.269, -103.7], "dist": 0.159, "yaw_err_deg": -1.1}
+[2026-03-09 20:10:57] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.944, -0.286, -104.5], "dist": 0.141, "yaw_err_deg": -0.7}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, -0.41999999999999993], "pose": [-0.947, -0.299, -105.0], "dist": 0.126, "yaw_err_deg": -0.5}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-0.977, -0.395, -113.6], "dist": 1.86, "yaw_err_deg": -34.9}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.097, -0.595, -129.2], "dist": 1.656, "yaw_err_deg": -22.2}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.261, -0.762, -139.5], "dist": 1.434, "yaw_err_deg": -14.3}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.448, -0.902, -146.2], "dist": 1.205, "yaw_err_deg": -9.3}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.64, -1.017, -150.6], "dist": 0.98, "yaw_err_deg": -6.2}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.801, -1.1, -153.5], "dist": 0.796, "yaw_err_deg": -4.1}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.932, -1.16, -155.4], "dist": 0.648, "yaw_err_deg": -2.6}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.038, -1.205, -156.5], "dist": 0.531, "yaw_err_deg": -1.5}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.123, -1.239, -157.2], "dist": 0.437, "yaw_err_deg": -0.8}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.191, -1.265, -157.5], "dist": 0.362, "yaw_err_deg": -0.2}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.245, -1.285, -157.6], "dist": 0.303, "yaw_err_deg": 0.2}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.289, -1.301, -157.4], "dist": 0.256, "yaw_err_deg": 0.6}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.324, -1.313, -157.1], "dist": 0.218, "yaw_err_deg": 1.0}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.352, -1.323, -156.7], "dist": 0.188, "yaw_err_deg": 1.3}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.374, -1.331, -156.1], "dist": 0.164, "yaw_err_deg": 1.5}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.391, -1.337, -155.6], "dist": 0.145, "yaw_err_deg": 1.8}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.406, -1.342, -155.0], "dist": 0.13, "yaw_err_deg": 2.0}
+[2026-03-09 20:10:58] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:10:58] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
+[2026-03-09 20:10:58] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in living_room and sees 0 relevant objects.", "current_room": "living_room", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find soap_blue. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:10:58] [PLAN] Target selected after reasoner call | {"object": "soap_blue", "ontology_target": "bathroom", "reasoner_target": "bathroom", "reasoner": {"scene_summary": "Robot is in living_room and sees 0 relevant objects.", "current_room": "living_room", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find soap_blue. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:10:58] [PLAN] A* path computed for approach soap_blue | {"goal": [-1.999988477768492, -1.9996971861856923], "path": [[-2.38, -1.4], [-2.52, -1.4]]}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 0, "target": [-2.38, -1.4], "pose": [-2.415, -1.345, -152.2], "dist": 0.065, "yaw_err_deg": 96.9}
+[2026-03-09 20:10:58] [PICK] Picked soap_blue
+[2026-03-09 20:10:58] [PLAN] A* path computed for carry soap_blue to bathroom | {"goal": [2.0, 2.0], "path": [[-2.38, -1.4], [-0.98, -0.41999999999999993], [1.4000000000000004, 1.4000000000000004]]}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.415, -1.345, -168.5], "dist": 1.707, "yaw_err_deg": -161.0}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.414, -1.345, 168.2], "dist": 1.707, "yaw_err_deg": -137.7}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.346, 144.8], "dist": 1.706, "yaw_err_deg": -114.3}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.347, 121.5], "dist": 1.706, "yaw_err_deg": -90.9}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.348, 98.1], "dist": 1.707, "yaw_err_deg": -67.5}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.413, -1.349, 77.0], "dist": 1.707, "yaw_err_deg": -45.7}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.35, -1.198, 59.4], "dist": 1.595, "yaw_err_deg": -31.0}
+[2026-03-09 20:10:58] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.212, -1.009, 46.4], "dist": 1.387, "yaw_err_deg": -21.5}
+[2026-03-09 20:10:59] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.039, -0.852, 37.4], "dist": 1.166, "yaw_err_deg": -15.6}
+[2026-03-09 20:10:59] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.859, -0.729, 30.9], "dist": 0.951, "yaw_err_deg": -11.8}
+[2026-03-09 20:10:59] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.704, -0.645, 26.0], "dist": 0.774, "yaw_err_deg": -9.0}
+[2026-03-09 20:10:59] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.576, -0.588, 22.5], "dist": 0.632, "yaw_err_deg": -6.9}
+[2026-03-09 20:10:59] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.471, -0.549, 19.8], "dist": 0.518, "yaw_err_deg": -5.2}
+[2026-03-09 20:10:59] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.387, -0.521, 17.8], "dist": 0.427, "yaw_err_deg": -4.0}
+[2026-03-09 20:10:59] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.319, -0.502, 16.5], "dist": 0.355, "yaw_err_deg": -3.0}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.264, -0.487, 15.5], "dist": 0.297, "yaw_err_deg": -2.3}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.22, -0.476, 14.9], "dist": 0.251, "yaw_err_deg": -1.7}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.185, -0.468, 14.5], "dist": 0.214, "yaw_err_deg": -1.3}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.157, -0.462, 14.3], "dist": 0.185, "yaw_err_deg": -0.9}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.135, -0.458, 14.3], "dist": 0.162, "yaw_err_deg": -0.6}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.117, -0.454, 14.3], "dist": 0.143, "yaw_err_deg": -0.4}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.103, -0.451, 14.4], "dist": 0.128, "yaw_err_deg": -0.3}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-1.027, -0.431, 18.0], "dist": 3.062, "yaw_err_deg": 20.0}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.81, -0.343, 26.8], "dist": 2.838, "yaw_err_deg": 12.1}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.606, -0.229, 32.3], "dist": 2.608, "yaw_err_deg": 7.1}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.412, -0.099, 35.8], "dist": 2.375, "yaw_err_deg": 4.0}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.225, 0.042, 38.0], "dist": 2.141, "yaw_err_deg": 2.1}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [-0.042, 0.188, 39.3], "dist": 1.907, "yaw_err_deg": 0.8}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.138, 0.338, 40.1], "dist": 1.673, "yaw_err_deg": -0.0}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.316, 0.49, 40.6], "dist": 1.439, "yaw_err_deg": -0.6}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.493, 0.643, 40.8], "dist": 1.205, "yaw_err_deg": -0.9}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.662, 0.79, 40.8], "dist": 0.978, "yaw_err_deg": -1.2}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.798, 0.908, 40.7], "dist": 0.794, "yaw_err_deg": -1.5}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.907, 1.002, 40.5], "dist": 0.646, "yaw_err_deg": -1.6}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [0.994, 1.077, 40.2], "dist": 0.529, "yaw_err_deg": -1.7}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.063, 1.136, 39.9], "dist": 0.436, "yaw_err_deg": -1.8}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.119, 1.183, 39.6], "dist": 0.361, "yaw_err_deg": -1.9}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.164, 1.22, 39.2], "dist": 0.302, "yaw_err_deg": -1.9}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.2, 1.249, 38.8], "dist": 0.255, "yaw_err_deg": -1.9}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.228, 1.273, 38.4], "dist": 0.217, "yaw_err_deg": -1.9}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.251, 1.291, 38.1], "dist": 0.187, "yaw_err_deg": -1.9}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.269, 1.305, 37.8], "dist": 0.163, "yaw_err_deg": -1.8}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.284, 1.317, 37.5], "dist": 0.144, "yaw_err_deg": -1.8}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 2, "target": [1.4000000000000004, 1.4000000000000004], "pose": [1.296, 1.326, 37.2], "dist": 0.129, "yaw_err_deg": -1.7}
+[2026-03-09 20:11:00] [DROP] Dropped soap_blue in bathroom
+[2026-03-09 20:11:00] [TASK] Move remote_black from bedroom to living_room
+[2026-03-09 20:11:00] [PLAN] A* path computed for source pedestal of remote_black | {"goal": [2.0, -2.0], "path": [[1.2600000000000007, 1.4000000000000004], [0.9800000000000004, 0.14000000000000057], [0.9800000000000004, -0.6999999999999997], [1.4000000000000004, -2.52]]}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 0, "target": [1.2600000000000007, 1.4000000000000004], "pose": [1.304, 1.332, 39.3], "dist": 0.081, "yaw_err_deg": 85.7}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, 15.9], "dist": 1.235, "yaw_err_deg": -123.5}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, -7.4], "dist": 1.235, "yaw_err_deg": -100.1}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, -30.8], "dist": 1.235, "yaw_err_deg": -76.7}
+[2026-03-09 20:11:00] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.303, 1.332, -53.8], "dist": 1.235, "yaw_err_deg": -53.5}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.329, 1.268, -71.9], "dist": 1.199, "yaw_err_deg": -36.6}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.369, 1.046, -88.2], "dist": 1.005, "yaw_err_deg": -25.9}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.358, 0.859, -100.0], "dist": 0.828, "yaw_err_deg": -18.4}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.323, 0.712, -108.6], "dist": 0.68, "yaw_err_deg": -12.8}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.28, 0.598, -114.8], "dist": 0.558, "yaw_err_deg": -8.7}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.237, 0.511, -119.3], "dist": 0.46, "yaw_err_deg": -5.7}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.198, 0.444, -122.4], "dist": 0.381, "yaw_err_deg": -3.5}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.164, 0.392, -124.4], "dist": 0.318, "yaw_err_deg": -1.8}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.136, 0.352, -125.8], "dist": 0.267, "yaw_err_deg": -0.7}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.113, 0.32, -126.6], "dist": 0.227, "yaw_err_deg": 0.2}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.094, 0.295, -127.1], "dist": 0.195, "yaw_err_deg": 0.8}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.078, 0.275, -127.3], "dist": 0.17, "yaw_err_deg": 1.2}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.066, 0.26, -127.3], "dist": 0.149, "yaw_err_deg": 1.5}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.056, 0.247, -127.2], "dist": 0.133, "yaw_err_deg": 1.7}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.9800000000000004, 0.14000000000000057], "pose": [1.049, 0.237, -127.0], "dist": 0.12, "yaw_err_deg": 1.8}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.965, 0.097, -113.5], "dist": 0.812, "yaw_err_deg": 25.5}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.918, -0.045, -102.5], "dist": 0.671, "yaw_err_deg": 18.5}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.901, -0.163, -94.5], "dist": 0.553, "yaw_err_deg": 13.3}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.897, -0.259, -88.7], "dist": 0.457, "yaw_err_deg": 9.6}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.901, -0.336, -84.4], "dist": 0.379, "yaw_err_deg": 6.9}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.907, -0.397, -81.4], "dist": 0.317, "yaw_err_deg": 5.0}
+[2026-03-09 20:11:01] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.914, -0.446, -79.1], "dist": 0.267, "yaw_err_deg": 3.8}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.92, -0.484, -77.4], "dist": 0.227, "yaw_err_deg": 3.0}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.926, -0.515, -76.1], "dist": 0.195, "yaw_err_deg": 2.4}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.931, -0.54, -75.0], "dist": 0.17, "yaw_err_deg": 2.1}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.935, -0.559, -74.1], "dist": 0.15, "yaw_err_deg": 2.0}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.938, -0.575, -73.3], "dist": 0.134, "yaw_err_deg": 1.9}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 2, "target": [0.9800000000000004, -0.6999999999999997], "pose": [0.941, -0.587, -72.6], "dist": 0.121, "yaw_err_deg": 1.9}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.999, -0.79, -74.2], "dist": 1.799, "yaw_err_deg": -2.9}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.059, -1.017, -75.3], "dist": 1.565, "yaw_err_deg": -2.0}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.115, -1.244, -76.1], "dist": 1.331, "yaw_err_deg": -1.4}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.168, -1.471, -76.6], "dist": 1.097, "yaw_err_deg": -1.0}
+[2026-03-09 20:11:02] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.213, -1.67, -76.9], "dist": 0.888, "yaw_err_deg": -0.8}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.248, -1.829, -77.1], "dist": 0.722, "yaw_err_deg": -0.5}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.275, -1.956, -77.2], "dist": 0.589, "yaw_err_deg": -0.4}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.297, -2.057, -77.2], "dist": 0.484, "yaw_err_deg": -0.2}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.313, -2.137, -77.2], "dist": 0.4, "yaw_err_deg": -0.1}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.326, -2.201, -77.0], "dist": 0.333, "yaw_err_deg": 0.1}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.337, -2.253, -76.8], "dist": 0.28, "yaw_err_deg": 0.2}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.345, -2.293, -76.6], "dist": 0.237, "yaw_err_deg": 0.3}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.351, -2.326, -76.3], "dist": 0.203, "yaw_err_deg": 0.5}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.356, -2.352, -76.0], "dist": 0.176, "yaw_err_deg": 0.6}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.36, -2.372, -75.6], "dist": 0.155, "yaw_err_deg": 0.7}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.363, -2.389, -75.2], "dist": 0.138, "yaw_err_deg": 0.8}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.366, -2.402, -74.8], "dist": 0.124, "yaw_err_deg": 0.9}
+[2026-03-09 20:11:03] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:11:03] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
+[2026-03-09 20:11:03] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in bedroom and sees 0 relevant objects.", "current_room": "bedroom", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find remote_black. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:11:03] [PLAN] Target selected after reasoner call | {"object": "remote_black", "ontology_target": "living_room", "reasoner_target": "living_room", "reasoner": {"scene_summary": "Robot is in bedroom and sees 0 relevant objects.", "current_room": "bedroom", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find remote_black. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:11:03] [PLAN] A* path computed for approach remote_black | {"goal": [1.9999838189138623, -1.9994487065072142], "path": [[1.4000000000000004, -2.38], [1.4000000000000004, -2.52]]}
+[2026-03-09 20:11:03] [PICK] Picked remote_black
+[2026-03-09 20:11:03] [PLAN] A* path computed for carry remote_black to living_room | {"goal": [-2.0, -2.0], "path": [[1.4000000000000004, -2.38], [0.41999999999999993, -0.98], [-1.96, -1.12], [-2.52, -1.4]]}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.367, -2.407, -74.7], "dist": 1.713, "yaw_err_deg": -164.1}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.367, -2.406, -98.0], "dist": 1.712, "yaw_err_deg": -140.7}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.367, -2.406, -121.4], "dist": 1.712, "yaw_err_deg": -117.3}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.368, -2.405, -144.7], "dist": 1.712, "yaw_err_deg": -94.0}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.369, -2.405, -168.1], "dist": 1.712, "yaw_err_deg": -70.6}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.37, -2.405, 170.0], "dist": 1.713, "yaw_err_deg": -48.1}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.239, -2.356, 152.1], "dist": 1.621, "yaw_err_deg": -32.6}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [1.045, -2.225, 138.4], "dist": 1.415, "yaw_err_deg": -22.5}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.882, -2.058, 128.9], "dist": 1.195, "yaw_err_deg": -16.2}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.752, -1.877, 122.2], "dist": 0.976, "yaw_err_deg": -12.2}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.662, -1.72, 117.2], "dist": 0.795, "yaw_err_deg": -9.3}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.601, -1.59, 113.5], "dist": 0.649, "yaw_err_deg": -7.2}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.558, -1.483, 110.7], "dist": 0.532, "yaw_err_deg": -5.5}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.529, -1.396, 108.7], "dist": 0.438, "yaw_err_deg": -4.1}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.507, -1.326, 107.2], "dist": 0.363, "yaw_err_deg": -3.1}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.492, -1.27, 106.2], "dist": 0.304, "yaw_err_deg": -2.4}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.48, -1.225, 105.6], "dist": 0.256, "yaw_err_deg": -1.8}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.471, -1.189, 105.1], "dist": 0.218, "yaw_err_deg": -1.3}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.465, -1.16, 104.9], "dist": 0.188, "yaw_err_deg": -1.0}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.46, -1.137, 104.9], "dist": 0.164, "yaw_err_deg": -0.7}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.456, -1.119, 104.9], "dist": 0.145, "yaw_err_deg": -0.5}
+[2026-03-09 20:11:03] [NAV] Following A* path | {"waypoint_index": 1, "target": [0.41999999999999993, -0.98], "pose": [0.453, -1.104, 105.0], "dist": 0.13, "yaw_err_deg": -0.3}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.45, -1.095, 109.8], "dist": 2.411, "yaw_err_deg": 73.2}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.45, -1.093, 132.3], "dist": 2.41, "yaw_err_deg": 50.3}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.373, -1.04, 149.8], "dist": 2.353, "yaw_err_deg": 33.7}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [0.157, -0.949, 164.1], "dist": 2.146, "yaw_err_deg": 21.5}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.072, -0.904, 173.1], "dist": 1.923, "yaw_err_deg": 14.0}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.305, -0.888, 179.1], "dist": 1.694, "yaw_err_deg": 9.3}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.539, -0.892, -176.8], "dist": 1.463, "yaw_err_deg": 6.2}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.772, -0.91, -174.0], "dist": 1.23, "yaw_err_deg": 4.2}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-0.997, -0.936, -171.9], "dist": 1.001, "yaw_err_deg": 2.9}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.18, -0.963, -170.5], "dist": 0.812, "yaw_err_deg": 1.9}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.325, -0.988, -169.4], "dist": 0.662, "yaw_err_deg": 1.2}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.441, -1.009, -168.6], "dist": 0.541, "yaw_err_deg": 0.7}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.533, -1.026, -168.0], "dist": 0.446, "yaw_err_deg": 0.4}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.606, -1.041, -167.5], "dist": 0.369, "yaw_err_deg": 0.2}
+[2026-03-09 20:11:04] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.664, -1.053, -167.2], "dist": 0.309, "yaw_err_deg": 0.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.711, -1.062, -166.9], "dist": 0.26, "yaw_err_deg": -0.1}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.748, -1.07, -166.6], "dist": 0.222, "yaw_err_deg": -0.1}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.777, -1.076, -166.3], "dist": 0.191, "yaw_err_deg": -0.1}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.801, -1.081, -166.0], "dist": 0.166, "yaw_err_deg": -0.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.819, -1.084, -165.8], "dist": 0.147, "yaw_err_deg": -0.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 2, "target": [-1.96, -1.12], "pose": [-1.834, -1.087, -165.5], "dist": 0.131, "yaw_err_deg": 0.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.86, -1.093, -164.7], "dist": 0.743, "yaw_err_deg": 10.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-1.988, -1.132, -159.9], "dist": 0.608, "yaw_err_deg": 6.9}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.088, -1.17, -156.4], "dist": 0.499, "yaw_err_deg": 4.6}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.166, -1.205, -154.0], "dist": 0.412, "yaw_err_deg": 3.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.227, -1.234, -152.2], "dist": 0.342, "yaw_err_deg": 1.8}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.275, -1.259, -151.0], "dist": 0.287, "yaw_err_deg": 1.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.313, -1.28, -150.1], "dist": 0.243, "yaw_err_deg": 0.4}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.344, -1.296, -149.5], "dist": 0.208, "yaw_err_deg": -0.0}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.367, -1.31, -149.0], "dist": 0.18, "yaw_err_deg": -0.3}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.386, -1.321, -148.7], "dist": 0.157, "yaw_err_deg": -0.5}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.402, -1.329, -148.5], "dist": 0.14, "yaw_err_deg": -0.6}
+[2026-03-09 20:11:05] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, -1.4], "pose": [-2.414, -1.336, -148.3], "dist": 0.125, "yaw_err_deg": -0.7}
+[2026-03-09 20:11:05] [DROP] Dropped remote_black in living_room
+[2026-03-09 20:11:05] [TASK] Move pillow_green from kitchen to bedroom
+[2026-03-09 20:11:05] [PLAN] A* path computed for source pedestal of pillow_green | {"goal": [-2.0, 2.0], "path": [[-2.38, -1.4], [-0.98, -0.41999999999999993], [-0.98, 0.41999999999999993], [-2.52, 1.4000000000000004]]}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.419, -1.34, -138.9], "dist": 1.708, "yaw_err_deg": 173.9}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.42, -1.34, -115.6], "dist": 1.709, "yaw_err_deg": 150.6}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.42, -1.342, -92.3], "dist": 1.71, "yaw_err_deg": 127.2}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.42, -1.343, -68.9], "dist": 1.71, "yaw_err_deg": 103.9}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.419, -1.344, -45.6], "dist": 1.71, "yaw_err_deg": 80.6}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.418, -1.345, -22.2], "dist": 1.71, "yaw_err_deg": 57.3}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.394, -1.347, -4.1], "dist": 1.709, "yaw_err_deg": 39.0}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-2.161, -1.332, 12.8], "dist": 1.513, "yaw_err_deg": 25.8}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.938, -1.261, 24.1], "dist": 1.297, "yaw_err_deg": 17.8}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.731, -1.155, 31.8], "dist": 1.073, "yaw_err_deg": 13.0}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.564, -1.045, 37.2], "dist": 0.873, "yaw_err_deg": 9.9}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.439, -0.946, 41.2], "dist": 0.712, "yaw_err_deg": 7.8}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.343, -0.86, 44.2], "dist": 0.582, "yaw_err_deg": 6.3}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.271, -0.789, 46.5], "dist": 0.479, "yaw_err_deg": 5.3}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.215, -0.729, 48.4], "dist": 0.396, "yaw_err_deg": 4.5}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.171, -0.681, 49.8], "dist": 0.33, "yaw_err_deg": 4.0}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.138, -0.642, 51.0], "dist": 0.277, "yaw_err_deg": 3.6}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.112, -0.61, 52.0], "dist": 0.235, "yaw_err_deg": 3.3}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.091, -0.584, 52.8], "dist": 0.201, "yaw_err_deg": 3.0}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.076, -0.563, 53.5], "dist": 0.174, "yaw_err_deg": 2.8}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.063, -0.546, 54.1], "dist": 0.153, "yaw_err_deg": 2.6}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.053, -0.533, 54.6], "dist": 0.136, "yaw_err_deg": 2.4}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 1, "target": [-0.98, -0.41999999999999993], "pose": [-1.046, -0.522, 55.0], "dist": 0.123, "yaw_err_deg": 2.3}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.978, -0.408, 65.3], "dist": 0.843, "yaw_err_deg": 25.6}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.927, -0.261, 76.4], "dist": 0.697, "yaw_err_deg": 18.6}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.907, -0.138, 84.5], "dist": 0.574, "yaw_err_deg": 13.4}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.902, -0.038, 90.4], "dist": 0.473, "yaw_err_deg": 9.7}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.904, 0.042, 94.6], "dist": 0.392, "yaw_err_deg": 6.9}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.91, 0.106, 97.7], "dist": 0.327, "yaw_err_deg": 5.1}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.916, 0.157, 100.0], "dist": 0.275, "yaw_err_deg": 3.8}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.922, 0.197, 101.7], "dist": 0.234, "yaw_err_deg": 2.9}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.928, 0.229, 103.0], "dist": 0.201, "yaw_err_deg": 2.4}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.932, 0.255, 104.1], "dist": 0.174, "yaw_err_deg": 2.0}
+[2026-03-09 20:11:06] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.936, 0.275, 105.0], "dist": 0.153, "yaw_err_deg": 1.9}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.939, 0.291, 105.7], "dist": 0.136, "yaw_err_deg": 1.8}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.98, 0.41999999999999993], "pose": [-0.942, 0.304, 106.4], "dist": 0.123, "yaw_err_deg": 1.7}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.003, 0.46, 119.3], "dist": 1.805, "yaw_err_deg": 30.1}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.136, 0.652, 131.8], "dist": 1.595, "yaw_err_deg": 20.5}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.303, 0.816, 140.3], "dist": 1.372, "yaw_err_deg": 14.5}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.49, 0.957, 146.2], "dist": 1.144, "yaw_err_deg": 10.8}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.672, 1.069, 150.5], "dist": 0.929, "yaw_err_deg": 8.4}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.823, 1.149, 153.8], "dist": 0.756, "yaw_err_deg": 6.5}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-1.947, 1.206, 156.2], "dist": 0.617, "yaw_err_deg": 5.1}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.048, 1.247, 158.1], "dist": 0.506, "yaw_err_deg": 4.1}
+[2026-03-09 20:11:07] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.129, 1.278, 159.4], "dist": 0.417, "yaw_err_deg": 3.3}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.194, 1.3, 160.4], "dist": 0.347, "yaw_err_deg": 2.6}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.247, 1.317, 161.1], "dist": 0.29, "yaw_err_deg": 2.1}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.289, 1.33, 161.6], "dist": 0.246, "yaw_err_deg": 1.7}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.322, 1.34, 161.9], "dist": 0.21, "yaw_err_deg": 1.4}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.349, 1.348, 162.0], "dist": 0.181, "yaw_err_deg": 1.1}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.37, 1.354, 162.1], "dist": 0.159, "yaw_err_deg": 0.9}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.387, 1.359, 162.0], "dist": 0.141, "yaw_err_deg": 0.7}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.52, 1.4000000000000004], "pose": [-2.401, 1.362, 161.9], "dist": 0.126, "yaw_err_deg": 0.6}
+[2026-03-09 20:11:08] [YOLO] Detections computed | {"count": 0, "detections": []}
+[2026-03-09 20:11:08] [WARN] Real Cosmos-Reason2 call failed, fallback to mock | {"error": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 111] Connection refused\"))"}
+[2026-03-09 20:11:08] [REASONER] Mock Cosmos-Reason2 result generated | {"result": {"scene_summary": "Robot is in kitchen and sees 0 relevant objects.", "current_room": "kitchen", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find pillow_green. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:11:08] [PLAN] Target selected after reasoner call | {"object": "pillow_green", "ontology_target": "bedroom", "reasoner_target": "bedroom", "reasoner": {"scene_summary": "Robot is in kitchen and sees 0 relevant objects.", "current_room": "kitchen", "visible_objects": [], "hazards": [], "recommended_next_action": "continue_navigation", "best_target_object": null, "best_target_room": null, "justification": "Mock reasoner used scene geometry and ontology mapping.", "mission": "Find pillow_green. Determine where it belongs according to the semantic context and ontology.", "yolo": {"enabled": true, "detections": []}}}
+[2026-03-09 20:11:08] [PLAN] A* path computed for approach pillow_green | {"goal": [-1.997196384354563, 3.860010966032229], "path": [[-2.38, 1.4000000000000004], [-2.52, 1.4000000000000004], [-2.66, 1.54], [-2.66, 2.9400000000000004], [-2.38, 3.500000000000001]]}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.414, 1.366, 158.8], "dist": 0.306, "yaw_err_deg": -14.5}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.457, 1.385, 152.0], "dist": 0.26, "yaw_err_deg": -9.8}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.49, 1.403, 147.2], "dist": 0.222, "yaw_err_deg": -6.3}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.515, 1.42, 144.0], "dist": 0.191, "yaw_err_deg": -3.9}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.534, 1.434, 141.9], "dist": 0.166, "yaw_err_deg": -2.1}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.549, 1.446, 140.5], "dist": 0.147, "yaw_err_deg": -0.8}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 2, "target": [-2.66, 1.54], "pose": [-2.561, 1.456, 139.8], "dist": 0.131, "yaw_err_deg": 0.1}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.569, 1.464, 137.7], "dist": 1.479, "yaw_err_deg": -45.9}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.666, 1.595, 119.5], "dist": 1.365, "yaw_err_deg": -31.0}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.755, 1.811, 105.9], "dist": 1.155, "yaw_err_deg": -21.4}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.797, 2.023, 96.4], "dist": 0.946, "yaw_err_deg": -15.4}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.807, 2.198, 89.5], "dist": 0.772, "yaw_err_deg": -11.0}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.801, 2.337, 84.5], "dist": 0.632, "yaw_err_deg": -7.8}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.788, 2.448, 80.8], "dist": 0.518, "yaw_err_deg": -5.5}
+[2026-03-09 20:11:08] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.773, 2.536, 78.1], "dist": 0.428, "yaw_err_deg": -3.8}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.758, 2.605, 76.1], "dist": 0.355, "yaw_err_deg": -2.5}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.745, 2.66, 74.6], "dist": 0.297, "yaw_err_deg": -1.6}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.734, 2.704, 73.5], "dist": 0.251, "yaw_err_deg": -1.0}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.725, 2.739, 72.7], "dist": 0.214, "yaw_err_deg": -0.6}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.717, 2.767, 72.1], "dist": 0.185, "yaw_err_deg": -0.3}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.711, 2.789, 71.6], "dist": 0.162, "yaw_err_deg": -0.1}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.706, 2.806, 71.1], "dist": 0.143, "yaw_err_deg": 0.1}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 3, "target": [-2.66, 2.9400000000000004], "pose": [-2.701, 2.82, 70.8], "dist": 0.128, "yaw_err_deg": 0.1}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.684, 2.87, 69.5], "dist": 0.714, "yaw_err_deg": -5.5}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.638, 2.989, 66.6], "dist": 0.584, "yaw_err_deg": -3.5}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.597, 3.083, 64.5], "dist": 0.479, "yaw_err_deg": -2.1}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.562, 3.156, 63.0], "dist": 0.396, "yaw_err_deg": -1.0}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.533, 3.214, 62.1], "dist": 0.33, "yaw_err_deg": -0.2}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.509, 3.26, 61.4], "dist": 0.277, "yaw_err_deg": 0.3}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.49, 3.297, 61.0], "dist": 0.235, "yaw_err_deg": 0.7}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.474, 3.325, 60.7], "dist": 0.201, "yaw_err_deg": 0.9}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.462, 3.348, 60.6], "dist": 0.175, "yaw_err_deg": 1.1}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.452, 3.367, 60.5], "dist": 0.153, "yaw_err_deg": 1.2}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.444, 3.381, 60.4], "dist": 0.136, "yaw_err_deg": 1.2}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 4, "target": [-2.38, 3.500000000000001], "pose": [-2.438, 3.393, 60.5], "dist": 0.123, "yaw_err_deg": 1.2}
+[2026-03-09 20:11:09] [PICK] Picked pillow_green
+[2026-03-09 20:11:09] [PLAN] A* path computed for carry pillow_green to bedroom | {"goal": [2.0, -2.0], "path": [[-2.38, 3.3600000000000003], [-1.4, 2.5200000000000005], [-0.41999999999999993, 0.9800000000000004], [1.4000000000000004, -2.52]]}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.436, 3.397, 44.1], "dist": 1.357, "yaw_err_deg": -86.7}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.435, 3.398, 20.8], "dist": 1.357, "yaw_err_deg": -63.5}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.433, 3.398, 1.0], "dist": 1.356, "yaw_err_deg": -42.9}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.226, 3.368, -17.5], "dist": 1.204, "yaw_err_deg": -29.3}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-2.019, 3.278, -31.2], "dist": 0.998, "yaw_err_deg": -20.3}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.869, 3.17, -40.9], "dist": 0.817, "yaw_err_deg": -13.8}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.762, 3.065, -47.6], "dist": 0.668, "yaw_err_deg": -9.1}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.687, 2.974, -52.1], "dist": 0.547, "yaw_err_deg": -5.8}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.632, 2.896, -55.0], "dist": 0.45, "yaw_err_deg": -3.5}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.591, 2.832, -56.8], "dist": 0.373, "yaw_err_deg": -1.8}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.561, 2.78, -57.8], "dist": 0.311, "yaw_err_deg": -0.6}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.537, 2.739, -58.3], "dist": 0.262, "yaw_err_deg": 0.3}
+[2026-03-09 20:11:09] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.519, 2.705, -58.4], "dist": 0.223, "yaw_err_deg": 1.0}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.504, 2.678, -58.1], "dist": 0.192, "yaw_err_deg": 1.5}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.493, 2.656, -57.7], "dist": 0.167, "yaw_err_deg": 1.9}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.484, 2.639, -57.2], "dist": 0.147, "yaw_err_deg": 2.3}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.477, 2.625, -56.6], "dist": 0.132, "yaw_err_deg": 2.5}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 1, "target": [-1.4, 2.5200000000000005], "pose": [-1.471, 2.614, -55.9], "dist": 0.119, "yaw_err_deg": 2.7}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-1.343, 2.418, -56.9], "dist": 1.732, "yaw_err_deg": -0.5}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-1.218, 2.22, -57.4], "dist": 1.498, "yaw_err_deg": 0.1}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-1.095, 2.021, -57.7], "dist": 1.264, "yaw_err_deg": 0.6}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.974, 1.825, -57.7], "dist": 1.032, "yaw_err_deg": 0.9}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.874, 1.662, -57.6], "dist": 0.837, "yaw_err_deg": 1.2}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.794, 1.532, -57.3], "dist": 0.681, "yaw_err_deg": 1.4}
+[2026-03-09 20:11:10] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.73, 1.429, -57.0], "dist": 0.557, "yaw_err_deg": 1.6}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.679, 1.346, -56.6], "dist": 0.458, "yaw_err_deg": 1.8}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.639, 1.281, -56.0], "dist": 0.379, "yaw_err_deg": 2.0}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.606, 1.229, -55.5], "dist": 0.316, "yaw_err_deg": 2.2}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.58, 1.187, -54.8], "dist": 0.266, "yaw_err_deg": 2.4}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.559, 1.154, -54.1], "dist": 0.226, "yaw_err_deg": 2.6}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.542, 1.128, -53.4], "dist": 0.194, "yaw_err_deg": 2.8}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.528, 1.107, -52.6], "dist": 0.169, "yaw_err_deg": 2.9}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.517, 1.09, -51.8], "dist": 0.149, "yaw_err_deg": 3.1}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.508, 1.077, -51.0], "dist": 0.133, "yaw_err_deg": 3.1}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 2, "target": [-0.41999999999999993, 0.9800000000000004], "pose": [-0.501, 1.067, -50.2], "dist": 0.12, "yaw_err_deg": 3.2}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.362, 0.879, -55.8], "dist": 3.851, "yaw_err_deg": -7.2}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.238, 0.68, -59.1], "dist": 3.618, "yaw_err_deg": -4.0}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.123, 0.476, -61.0], "dist": 3.384, "yaw_err_deg": -2.2}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [-0.014, 0.269, -62.1], "dist": 3.15, "yaw_err_deg": -1.0}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.092, 0.06, -62.8], "dist": 2.916, "yaw_err_deg": -0.4}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.196, -0.149, -63.1], "dist": 2.682, "yaw_err_deg": 0.0}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.299, -0.36, -63.3], "dist": 2.448, "yaw_err_deg": 0.3}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.401, -0.57, -63.3], "dist": 2.214, "yaw_err_deg": 0.4}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.504, -0.78, -63.3], "dist": 1.98, "yaw_err_deg": 0.5}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.607, -0.991, -63.2], "dist": 1.746, "yaw_err_deg": 0.6}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.71, -1.201, -63.1], "dist": 1.512, "yaw_err_deg": 0.7}
+[2026-03-09 20:11:11] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.814, -1.411, -63.0], "dist": 1.278, "yaw_err_deg": 0.8}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [0.917, -1.618, -62.8], "dist": 1.046, "yaw_err_deg": 0.9}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.003, -1.791, -62.5], "dist": 0.847, "yaw_err_deg": 1.0}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.073, -1.929, -62.2], "dist": 0.689, "yaw_err_deg": 1.2}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.128, -2.039, -61.8], "dist": 0.563, "yaw_err_deg": 1.3}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.172, -2.127, -61.4], "dist": 0.463, "yaw_err_deg": 1.5}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.208, -2.197, -60.9], "dist": 0.383, "yaw_err_deg": 1.6}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.236, -2.252, -60.4], "dist": 0.32, "yaw_err_deg": 1.8}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.259, -2.296, -59.8], "dist": 0.269, "yaw_err_deg": 2.0}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.277, -2.332, -59.1], "dist": 0.228, "yaw_err_deg": 2.2}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.292, -2.36, -58.4], "dist": 0.196, "yaw_err_deg": 2.4}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.303, -2.382, -57.6], "dist": 0.171, "yaw_err_deg": 2.6}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.313, -2.4, -56.8], "dist": 0.15, "yaw_err_deg": 2.8}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.32, -2.414, -56.0], "dist": 0.134, "yaw_err_deg": 3.0}
+[2026-03-09 20:11:12] [NAV] Following A* path | {"waypoint_index": 3, "target": [1.4000000000000004, -2.52], "pose": [1.327, -2.426, -55.2], "dist": 0.121, "yaw_err_deg": 3.1}
+[2026-03-09 20:11:12] [DROP] Dropped pillow_green in bedroom
+[2026-03-09 20:11:12] [DONE] All objects are correctly sorted

@@ -1,6 +1,6 @@
 [
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "INIT",
     "message": "PyBullet DIRECT session started",
     "payload": {
@@ -8,16 +8,16 @@
     }
   },
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "ONTOLOGY",
     "message": "Using built-in fallback ontology",
     "payload": {
-      "ontology_path": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl",
+      "ontology_path": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl",
       "note": "Expected an existing .owl file"
     }
   },
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "WARN",
     "message": "YCB model not found; fallback primitive used",
     "payload": {
@@ -29,7 +29,7 @@
     }
   },
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "WARN",
     "message": "YCB model not found; fallback primitive used",
     "payload": {
@@ -41,7 +41,7 @@
     }
   },
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "WARN",
     "message": "YCB model not found; fallback primitive used",
     "payload": {
@@ -52,7 +52,7 @@
     }
   },
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "WARN",
     "message": "YCB model not found; fallback primitive used",
     "payload": {
@@ -64,7 +64,7 @@
     }
   },
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "YOLO",
     "message": "YOLO model loaded",
     "payload": {
@@ -72,19 +72,19 @@
     }
   },
   {
-    "ts": "2026-03-09 13:29:09",
+    "ts": "2026-03-09 20:07:55",
     "kind": "PATHS",
     "message": "Resolved project paths",
     "payload": {
-      "base_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv",
-      "ontology_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology",
-      "data_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data",
-      "logs_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/logs",
-      "ycb_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/YCB_Dataset",
-      "models_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/models",
-      "ontology_path": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl",
-      "ycb_dataset_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/YCB_Dataset",
-      "output_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/logs",
+      "base_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv",
+      "ontology_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/Ontology",
+      "data_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data",
+      "logs_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/logs",
+      "ycb_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/YCB_Dataset",
+      "models_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/models",
+      "ontology_path": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl",
+      "ycb_dataset_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/YCB_Dataset",
+      "output_dir": "/home/jarain78/VisualCode/HYDRA-PAI/src/ugv/data/logs",
       "yolo_model_path": "yolov8n.pt"
     }
   }
