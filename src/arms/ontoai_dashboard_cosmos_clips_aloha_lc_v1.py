@@ -28,6 +28,7 @@ import tempfile
 import subprocess
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
 from typing import Optional, List, Tuple, Dict, Any
 
@@ -189,6 +190,22 @@ DT = 1.0 / SIM_HZ
 MAX_JOINT_VEL = 0.9
 DEFAULT_FORCE = 120
 GRASP_Z_OFFSET = 0.015
+
+CALIB_JSON_DEFAULT = str(Path(os.getenv("HYDRA_ALOHA_CALIB", "/home/jarain78/VisualCodeProjects/ACT_LowCostRobot/.cache/calibration/main_follower.json")).expanduser().resolve())
+IKPY_URDF_DEFAULT = ALOHA_URDF_DEFAULT
+USE_CALIBRATION_DEFAULT = True
+SERVO_TICKS_PER_TURN = 4096.0
+
+# Optional sign corrections between PyBullet/IK frame and real servo convention.
+# Adjust only if a specific joint still moves mirrored after applying homing offsets.
+ALOHA_ARM_CALIB_SIGN = {
+    "joint_1_shoulder_pan": 1.0,
+    "joint_2_shoulder_lift": 1.0,
+    "joint_3_elbow": 1.0,
+    "joint_4_wrist_1": 1.0,
+    "joint_5_wrist_2": 1.0,
+    "joint_6_wrist_3": 1.0,
+}
 
 
 # ============================================================
@@ -655,6 +672,106 @@ def symbol_to_body(sym: str) -> Optional[int]:
 
 
 # ============================================================
+# ALOHA calibration / IK helpers
+# ============================================================
+
+@dataclass
+class AlohaCalibration:
+    homing_offset: List[int]
+    start_pos: List[int]
+    end_pos: List[int]
+    motor_names: List[str]
+    ticks_per_turn: float = SERVO_TICKS_PER_TURN
+
+    @property
+    def ticks_to_rad(self) -> float:
+        return 2.0 * np.pi / float(self.ticks_per_turn)
+
+    def servo_ticks_to_model_radians(self, ticks: List[float], arm_joint_names: List[str]) -> Dict[str, float]:
+        n = min(len(ticks), len(self.homing_offset), len(self.motor_names))
+        corrected = (np.asarray(ticks[:n], dtype=np.float64) - np.asarray(self.homing_offset[:n], dtype=np.float64)) * self.ticks_to_rad
+        out: Dict[str, float] = {}
+        for idx, motor_name in enumerate(self.motor_names[:n]):
+            mapped = motor_name_to_pybullet_joint(motor_name)
+            if mapped in arm_joint_names:
+                out[mapped] = float(corrected[idx] * ALOHA_ARM_CALIB_SIGN.get(mapped, 1.0))
+        return out
+
+
+def motor_name_to_pybullet_joint(motor_name: str) -> str:
+    mapping = {
+        "shoulder_pan": "joint_1_shoulder_pan",
+        "shoulder_1": "joint_2_shoulder_lift",
+        "shoulder_2": "joint_2_shoulder_lift",
+        "elbow_1": "joint_3_elbow",
+        "elbow_2": "joint_3_elbow",
+        "wrist_1": "joint_4_wrist_1",
+        "wrist_2": "joint_5_wrist_2",
+        "wrist_3": "joint_6_wrist_3",
+    }
+    return mapping.get(motor_name, motor_name)
+
+
+@lru_cache(maxsize=4)
+def load_aloha_calibration(calib_json_path: str) -> Optional[AlohaCalibration]:
+    calib_json_path = os.path.abspath(os.path.expanduser(calib_json_path))
+    if not calib_json_path or not os.path.isfile(calib_json_path):
+        log(f"Calibration JSON not found: {calib_json_path}")
+        return None
+    with open(calib_json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    calib = AlohaCalibration(
+        homing_offset=list(data.get("homing_offset", [])),
+        start_pos=list(data.get("start_pos", [])),
+        end_pos=list(data.get("end_pos", [])),
+        motor_names=list(data.get("motor_names", [])),
+    )
+    log(f"Calibration loaded: {calib_json_path} motors={len(calib.motor_names)}")
+    return calib
+
+
+def apply_aloha_calibration_home(robot_id: int, jmap: Dict[str, int], calib: Optional[AlohaCalibration]) -> None:
+    if calib is None or not calib.start_pos:
+        aloha_home(robot_id, jmap)
+        return
+    qmap = calib.servo_ticks_to_model_radians(calib.start_pos, ALOHA_ARM_JOINT_NAMES)
+    for jn in ALOHA_ARM_JOINT_NAMES:
+        if jn not in jmap:
+            continue
+        q = qmap.get(jn, 0.0)
+        jid = jmap[jn]
+        p.resetJointState(robot_id, jid, q)
+        p.setJointMotorControl2(robot_id, jid, p.POSITION_CONTROL, targetPosition=q, force=DEFAULT_FORCE)
+    for jn, q in {"gripper_left_slide": 0.017, "gripper_right_slide": 0.017}.items():
+        if jn in jmap:
+            jid = jmap[jn]
+            p.resetJointState(robot_id, jid, q)
+            p.setJointMotorControl2(robot_id, jid, p.POSITION_CONTROL, targetPosition=q, force=40)
+    for _ in range(int(0.5 * SIM_HZ)):
+        p.stepSimulation()
+        time.sleep(DT)
+
+
+def calibrate_ik_solution(robot_id: int, q_ik: Tuple[float, ...], arm_joint_ids: List[int], arm_joint_names: List[str], calib: Optional[AlohaCalibration]) -> List[float]:
+    q_goal = []
+    for jid, jn in zip(arm_joint_ids, arm_joint_names):
+        q = q_ik[jid] if jid < len(q_ik) else p.getJointState(robot_id, jid)[0]
+        q_goal.append(float(q))
+    if calib is None:
+        return q_goal
+
+    calibrated_home = calib.servo_ticks_to_model_radians(calib.start_pos, arm_joint_names)
+    if not calibrated_home:
+        return q_goal
+
+    corrected = []
+    for q, jn in zip(q_goal, arm_joint_names):
+        # Re-anchor the IK solution around the real calibrated zero/home of each servo.
+        corrected.append(float(q + calibrated_home.get(jn, 0.0)))
+    return corrected
+
+
+# ============================================================
 # JSO-800 control
 # ============================================================
 
@@ -724,8 +841,10 @@ def aloha_move_ee(
     duration: float,
     max_joint_vel: float = MAX_JOINT_VEL,
     force: float = DEFAULT_FORCE,
+    calib: Optional[AlohaCalibration] = None,
 ) -> None:
-    arm_joint_ids = [jmap[jn] for jn in ALOHA_ARM_JOINT_NAMES if jn in jmap]
+    arm_joint_names = [jn for jn in ALOHA_ARM_JOINT_NAMES if jn in jmap]
+    arm_joint_ids = [jmap[jn] for jn in arm_joint_names]
     steps = max(1, int(duration * SIM_HZ))
     max_step = max_joint_vel * DT
 
@@ -737,7 +856,7 @@ def aloha_move_ee(
         maxNumIterations=200,
         residualThreshold=1e-4,
     )
-    q_goal = [q_ik[j] if j < len(q_ik) else p.getJointState(robot_id, j)[0] for j in arm_joint_ids]
+    q_goal = calibrate_ik_solution(robot_id, q_ik, arm_joint_ids, arm_joint_names, calib)
     q = [p.getJointState(robot_id, j)[0] for j in arm_joint_ids]
 
     for _ in range(steps):
@@ -777,7 +896,7 @@ def grasp_with_constraint(robot_id: int, ee_link: int, obj_id: int) -> int:
         childFrameOrientation=child_frame_orn,
     )
 
-def execute_pick_and_place(robot_id: int, jmap: Dict[str, int], ee_link: int, obj_id: int, dst_room: str) -> List[str]:
+def execute_pick_and_place(robot_id: int, jmap: Dict[str, int], ee_link: int, obj_id: int, dst_room: str, calib: Optional[AlohaCalibration] = None) -> List[str]:
     logs = []
     (ox, oy, oz), _ = p.getBasePositionAndOrientation(obj_id)
     dx, dy = drop_point(dst_room)
@@ -786,10 +905,10 @@ def execute_pick_and_place(robot_id: int, jmap: Dict[str, int], ee_link: int, ob
     logs.append(f"EXEC ALOHA LC v1 pick&place body_id={obj_id} -> '{dst_room}' from=({ox:.3f},{oy:.3f},{oz:.3f}) drop=({dx:.3f},{dy:.3f})")
 
     #aloha_open_gripper(robot_id, jmap)
-    aloha_move_ee(robot_id, jmap, ee_link, [ox, oy, 0.30], down_orn, duration=1.6)
+    aloha_move_ee(robot_id, jmap, ee_link, [ox, oy, 0.30], down_orn, duration=1.6, calib=calib)
 
     pre_z = max(0.04, oz + 0.05 - GRASP_Z_OFFSET)
-    aloha_move_ee(robot_id, jmap, ee_link, [ox, oy, pre_z], down_orn, duration=1.2)
+    aloha_move_ee(robot_id, jmap, ee_link, [ox, oy, pre_z], down_orn, duration=1.2, calib=calib)
 
     #aloha_close_gripper(robot_id, jmap)
     for _ in range(int(0.35 * SIM_HZ)):
@@ -799,11 +918,11 @@ def execute_pick_and_place(robot_id: int, jmap: Dict[str, int], ee_link: int, ob
     cid = grasp_with_constraint(robot_id, ee_link, obj_id)
     logs.append(f"GRASP constraint id={cid}")
 
-    aloha_move_ee(robot_id, jmap, ee_link, [ox, oy, 0.32], down_orn, duration=1.2)
-    aloha_move_ee(robot_id, jmap, ee_link, [dx, dy, 0.32], down_orn, duration=2.2)
+    aloha_move_ee(robot_id, jmap, ee_link, [ox, oy, 0.32], down_orn, duration=1.2, calib=calib)
+    aloha_move_ee(robot_id, jmap, ee_link, [dx, dy, 0.32], down_orn, duration=2.2, calib=calib)
 
     place_z = max(0.06, 0.11 - GRASP_Z_OFFSET)
-    aloha_move_ee(robot_id, jmap, ee_link, [dx, dy, place_z], down_orn, duration=1.1)
+    aloha_move_ee(robot_id, jmap, ee_link, [dx, dy, place_z], down_orn, duration=1.1, calib=calib)
 
     try:
         p.removeConstraint(cid)
@@ -816,7 +935,7 @@ def execute_pick_and_place(robot_id: int, jmap: Dict[str, int], ee_link: int, ob
         time.sleep(DT)
 
     logs.append("RELEASE")
-    aloha_move_ee(robot_id, jmap, ee_link, [dx, dy, 0.32], down_orn, duration=1.0)
+    aloha_move_ee(robot_id, jmap, ee_link, [dx, dy, 0.32], down_orn, duration=1.0, calib=calib)
     logs.append("DONE")
     return logs
 
@@ -1049,7 +1168,9 @@ def setup_pybullet_world(
     *,
     aloha_urdf: str,
     use_fixed_base: bool = True,
-) -> Tuple[int, Dict[str, int], Dict[str, int], int]:
+    calib_json_path: Optional[str] = None,
+    use_calibration: bool = True,
+) -> Tuple[int, Dict[str, int], Dict[str, int], int, Optional[AlohaCalibration]]:
     if p.isConnected():
         try:
             p.disconnect()
@@ -1101,7 +1222,8 @@ def setup_pybullet_world(
         raise RuntimeError(f"ALOHA LC v1 URDF missing joints: {missing}. Found: {sorted(jmap.keys())}")
 
     ee_link = jmap["joint_6_wrist_3"]
-    aloha_home(robot_id, jmap)
+    calib = load_aloha_calibration(calib_json_path) if use_calibration and calib_json_path else None
+    apply_aloha_calibration_home(robot_id, jmap, calib)
 
     paths = ensure_repo(ycb_repo_dir)
     available = set(list_ycb_objects(paths.ycb_dir))
@@ -1120,7 +1242,7 @@ def setup_pybullet_world(
     if gui:
         p.resetDebugVisualizerCamera(cameraDistance=1.15, cameraYaw=35, cameraPitch=-35, cameraTargetPosition=[0.30, 0.0, 0.18])
 
-    return robot_id, sim_objects, jmap, ee_link
+    return robot_id, sim_objects, jmap, ee_link, calib
 
 
 # ============================================================
@@ -1130,7 +1252,7 @@ def setup_pybullet_world(
 def run_cycle(robot_id: int, sim_objects: Dict[str, int], cam: CameraConfig, yolo, onto_info: Dict[str, OntoIndexEntry], hierarchy: Dict[str, List[str]], clips_env,
               *, use_cosmos: bool, cosmos_model: str, cosmos_user_task: str, cosmos_max_new_tokens: int,
               yolo_conf: float, yolo_to_onto: Dict[str, str], fallback_sim: bool, apply_execution: bool,
-              jmap: Dict[str, int], ee_link: int) -> Dict[str, Any]:
+              jmap: Dict[str, int], ee_link: int, calib: Optional[AlohaCalibration]) -> Dict[str, Any]:
     rgb, view, proj = render_camera(cam)
     results = yolo.predict(source=rgb, conf=float(yolo_conf), verbose=False)
 
@@ -1208,7 +1330,7 @@ def run_cycle(robot_id: int, sim_objects: Dict[str, int], cam: CameraConfig, yol
             bid = symbol_to_body(t0["id"])
             dst = t0["to"]
             if bid is not None and dst in set(ROOM_NAMES):
-                exec_logs = execute_pick_and_place(robot_id, jmap, ee_link, bid, dst)
+                exec_logs = execute_pick_and_place(robot_id, jmap, ee_link, bid, dst, calib=calib)
 
     return {
         "rgb": rgb,
@@ -1228,17 +1350,20 @@ def run_cycle(robot_id: int, sim_objects: Dict[str, int], cam: CameraConfig, yol
 
 def init_state(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], ycb_positions: List[Tuple[float, float, float]],
                onto_uri: str, iri_object: str, iri_room: str, yolo_weights: str,
-               aloha_urdf: str, use_fixed_base: bool = True) -> None:
+               aloha_urdf: str, use_fixed_base: bool = True,
+               calib_json_path: Optional[str] = None, use_calibration: bool = True) -> None:
     if st.session_state.get("initialized", False):
         return
 
     st.session_state["ui_logs"] = []
     log("Initializing world...")
 
-    robot_id, sim_objects, jmap, ee_link = setup_pybullet_world(
+    robot_id, sim_objects, jmap, ee_link, calib = setup_pybullet_world(
         gui, ycb_repo_dir, ycb_objects, ycb_positions,
         aloha_urdf=aloha_urdf,
         use_fixed_base=use_fixed_base,
+        calib_json_path=calib_json_path,
+        use_calibration=use_calibration,
     )
 
     log("Loading ontology...")
@@ -1261,6 +1386,7 @@ def init_state(gui: bool, ycb_repo_dir: str, ycb_objects: List[str], ycb_positio
         "sim_objects": sim_objects,
         "jmap": jmap,
         "ee_link": ee_link,
+        "calib": calib,
         "onto_info": onto_info,
         "hierarchy": hierarchy,
         "yolo": yolo,
@@ -1288,6 +1414,8 @@ def main():
 
         aloha_urdf = st.text_input(tr("urdf_path"), value=ALOHA_URDF_DEFAULT)
         use_fixed_base = st.toggle(tr("use_fixed_base"), value=ROBOT_USE_FIXED_BASE_DEFAULT)
+        use_calibration = st.toggle("Use calibration JSON", value=USE_CALIBRATION_DEFAULT)
+        calib_json_path = st.text_input("Calibration JSON", value=CALIB_JSON_DEFAULT)
 
         apply_execution = st.toggle(tr("execute"), value=False)
         use_cosmos = st.toggle(tr("use_cosmos"), value=True)
@@ -1369,7 +1497,9 @@ def main():
         iri_room,
         yolo_weights,
         aloha_urdf,
-        use_fixed_base
+        use_fixed_base,
+        calib_json_path,
+        use_calibration,
     )
 
     try:
@@ -1399,6 +1529,7 @@ def main():
             apply_execution=apply_execution,
             jmap=st.session_state["jmap"],
             ee_link=st.session_state["ee_link"],
+            calib=st.session_state.get("calib"),
         )
         st.session_state["last_result"] = res
 

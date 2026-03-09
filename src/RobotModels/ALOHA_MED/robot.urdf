@@ -107,7 +107,7 @@
     </inertial>
     <!-- Part link_4_aloha_lc_v1_4 -->
     <visual>
-      <origin xyz="-0.147634 -0.00116223 -0.0904931" rpy="-4e-12 1.55422 -0"/>
+      <origin xyz="-0.147634 -0.00116223 -0.0904931" rpy="-4e-12 1.55422 0"/>
       <geometry>
         <mesh filename="assets/link_4_aloha_lc_v1_4.stl"/>
       </geometry>
@@ -116,7 +116,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.147634 -0.00116223 -0.0904931" rpy="-4e-12 1.55422 -0"/>
+      <origin xyz="-0.147634 -0.00116223 -0.0904931" rpy="-4e-12 1.55422 0"/>
       <geometry>
         <mesh filename="assets/link_4_aloha_lc_v1_4.stl"/>
       </geometry>
@@ -171,28 +171,28 @@
     </collision>
   </link>
   <!-- Joint from link_5_aloha_lc_v1_4 to fcg_eef_aloha_lc_v1_4 -->
-  <joint name="joint_6_wrist_3" type="revolute">
-    <origin xyz="0.060333 -0.00143286 -0.018425" rpy="-1.5708 -0.000306646 1.54705"/>
+  <joint name="" type="revolute">
+    <origin xyz="0.060333 -0.00143286 -0.018425" rpy="-1.5708 1.62394e-05 1.54705"/>
     <parent link="link_5_aloha_lc_v1_4"/>
     <child link="fcg_eef_aloha_lc_v1_4"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
   </joint>
   <!-- Joint from link_4_aloha_lc_v1_4 to link_5_aloha_lc_v1_4 -->
   <joint name="joint_5_wrist_2" type="revolute">
-    <origin xyz="-4.60594e-07 -0.0198 -0.07496" rpy="1.5708 1.53515 -2.32623e-05"/>
+    <origin xyz="-4.60594e-07 -0.0198 -0.07496" rpy="1.5708 1.55422 -2.32623e-05"/>
     <parent link="link_4_aloha_lc_v1_4"/>
     <child link="link_5_aloha_lc_v1_4"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
   </joint>
   <!-- Joint from link_3_aloha_lc_v1_4 to link_4_aloha_lc_v1_4 -->
   <joint name="joint_4_wrist_1" type="revolute">
-    <origin xyz="0.0878508 -0.0014563 -0.0385968" rpy="-1.5708 0.0251682 1.55422"/>
+    <origin xyz="0.0878508 -0.0014563 -0.0385968" rpy="-1.5708 -7e-12 1.55422"/>
     <parent link="link_3_aloha_lc_v1_4"/>
     <child link="link_4_aloha_lc_v1_4"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
   </joint>
   <!-- Joint from link_2_aloha_lc_v1_4 to link_3_aloha_lc_v1_4 -->
   <joint name="joint_3_elbow" type="revolute">
@@ -200,7 +200,7 @@
     <parent link="link_2_aloha_lc_v1_4"/>
     <child link="link_3_aloha_lc_v1_4"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
   </joint>
   <!-- Joint from link_1_aloha_lc_v1_4 to link_2_aloha_lc_v1_4 -->
   <joint name="joint_2_shoulder_lift" type="revolute">
@@ -208,7 +208,7 @@
     <parent link="link_1_aloha_lc_v1_4"/>
     <child link="link_2_aloha_lc_v1_4"/>
     <axis xyz="0 0 1"/>
-    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+    <limit effort="10" velocity="10" lower="0" upper="3.14159"/>
   </joint>
   <!-- Joint from base_aloha_lc_v1_4 to link_1_aloha_lc_v1_4 -->
   <joint name="joint_1_shoulder_pan" type="revolute">
