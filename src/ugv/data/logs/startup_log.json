@@ -1,0 +1,91 @@
+[
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "INIT",
+    "message": "PyBullet DIRECT session started",
+    "payload": {
+      "client_id": 0
+    }
+  },
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "ONTOLOGY",
+    "message": "Using built-in fallback ontology",
+    "payload": {
+      "ontology_path": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl",
+      "note": "Expected an existing .owl file"
+    }
+  },
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "WARN",
+    "message": "YCB model not found; fallback primitive used",
+    "payload": {
+      "semantic_name": "mug_red",
+      "expected_candidates": [
+        "025_mug",
+        "YcbMug"
+      ]
+    }
+  },
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "WARN",
+    "message": "YCB model not found; fallback primitive used",
+    "payload": {
+      "semantic_name": "soap_blue",
+      "expected_candidates": [
+        "021_bleach_cleanser",
+        "YcbBleachCleanser"
+      ]
+    }
+  },
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "WARN",
+    "message": "YCB model not found; fallback primitive used",
+    "payload": {
+      "semantic_name": "remote_black",
+      "expected_candidates": [
+        "040_large_marker"
+      ]
+    }
+  },
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "WARN",
+    "message": "YCB model not found; fallback primitive used",
+    "payload": {
+      "semantic_name": "pillow_green",
+      "expected_candidates": [
+        "061_foam_brick",
+        "YcbFoamBrick"
+      ]
+    }
+  },
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "YOLO",
+    "message": "YOLO model loaded",
+    "payload": {
+      "model_path": "yolov8n.pt"
+    }
+  },
+  {
+    "ts": "2026-03-09 13:29:09",
+    "kind": "PATHS",
+    "message": "Resolved project paths",
+    "payload": {
+      "base_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv",
+      "ontology_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology",
+      "data_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data",
+      "logs_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/logs",
+      "ycb_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/YCB_Dataset",
+      "models_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/models",
+      "ontology_path": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/Ontology/Home_Extended.owl",
+      "ycb_dataset_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/YCB_Dataset",
+      "output_dir": "/home/jarain78/VisualCodeProjects/HYDRA-PAI/src/ugv/data/logs",
+      "yolo_model_path": "yolov8n.pt"
+    }
+  }
+]

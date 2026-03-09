@@ -1,0 +1,17 @@
+@prefix ex: <http://example.org/home#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:Room a owl:Class .
+ex:Object a owl:Class .
+ex:belongsIn a owl:ObjectProperty .
+
+ex:kitchen a ex:Room .
+ex:bathroom a ex:Room .
+ex:living_room a ex:Room .
+ex:bedroom a ex:Room .
+
+ex:mug_red a ex:Object ; ex:belongsIn ex:kitchen .
+ex:soap_blue a ex:Object ; ex:belongsIn ex:bathroom .
+ex:remote_black a ex:Object ; ex:belongsIn ex:living_room .
+ex:pillow_green a ex:Object ; ex:belongsIn ex:bedroom .

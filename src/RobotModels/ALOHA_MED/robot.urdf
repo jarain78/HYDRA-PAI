@@ -1,0 +1,221 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape document_id: 5c1e0d02736b9bfe4a87cb57 / workspace_id: 041e608e619061741f357489 -->
+<robot name="ALOHA_MED">
+  <!-- Link base_aloha_lc_v1_4 -->
+  <link name="base_aloha_lc_v1_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part base_aloha_lc_v1_4 -->
+    <visual>
+      <origin xyz="-0.00350146 -4.12364e-05 0.0055419" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/base_aloha_lc_v1_4.stl"/>
+      </geometry>
+      <material name="base_aloha_lc_v1_4_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00350146 -4.12364e-05 0.0055419" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="assets/base_aloha_lc_v1_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link_1_aloha_lc_v1_4 -->
+  <link name="link_1_aloha_lc_v1_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part link_1_aloha_lc_v1_4 -->
+    <visual>
+      <origin xyz="-0.0397031 0 -0.04455" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="assets/link_1_aloha_lc_v1_4.stl"/>
+      </geometry>
+      <material name="link_1_aloha_lc_v1_4_material">
+        <color rgba="0.980392 0.713725 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0397031 0 -0.04455" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="assets/link_1_aloha_lc_v1_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link_2_aloha_lc_v1_4 -->
+  <link name="link_2_aloha_lc_v1_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part link_2_aloha_lc_v1_4 -->
+    <visual>
+      <origin xyz="-0.0397031 0.08916 0.0380583" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="assets/link_2_aloha_lc_v1_4.stl"/>
+      </geometry>
+      <material name="link_2_aloha_lc_v1_4_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0397031 0.08916 0.0380583" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="assets/link_2_aloha_lc_v1_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link_3_aloha_lc_v1_4 -->
+  <link name="link_3_aloha_lc_v1_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part link_3_aloha_lc_v1_4 -->
+    <visual>
+      <origin xyz="0.175885 -0.15057 -0.0374346" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="assets/link_3_aloha_lc_v1_4.stl"/>
+      </geometry>
+      <material name="link_3_aloha_lc_v1_4_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.175885 -0.15057 -0.0374346" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="assets/link_3_aloha_lc_v1_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link_4_aloha_lc_v1_4 -->
+  <link name="link_4_aloha_lc_v1_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part link_4_aloha_lc_v1_4 -->
+    <visual>
+      <origin xyz="-0.147634 -0.00116223 -0.0904931" rpy="-4e-12 1.55422 -0"/>
+      <geometry>
+        <mesh filename="assets/link_4_aloha_lc_v1_4.stl"/>
+      </geometry>
+      <material name="link_4_aloha_lc_v1_4_material">
+        <color rgba="0.231373 0.380392 0.705882 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.147634 -0.00116223 -0.0904931" rpy="-4e-12 1.55422 -0"/>
+      <geometry>
+        <mesh filename="assets/link_4_aloha_lc_v1_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link link_5_aloha_lc_v1_4 -->
+  <link name="link_5_aloha_lc_v1_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part link_5_aloha_lc_v1_4 -->
+    <visual>
+      <origin xyz="0.013084 -0.147871 -0.0186343" rpy="-1.57082 3.85565e-07 0"/>
+      <geometry>
+        <mesh filename="assets/link_5_aloha_lc_v1_4.stl"/>
+      </geometry>
+      <material name="link_5_aloha_lc_v1_4_material">
+        <color rgba="0.615686 0.811765 0.929412 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.013084 -0.147871 -0.0186343" rpy="-1.57082 3.85565e-07 0"/>
+      <geometry>
+        <mesh filename="assets/link_5_aloha_lc_v1_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link fcg_eef_aloha_lc_v1_4 -->
+  <link name="fcg_eef_aloha_lc_v1_4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part fcg_eef_aloha_lc_v1_4 -->
+    <visual>
+      <origin xyz="-0.147519 0.000211733 0.0437589" rpy="-7.02429e-06 1.54705 0"/>
+      <geometry>
+        <mesh filename="assets/fcg_eef_aloha_lc_v1_4.stl"/>
+      </geometry>
+      <material name="fcg_eef_aloha_lc_v1_4_material">
+        <color rgba="0.972549 0.529412 0.00392157 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.147519 0.000211733 0.0437589" rpy="-7.02429e-06 1.54705 0"/>
+      <geometry>
+        <mesh filename="assets/fcg_eef_aloha_lc_v1_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from link_5_aloha_lc_v1_4 to fcg_eef_aloha_lc_v1_4 -->
+  <joint name="joint_6_wrist_3" type="revolute">
+    <origin xyz="0.060333 -0.00143286 -0.018425" rpy="-1.5708 -0.000306646 1.54705"/>
+    <parent link="link_5_aloha_lc_v1_4"/>
+    <child link="fcg_eef_aloha_lc_v1_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from link_4_aloha_lc_v1_4 to link_5_aloha_lc_v1_4 -->
+  <joint name="joint_5_wrist_2" type="revolute">
+    <origin xyz="-4.60594e-07 -0.0198 -0.07496" rpy="1.5708 1.53515 -2.32623e-05"/>
+    <parent link="link_4_aloha_lc_v1_4"/>
+    <child link="link_5_aloha_lc_v1_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from link_3_aloha_lc_v1_4 to link_4_aloha_lc_v1_4 -->
+  <joint name="joint_4_wrist_1" type="revolute">
+    <origin xyz="0.0878508 -0.0014563 -0.0385968" rpy="-1.5708 0.0251682 1.55422"/>
+    <parent link="link_3_aloha_lc_v1_4"/>
+    <child link="link_4_aloha_lc_v1_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from link_2_aloha_lc_v1_4 to link_3_aloha_lc_v1_4 -->
+  <joint name="joint_3_elbow" type="revolute">
+    <origin xyz="-0.215588 -0.06141 0.000546733" rpy="-3.14159 0 -0"/>
+    <parent link="link_2_aloha_lc_v1_4"/>
+    <child link="link_3_aloha_lc_v1_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from link_1_aloha_lc_v1_4 to link_2_aloha_lc_v1_4 -->
+  <joint name="joint_2_shoulder_lift" type="revolute">
+    <origin xyz="0 -0.0385968 0.04461" rpy="-1.5708 0 0"/>
+    <parent link="link_1_aloha_lc_v1_4"/>
+    <child link="link_2_aloha_lc_v1_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base_aloha_lc_v1_4 to link_1_aloha_lc_v1_4 -->
+  <joint name="joint_1_shoulder_pan" type="revolute">
+    <origin xyz="0.0362016 -4.12364e-05 0.0495919" rpy="0 -0 -0"/>
+    <parent link="base_aloha_lc_v1_4"/>
+    <child link="link_1_aloha_lc_v1_4"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-1.5708" upper="1.5708"/>
+  </joint>
+</robot>

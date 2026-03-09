@@ -43,7 +43,7 @@ def pick_from_menu(apps: list[Path]) -> Path:
 
 def main() -> int:
     repo_root = Path(__file__).resolve().parent
-    src_dir = repo_root / "src"
+    src_dir = repo_root / "src/arms"
 
     parser = argparse.ArgumentParser(
         prog="main.py",
